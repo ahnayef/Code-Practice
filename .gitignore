@@ -1,4 +1,4 @@
 *
 !*.c
 !.gitignore
-!*.md
+!readme.md
