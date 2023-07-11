@@ -54,7 +54,7 @@ int main()
     last->next=NULL;
 
     travel(head);
-    insertBetween(head,new,1);
+    insertBetween(head,new,3);
     printf("After insertion:\n");
     travel(head);
 
