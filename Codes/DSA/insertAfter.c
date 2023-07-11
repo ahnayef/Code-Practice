@@ -7,6 +7,12 @@ struct node
     struct node *next;
 };
 
+void insertAfter(struct node *ptr, struct node *add)
+{
+    add->next = ptr->next;
+    ptr->next = add;
+}
+
 void travel(struct node *ptr)
 {
 
@@ -17,49 +23,36 @@ void travel(struct node *ptr)
     }
 }
 
-struct node * insertLast(struct node *add,struct node *ptr, struct node *head)
-{
-
-  while (ptr)
-  {
-    if (ptr->next == NULL)
-    {
-        ptr->next=add;
-        add->next=NULL;
-        break;
-    }
-    
-    ptr= ptr->next;
-
-  }
-  
-    return head;
-
-}
-
 int main()
 {
 
     struct node *head = (struct node *)malloc(sizeof(struct node));
-    struct node *middle = (struct node *)malloc(sizeof(struct node));
+    struct node *second = (struct node *)malloc(sizeof(struct node));
     struct node *last = (struct node *)malloc(sizeof(struct node));
     struct node *new = (struct node *)malloc(sizeof(struct node));
+    struct node *new2 = (struct node *)malloc(sizeof(struct node));
 
     head->data = 10;
-    head->next = middle;
+    head->next = second;
 
-    middle->data = 20;
-    middle->next = last;
+    second->data = 20;
+    second->next = last;
 
     last->data = 30;
     last->next = NULL;
 
-    new->data = 50;
+    new->data = 70;
+    new2->data = 100;
 
     travel(head);
 
-    printf("\nAfter insertion:\n");
+    insertAfter(head, new);
+    insertAfter(new, new2);
 
-    travel(insertLast(new,head,head));
+    printf("After insertion:\n");
 
+    travel(head);
+
+
+    return 0;
 }
