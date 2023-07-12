@@ -1,4 +1,11 @@
 {
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 300
+    "files.autoSaveDelay": 300,
+    "files.associations": {
+        "javascript": "javascriptreact",
+        "math.h": "c",
+        "ratio": "cpp",
+        "cmath": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "enabled"
 }
