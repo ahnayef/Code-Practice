@@ -1,6 +1,9 @@
 #include<stdio.h>
 
 
+int decToBin(int num){
+    
+}
 
 
 
