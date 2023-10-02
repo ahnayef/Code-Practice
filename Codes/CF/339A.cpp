@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+
 using namespace std;
 
 
@@ -34,20 +36,29 @@ int main()
 
     int n=0;
    
-    string nums;
+    int nums[100];
     int arrlen=0;
+
+
+
+
 
    while (s[n]!='\0')
    {
     if (s[n]!='+')
     {
-        nums+=s[n];
+        nums[arrlen]= int(s[n] - 0);
     }
     
     n++;
    }
 
-   cout<<nums;
+   
+   for (int i = 0; i < arrlen+1; i++)
+   {
+    cout<<nums[i] << " ";
+   }
+   
    
     
     
