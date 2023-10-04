@@ -25,20 +25,15 @@ void printList()
     }
 }
 
-void insertLast(int data)
+void insertLast(struct node *newNode)
 {
     struct node *tmp = head;
-    struct node *newnode = NULL;
-    newnode = malloc(sizeof(struct node));
-    newnode->data = data;
-    newnode->next = NULL;
-
     while (tmp->next != NULL)
     {
         tmp = tmp->next;
     }
 
-    tmp->next = newnode;
+    tmp->next = newNode;
 }
 
 // Efficient way:
@@ -67,11 +62,16 @@ int main()
 
     head = one;
 
-    printf("Original liked list:\n"); // Printing to make it easy and understandable for you.
+    struct node *newnode = NULL;
+    newnode = malloc(sizeof(struct node));
+    newnode->data = 50; // hard coded, you can try taking input from user(2 lines of code 🙂)
+    newnode->next = NULL;
+
+    printf("Original liked list:\n"); // Printing to make it easy for you to understand
     printList();
 
-    printf("\nAfter adding a element:\n"); // Printing to make it easy and understandable for you.
-    insertLast(50);                        // hard coded - you can try taking input from user(2 lines of code 🙂)
+    printf("\nAfter adding a element:\n"); // Printing to make it easy for you to understand
+    insertLast(newnode);
     printList();
 
     return 0;
