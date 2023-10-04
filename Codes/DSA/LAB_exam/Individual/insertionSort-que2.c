@@ -1,6 +1,5 @@
 // Implement insertion sort to sort an array(given in the question or taken as input) in descending order.
 
-
 // NB: I'm assuming the array isn't provided in the question. I will take the array as input.
 
 #include <stdio.h>
@@ -9,16 +8,15 @@ void insertionSort(int arr[], int len)
 {
     for (int i = 0; i < len; i++)
     {
-        int j=i-1;
-        int key=arr[i];
-        while (j>=0 && arr[j]< key)
+        int j = i - 1;
+        int key = arr[i];
+        while (j >= 0 && arr[j] < key)
         {
-            arr[j+1] = arr[j];
+            arr[j + 1] = arr[j];
             j--;
         }
-        arr[j+1] = key;
+        arr[j + 1] = key;
     }
-    
 }
 
 int main()
