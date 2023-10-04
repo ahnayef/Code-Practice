@@ -1,4 +1,4 @@
-// Append a new node to the end of a linked list.
+// Create a function to append a new node to the end of a linked list.
 
 // NB: I'm assuming the linked list data isn't provided in the question. I will create the linked list with random data.
 
