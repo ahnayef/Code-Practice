@@ -1,4 +1,6 @@
-// Delete the first node from a linked list.
+// Append a new node to the end of a linked list.
+
+// NB: I'm assuming the linked list data isn't provided in the question. I will create the linked list with random data.
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -23,19 +25,23 @@ void printList()
     }
 }
 
-void insertLast()
+void insertLast(int data)
 {
-    head = head->next; // Easy ?
+    struct node *tmp = head;
+    struct node *newnode = NULL;
+    newnode = malloc(sizeof(struct node));
+    newnode->data = data;
+    newnode->next = NULL;
+
+    while (tmp->next != NULL)
+    {
+        tmp = tmp->next;
+    }
+
+    tmp->next = newnode;
 }
 
 // Efficient way:
-
-void deleteFirstNodeV2()
-{
-    struct node *temp = head;
-    head = head->next;
-    free(temp);
-}
 
 int main()
 {
@@ -64,12 +70,8 @@ int main()
     printf("Original liked list:\n"); // Printing to make it easy and understandable for you.
     printList();
 
-    printf("\nAfter deleting the first node:\n"); // Printing to make it easy and understandable for you.
-    insertLast();
-    printList();
-
-    printf("\nAfter deleting the first node(efficient way):\n"); // Printing to make it easy and understandable for you.
-    deleteFirstNodeV2();
+    printf("\nAfter adding a element:\n"); // Printing to make it easy and understandable for you.
+    insertLast(50);                        // hard coded - you can try taking input from user(2 lines of code 🙂)
     printList();
 
     return 0;
