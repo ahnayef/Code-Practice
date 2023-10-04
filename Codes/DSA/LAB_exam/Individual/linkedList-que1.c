@@ -1,4 +1,4 @@
-// Delete the first node from a linked list.
+// Create a linked list and display its elements.
 
 // NB: I'm assuming the linked list data isn't provided in the question. I will create the linked list with random data.
 
