@@ -25,19 +25,6 @@ void printList()
     }
 }
 
-void insertLast()
-{
-    head = head->next; // Easy ?
-}
-
-// Efficient way:
-
-void deleteFirstNodeV2()
-{
-    struct node *temp = head;
-    head = head->next;
-    free(temp);
-}
 
 int main()
 {
@@ -63,16 +50,17 @@ int main()
 
     head = one;
 
-    printf("Original liked list:\n"); // Printing to make it easy and understandable for you.
+    // ⚠️ Note that I'm adding node without using function. Ma'am may ask you to do it with function. ⚠️
+
+    struct node *newNode = NULL;
+    newNode = malloc(sizeof(struct node));
+
+    newNode->data=50;
+    head=newNode;
+
+    printf("Liked list:\n"); 
     printList();
 
-    printf("\nAfter deleting the first node:\n"); // Printing to make it easy and understandable for you.
-    insertLast();
-    printList();
-
-    printf("\nAfter deleting the first node(efficient way):\n"); // Printing to make it easy and understandable for you.
-    deleteFirstNodeV2();
-    printList();
 
     return 0;
 }
