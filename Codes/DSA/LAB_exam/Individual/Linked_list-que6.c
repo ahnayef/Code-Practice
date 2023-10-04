@@ -1,4 +1,4 @@
-// Delete the first node from a linked list.
+// Create a function to delete the first node from a linked list.
 // NB: I'm assuming the linked list data isn't provided in the question. I will create the linked list with random data.
 
 #include <stdio.h>
