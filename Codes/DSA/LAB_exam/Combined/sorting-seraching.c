@@ -44,7 +44,7 @@ void bubbleSort(int arr[], int len)
     }
 }
 
-// Que 2 : You can choose one
+// Que 2 : Use whichever one you prefer. There is no obligation.
 
 int linearSearch(int arr[], int len, int searchItem)
 {
