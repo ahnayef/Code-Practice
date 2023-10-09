@@ -5,72 +5,98 @@
 
 #include <stdio.h>
 
-#define len 5 // I's a Constant ||  Google it
-int arr[len];
+#define size 5 // I's a Constant ||  Google it
+int stack[size];
 int top = -1;
+
+int isFull()
+{
+    if (top == size - 1)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+int isEmpty()
+{
+    if (top == -1)
+    {
+        return 1;
+    }
+    return 0;
+}
 
 void push(int data)
 {
-    if (top < len - 1)
-    {
-        top++;
-        arr[top] = data;
-    }
-    else
+
+    if (isFull())
     {
         printf("Stack overflow");
+        return;
     }
+    top++;
+    stack[top] = data;
 }
 
-void insertionSort(int length)
+void insertionSort()
 {
-    for (int i = 0; i < length; i++)
+    for (int i = 0; i < top; i++)
     {
         int j = i - 1;
-        int key = arr[i];
-        while (j >= 0 && arr[j] > key)
+        int key = stack[i];
+        while (j >= 0 && stack[j] > key)
         {
-            arr[j + 1] = arr[j];
+            stack[j + 1] = stack[j];
             j--;
         }
-        arr[j + 1] = key;
+        stack[j + 1] = key;
     }
 };
 
-void bubbleSort(int lenght)
+void bubbleSort()
 {
-    for (int i = 0; i < lenght - 1; i++)
+
+    for (int i = 0; i < top - 1; i++)
     {
-        for (int j = 0; j < lenght - i - 1; j++)
+        for (int j = 0; j < top - i - 1; j++)
         {
-            if (arr[j] > arr[j + 1])
+            if (stack[j] > stack[j + 1])
             {
-                int temp = arr[j];
-                arr[j] = arr[j + 1];
-                arr[j + 1] = temp;
+                int temp = stack[j];
+                stack[j] = stack[j + 1];
+                stack[j + 1] = temp;
             }
         }
     }
 }
 
+void print()
+{
+    for (int i = 0; i < top; i++)
+    {
+        printf("%d ", stack[i]);
+    }
+    printf("\n");
+}
+
 int main()
 {
-    push(10);
     push(12);
+    push(10);
     push(30);
     push(15);
     push(5);
 
-    // Try any of these 
+    printf("Before sorting: ");
+    print();
 
-    insertionSort(5); // 5 is the number of elements available in the stack
+    // Try any of these
+    insertionSort(); 
+    // bubbleSort();
 
-    // bubbleSort(5);
-
-    for (int i = 0; i < 5; i++)
-    {
-        printf("%d ", arr[i]);
-    }
+    printf("After sorting: ");
+    print();
 
     return 0;
 }
