@@ -9,12 +9,12 @@ struct node
     int data;
 };
 
-struct node *head;
+struct node *top;
 
 void printList()
 {
     struct node *ref;
-    ref = head;
+    ref = top;
 
     while (ref != NULL)
     {
@@ -24,21 +24,50 @@ void printList()
     printf("\n");
 }
 
+int isFull(struct node *newNode)
+{
+    if (newNode == NULL)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+int isEmpty()
+{
+    if (top == NULL)
+    {
+        return 1;
+    }
+    return 0;
+}
+
 void push(int data)
 {
     struct node *newNode = NULL;
     newNode = malloc(sizeof(struct node));
+
+    if (isFull(newNode))
+    {
+        return;
+    }
+
     newNode->data = data;
 
-    newNode->next = head;
-    head = newNode;
+    newNode->next = top;
+    top = newNode;
 }
 
 void pop()
 {
+    if (isEmpty())
+    {
+        return;
+    }
+
     struct node *temp;
-    temp = head;
-    head = head->next;
+    temp = top;
+    top = top->next;
     free(temp);
 }
 
@@ -64,7 +93,7 @@ int main()
     three->next = four;
     four->next = NULL;
 
-    head = one;
+    top = one;
 
     printf("Liked list:\n");
     printList();
