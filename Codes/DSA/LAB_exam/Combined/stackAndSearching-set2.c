@@ -14,7 +14,7 @@ struct node
 
 struct node *head;
 
-void printList()  // I'm writing this function just so you can understand the linearSearch function below. Otherwise, there's no need for it
+void printList() // I'm writing this function just so you can understand the linearSearch function below. Otherwise, there's no need for it
 {
     struct node *ref;
     ref = head;
@@ -27,12 +27,26 @@ void printList()  // I'm writing this function just so you can understand the li
     printf("\n");
 }
 
+int isFull(struct node *newNode)
+{
+    if (newNode == NULL)
+    {
+        return 1;
+    }
+    return 0;
+}
+
 void push(int data)
 {
     struct node *newNode = NULL;
     newNode = malloc(sizeof(struct node));
-    newNode->data = data;
 
+    if (isFull(newNode))
+    {
+        return;
+    }
+
+    newNode->data = data;
     newNode->next = head;
     head = newNode;
 }
@@ -43,17 +57,18 @@ int linearSearch(int data)
     while (ref->data != data)
     {
         ref = ref->next;
-        if (ref==NULL)
+        if (ref == NULL)
         {
             break;
         }
-        
     }
 
     if (ref != NULL)
     {
         printf("Item found at the address: %d\n", ref);
-    }else{
+    }
+    else
+    {
         return -1;
     }
 }
@@ -82,7 +97,6 @@ int main()
     {
         printf("Item not found >_<");
     }
-    
 
     return 0;
 }
