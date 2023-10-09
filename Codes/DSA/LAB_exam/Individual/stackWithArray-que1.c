@@ -95,7 +95,7 @@ int main()
     TOP();
     push(50);
     print(); 
-    printf("Top %d\n", stack[top2()]); // makes things messy
+    printf("Top %d\n", stack[top2()]); // makes things messy; try 1st aproach.
 
     return 0;
 }
