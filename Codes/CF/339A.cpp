@@ -1,67 +1,33 @@
 #include <iostream>
-#include <string>
+#include<string>
+
 
 using namespace std;
 
-
-
-
-// void bubbleSort(int arr[], int len)
-// {
-//     for (int i = 0; i < len -1; i++)
-//     {
-//         for (int j = 0; j < len -i -1; j++)
-//         {
-//             if(arr[j]>arr[j+1]){
-//                 int temp = arr[j];
-//                 arr[j]=arr[j+1];
-//                 arr[j+1]=temp;
-//             }
-//         }
-        
-//     }
-    
-// }
-
 int main()
 {
-
     string s;
-
     cin >> s;
 
-    // int arr[5] = {2, 8, 9, 1, 3};
+    int len = s.length();
+    int arr[len];
 
-    // bubbleSort(arr, 5);
-
-    int n=0;
-   
-    int nums[100];
-    int arrlen=0;
-
-
-
-
-
-   while (s[n]!='\0')
-   {
-    if (s[n]!='+')
+    int i = 0;
+    int a = 0;
+    while (s[i] != '\0')
     {
-        nums[arrlen]= int(s[n] - 0);
+
+        if (s[i] != '+')
+        {
+            arr[a] = 
+            a++;
+        }
+
+        i++;
     }
-    
-    n++;
-   }
 
-   
-   for (int i = 0; i < arrlen+1; i++)
-   {
-    cout<<nums[i] << " ";
-   }
-   
-   
-    
-    
-
-    return 0;
+    // for (int i = 0; i < len; i++)
+    // {
+    //     cout<<arr[i]<<" ";
+    // }
 }
