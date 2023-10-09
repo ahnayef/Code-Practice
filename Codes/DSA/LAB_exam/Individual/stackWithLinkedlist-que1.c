@@ -9,12 +9,12 @@ struct node
     int data;
 };
 
-struct node *head;
+struct node *top = NULL;
 
 void printList()
 {
     struct node *ref;
-    ref = head;
+    ref = top;
 
     while (ref != NULL)
     {
@@ -24,21 +24,51 @@ void printList()
     printf("\n");
 }
 
+int isFull(struct node *newNode)
+{
+    if (newNode == NULL)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+int isEmpty()
+{
+    if (top == NULL)
+    {
+        return 1;
+    }
+    return 0;
+}
+
 void push(int data)
 {
     struct node *newNode = NULL;
     newNode = malloc(sizeof(struct node));
-    newNode->data = data;
 
-    newNode->next = head;
-    head = newNode;
+    if (isFull(newNode))
+    {
+        printf("Stack overflow\n");
+        return;
+    }
+
+    newNode->data = data;
+    newNode->next = top;
+    top = newNode;
 }
 
 void pop()
 {
+    if (isEmpty())
+    {
+        printf("Stack underflow\n");
+        return;
+    }
+
     struct node *temp;
-    temp = head;
-    head = head->next;
+    temp = top;
+    top = top->next;
     free(temp);
 }
 
@@ -64,12 +94,12 @@ int main()
     three->next = four;
     four->next = NULL;
 
-    head = one;
+    top = one;
 
     printf("Liked list:\n");
     printList();
 
-    printf("After pushing two elements:\n");  // Printing to make it easy and understandable for you.
+    printf("After pushing two elements:\n"); // Printing to make it easy and understandable for you.
     push(50);
     push(60);
     printList();
