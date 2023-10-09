@@ -5,35 +5,52 @@
 
 #include <stdio.h>
 
-#define len 5 // I's a Constant ||  Google it
-int arr[len];
+#define size 5 // I's a Constant ||  Google it
+int stack[size];
 int top = -1;
+
+int isFull()
+{
+    if (top == size - 1)
+    {
+        return 1;
+    }
+    return 0;
+}
+
+int isEmpty()
+{
+    if (top == -1)
+    {
+        return 1;
+    }
+    return 0;
+}
 
 void push(int data)
 {
 
-    if (top < len - 1)
+    if (isFull())
     {
-        top++;
-        arr[top] = data;
+        printf("Stack overflow");
+        return;
     }
-    else
-    {
-        printf("Stack overflow!");
-    }
+
+    top++;
+    stack[top] = data;
 }
 
-int binarySearch(int arr[], int lenght, int searchItem)
+int binarySearch(int searchItem)
 {
-    int lb = 0, ub = lenght, mid = (lb + ub) / 2;
+    int lb = 0, ub = top, mid = (lb + ub) / 2;
 
     while (lb <= ub)
     {
-        if (arr[mid] == searchItem)
+        if (stack[mid] == searchItem)
         {
             return mid;
         }
-        else if (arr[mid] < searchItem)
+        else if (stack[mid] < searchItem)
         {
             lb = mid + 1;
             mid = (lb + ub) / 2;
@@ -47,6 +64,16 @@ int binarySearch(int arr[], int lenght, int searchItem)
     return -1;
 }
 
+void print()
+{
+    for (int i = 0; i <= top; i++)
+    {
+        printf("%d ", stack[i]);
+    }
+
+    printf("\n");
+}
+
 int main()
 {
     // Pusing 6 element<
@@ -57,7 +84,11 @@ int main()
 
     int searchItem = 18; // Took one from the stack
 
-    int res = binarySearch(arr, 4, searchItem);
+    print(); // It's not printf
+
+    int res = binarySearch(18);
+
+
 
     if (res != -1)
     {

@@ -41,7 +41,8 @@ void push(int data)
 
 void insertionSort()
 {
-    for (int i = 0; i < top; i++)
+    int len = top + 1; // top = 4, top + 1 = 5 = array size
+    for (int i = 0; i < len; i++)
     {
         int j = i - 1;
         int key = stack[i];
@@ -56,10 +57,10 @@ void insertionSort()
 
 void bubbleSort()
 {
-
-    for (int i = 0; i < top - 1; i++)
+    int len = top + 1; // top = 4, top + 1 = 5 = array size
+    for (int i = 0; i < len - 1; i++)
     {
-        for (int j = 0; j < top - i - 1; j++)
+        for (int j = 0; j < len - i - 1; j++)
         {
             if (stack[j] > stack[j + 1])
             {
@@ -73,7 +74,7 @@ void bubbleSort()
 
 void print()
 {
-    for (int i = 0; i < top; i++)
+    for (int i = 0; i <= top; i++)
     {
         printf("%d ", stack[i]);
     }
@@ -92,7 +93,7 @@ int main()
     print();
 
     // Try any of these
-    insertionSort(); 
+    insertionSort();
     // bubbleSort();
 
     printf("After sorting: ");
