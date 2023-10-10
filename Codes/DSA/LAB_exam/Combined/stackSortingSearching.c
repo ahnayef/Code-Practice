@@ -10,24 +10,33 @@
 int arr[len];
 int top = -1;
 
-int push(int data)
+int isFull()
 {
-    if (top < len - 1)
+    if (top == len - 1)
     {
-        top++;
-        arr[top] = data;
+        return 1;
     }
-    else
-    {
-        printf("Stack overflow");
-    }
+    return 0;
 }
 
-void bubbleSort(int lenght)
+void push(int data)
 {
-    for (int i = 0; i < lenght - 1; i++)
+    if (isFull())
     {
-        for (int j = 0; j < lenght - i - 1; j++)
+        printf("Stack overflow");
+        return;
+    }
+
+    top++;
+    arr[top] = data;
+}
+
+void bubbleSort()
+{
+    int length = top + 1;
+    for (int i = 0; i < length - 1; i++)
+    {
+        for (int j = 0; j < length - i - 1; j++)
         {
             if (arr[j] > arr[j + 1])
             {
@@ -39,9 +48,9 @@ void bubbleSort(int lenght)
     }
 }
 
-int binarySearch(int e, int searchItem)
+int binarySearch(int searchItem)
 {
-    int lb = 0, ub = e, mid = (lb + ub) / 2;
+    int lb = 0, ub = top+1, mid = (lb + ub) / 2;
     while (lb <= ub)
     {
         if (arr[mid] == searchItem)
@@ -62,6 +71,15 @@ int binarySearch(int e, int searchItem)
     return -1;
 }
 
+void print()
+{
+    for (int i = 0; i <= top; i++)
+    {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+}
+
 int main()
 {
 
@@ -71,26 +89,22 @@ int main()
     push(6);
     push(4);
 
-    bubbleSort(5); 
+    bubbleSort(5);
 
-    int res = binarySearch(5, 10); // 5 = element available in the stack. 10 = searchItem
+    int res = binarySearch(10); // searchItem = 10
 
     printf("Sorted stack: ");
 
-    for (int i = 0; i < 5; i++)
+    print();
+
+    if (res != -1)
     {
-        printf("%d ",arr[i]);
+        printf("Item found at index: %d", res);
     }
-
-    printf("\n")    ;
-
-    if (res!=-1)
+    else
     {
-        printf("Item found at index: %d",res);
-    }else{
         printf("Item not found :/ ");
     }
-    
 
     return 0;
 }
