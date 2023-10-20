@@ -26,8 +26,6 @@ int main()
 
         i++;
     }
-
-    cout << "\n";
     // Sorting...
     for (int i = 1; i < a; i++)
     {
@@ -42,16 +40,19 @@ int main()
     }
 
     a = 0;
-    cout << "Res: \n";
 
     for (int i = 0; i < len; i += 2)
     {
         char tmp = arr[a] + 48;
         s[i] = tmp;
-        cout << tmp;
         a++;
     }
 
+    i = 0;
 
-
+    while (s[i] != '\0')
+    {
+        cout << s[i];
+        i++;
+    }
 }
