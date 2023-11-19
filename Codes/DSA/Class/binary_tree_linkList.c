@@ -3,85 +3,46 @@
 
 struct node
 {
-    struct node *prev;
-    int data;
-    struct node *next;
+    struct node *left;
+    char data;
+    struct node *right;
 };
 
-struct node *head;
-
-void addNewNode(int data)
+struct node *createTree()
 {
-    struct node *newNode1;
-    newNode1 = malloc(sizeof(struct node));
+    int input, data;
+    printf("Do you want to add a node? press 1 for yes: ");
+    scanf("%d", &input);
 
-    newNode1->data = data;
-    newNode1->next = NULL;
-
-    struct node *temp = head;
-
-    while (temp->next != NULL)
+    if (!input)
     {
-        temp = temp->next;
+        return NULL;
     }
-
-    temp->next = newNode1;
-    newNode1->prev = temp;
-}
-
-void print(struct node *p)
-{
-    while (p != NULL)
+    else
     {
-        printf("%d ", p->data);
-        p = p->next;
+        struct node *newNode = malloc(sizeof(struct node));
+        printf("Enter data:");
+        scanf("%d", &data);
+        newNode->data = data;
+        printf("Left child of %d:\n", newNode->data);
+        newNode->left = createTree();
+        printf("Right child of %d:\n", newNode->data);
+        newNode->right = createTree();
+        return newNode;
     }
 }
 
 int main()
 {
 
-    struct node *first = NULL;
-    first = malloc(sizeof(struct node));
+    struct node *root = createTree();
 
-    struct node *second = NULL;
-    second = malloc(sizeof(struct node));
-
-    struct node *third = NULL;
-    third = malloc(sizeof(struct node));
-
-    struct node *newNode = NULL;
-    newNode = malloc(sizeof(struct node));
-
-    struct node *newNode2 = NULL;
-    newNode2 = malloc(sizeof(struct node));
-
-    newNode->data = 10;
-    first->data = 5;
-    second->data = 7;
-    third->data = 2;
-    newNode2->data = 8;
-
-    newNode->prev = NULL;
-    newNode->next = first;
-
-    first->prev = newNode;
-    first->next = second;
-
-    second->prev = first;
-    second->next = third;
-
-    third->prev = second;
-    third->next = newNode2;
-
-    newNode2->prev = third;
-    newNode2->next = NULL;
-
-    head = newNode;
-
-    addNewNode(27);
-
-    print(head);
+    printf("%d ", root->data);
+    printf("%d ", root->left->data);
+    printf("%d ", root->right->data);
+    printf("%d ", root->left->left->data);
+    printf("%d ", root->left->right->data);
+    printf("%d ", root->right->right->data);
 
     return 0;
 }
