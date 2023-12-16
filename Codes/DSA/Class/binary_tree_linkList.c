@@ -32,17 +32,62 @@ struct node *createTree()
     }
 }
 
+void preOrder(struct node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    else
+    {
+        printf("%d ", root->data);
+        preOrder(root->left);
+        preOrder(root->right);
+    }
+}
+
+void inOrder(struct node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    else
+    {
+        inOrder(root->left);
+        printf("%d ", root->data);
+        inOrder(root->right);
+    }
+}
+
+void postOrder(struct node *root)
+{
+    if (root == NULL)
+    {
+        return;
+    }
+    else
+    {
+        postOrder(root->left);
+        postOrder(root->right);
+        printf("%d ", root->data);
+    }
+}
+
 int main()
 {
 
     struct node *root = createTree();
 
-    printf("%d ", root->data);
-    printf("%d ", root->left->data);
-    printf("%d ", root->right->data);
-    printf("%d ", root->left->left->data);
-    printf("%d ", root->left->right->data);
-    printf("%d ", root->right->right->data);
+    printf("Preorder traversal: ");
+    preOrder(root);
+    printf("\n");
+    printf("Inorder traversal: ");
+    inOrder(root);
+    printf("\n");
+    printf("Postorder traversal: ");
+    postOrder(root);
+    printf("\n");
 
     return 0;
 }
