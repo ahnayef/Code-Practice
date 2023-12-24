@@ -7,7 +7,7 @@ char tree[MAX];  // Declare the binary tree as an array; It's a global variable
 // Function to set the root of the binary tree
 void root(char parent){
     if(tree[0]!='\0'){  // Check if root already exists
-        printf("Root already exits");
+        printf("Root already exist");
     }
     else{
         tree[0]=parent;  // Set the root of the tree
@@ -17,7 +17,7 @@ void root(char parent){
 // Function to set the left child of a node
 void left(char child,int parent){
     if(tree[parent]=='\0'){  // Check if parent exists
-        printf("parent does not exit");
+        printf("parent does not exist");
     }
     else{
         tree[(2*parent)+1]=child;  // Set the left child of the parent
@@ -27,7 +27,7 @@ void left(char child,int parent){
 // Function to set the right child of a node
 void right(char child,int parent){
     if(tree[parent]=='\0'){  // Check if parent exists
-        printf("parent does not exit");
+        printf("parent does not exist");
     }
     else{
         tree[(2*parent)+2]=child;  // Set the right child of the parent
