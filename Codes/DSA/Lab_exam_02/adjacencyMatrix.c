@@ -6,7 +6,7 @@ int main() {
     int V, E;
 
     // Ask user for number of vertices
-    printf("Enter the number of vertices: ");
+    printf("Enter the number of vertices (V): ");
     scanf("%d", &V);
 
     // Ask user for number of edges
