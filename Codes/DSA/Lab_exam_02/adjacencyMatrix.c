@@ -24,7 +24,7 @@ int main() {
     }
 
     // Ask user for edges connecting two vertices
-    printf("Enter the edge : ");
+    printf("Enter the edge :\n");
     for (int i = 0; i < E; i++) {
         int node1, node2;
 
