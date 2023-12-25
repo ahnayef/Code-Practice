@@ -13,7 +13,7 @@ void dfs(int V, int adj[][V],int visited[], int start)
     for(int i=0;i<V;i++)
     {
         // If the current node is connected to the i-th node and the i-th node is not visited
-        if( adj[start][i]==1&& visited[i]==0)
+        if( adj[start][i]==1 && visited[i]==0)
         {
             // Perform DFS on the i-th node
             dfs(V,adj,visited,i);
@@ -23,6 +23,7 @@ void dfs(int V, int adj[][V],int visited[], int start)
 
 int main()
 {
+
     int V, E;
     
     // Ask for the number of vertices
@@ -52,18 +53,27 @@ int main()
         adjMatrix[node2][node1] = 1;
     }
 
+
+
     // Ask for the starting node for DFS
-    int start,visited[V];
+    int start;
     printf("Enter the starting node: ");
     scanf("%d",&start);
-    printf("DFS traversal: ");
+
+
+    int visited[V];
+    
     // Initialize all nodes as not visited
     for(int i =0;i<V;i++){
             visited[i] = 0;
     }
+
+
+
+    printf("DFS traversal: ");
     
     // Perform DFS starting from the 'start' node
-    dfs(V,adjMatrix,visited, start);
+    dfs(V,adjMatrix,visited, start); 
     
     return 0;
 }
