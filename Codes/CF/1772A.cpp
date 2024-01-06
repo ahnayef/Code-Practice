@@ -12,7 +12,7 @@ int main()
         int a, b;
 
         cin >> a >> p >> b;
-        cout << a + b << endl;
+        cout << a + b;
     }
 
     return 0;
