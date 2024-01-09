@@ -1,15 +1,32 @@
 #include <iostream>
 using namespace std;
 
+void insertionSort(int arr[], int n)
+{
+    int i, key, j;
+    for (i = 1; i < n; i++)
+    {
+        key = arr[i];
+        j = i - 1;
+
+        while (j >= 0 && arr[j] > key)
+        {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;
+    }
+}
+
 int main()
 {
-    int t;
+    int t, possible = 1;
     cin >> t;
     while (t--)
     {
-        int n, len = 0;
+        int n;
         cin >> n;
-        int total = n;
+
         int arr[n];
 
         for (int i = 0; i < n; i++)
@@ -17,43 +34,36 @@ int main()
             cin >> arr[i];
         }
 
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-
-                if (arr[j + 1] > arr[j] || arr[j + 1] == arr[j])
-                {
-                    if ((arr[j + 1] - arr[j]) == 0 || (arr[j + 1] - arr[j]) == 1)
-                    {
-                        arr[j] = 0;
-                    }
-                }
-                else
-                {
-                    if ((arr[j] - arr[j + 1]) == 0 || (arr[j] - arr[j + 1]) == 1)
-                    {
-                        arr[j + 1] = 0;
-                    }
-                }
-            }
-        }
-
-        for (int i = 0; i < n; i++)
-        {
-            if (arr[i] != 0)
-            {
-                len++;
-            }
-        }
-
-        if (len == 1)
+        if (n == 1)
         {
             cout << "YES" << endl;
         }
         else
         {
-            cout << "NO" << endl;
+            insertionSort(arr, n);
+
+            for (int i = 0; i < n - 1; i++)
+            {
+
+                if ((arr[i + 1] - arr[i]) > 1)
+                {
+                    possible = 0;
+                    break;
+                }
+                else
+                {
+                    possible = 1;
+                }
+            }
+
+            if (possible)
+            {
+                cout << "YES" << endl;
+            }
+            else
+            {
+                cout << "NO" << endl;
+            }
         }
     }
 
