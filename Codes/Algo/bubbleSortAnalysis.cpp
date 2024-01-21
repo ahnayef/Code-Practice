@@ -40,10 +40,10 @@ void bubbleSortWithEarlyStop(int arr[], int len)
             }
         }
 
+        stepCount++;
+
         if (!swaped)
             break;
-
-        stepCount++;
     }
 
     cout << "Steps: " << stepCount << endl
