@@ -27,7 +27,7 @@ void insertionSortDry(int arr[], int len)
 
         while (j >= 0 && arr[j] > key)
         {
-            printf("\t(j = %d >= 0 && arr[%d] = %d > key = %d)\n\n", j, j, arr[j], key);
+            printf("\t(j (%d) >= 0 && arr[%d] = %d > key = %d)\n\n", j, j, arr[j], key);
 
             printf("\tarr[%d + 1] = arr[%d] = arr[%d] = %d\n\n", j, j + 1, j, arr[j]);
             arr[j + 1] = arr[j];
@@ -36,7 +36,7 @@ void insertionSortDry(int arr[], int len)
         }
         printf("arr[j + 1] = arr[%d + 1] = arr[%d] = key (%d)", j, (j + 1), key);
         arr[j + 1] = key;
-        printArray(arr, i+1);
+        printArray(arr, i + 1);
 
         cout << "\n\n------------\n\n";
     }
