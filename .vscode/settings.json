@@ -2,6 +2,8 @@
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 300,
     "files.associations": {
+        "*.excalidraw": "json",
+        "*.excalidrawlib": "json",
         "javascript": "javascriptreact",
         "math.h": "c",
         "ratio": "cpp",
@@ -18,7 +20,8 @@
         "string_view": "cpp",
         "format": "cpp",
         "initializer_list": "cpp",
-        "span": "cpp"
+        "span": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "enabled"
 }
