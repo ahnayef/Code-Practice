@@ -104,19 +104,14 @@ int main()
         }
         */
 
-        if (maxElement > n / 2 && minElement > n / 2)
-        {
-            if (maxElement > minElement)
-            {
-                cout << n - minElement << endl;
-            }
-            else
-            {
-                cout << n - maxElement;
-            }
+        int removeFromRight = (n - minElement) + (n - maxElement);
+        int removeFromLeft = (minElement + 1) + (maxElement + 1);
+        int rightSmall = (n - minElement) + (maxElement + 1);
+        int leftSmall = (minElement + 1) + (maxElement - n);
 
-            
-        }
+        int arr2[4] = {removeFromRight, rightSmall, removeFromLeft, leftSmall};
+
+        cout << *min_element(arr2, arr2 + 4) << endl;
     }
     return 0;
 }
