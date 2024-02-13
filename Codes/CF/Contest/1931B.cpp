@@ -1,50 +1,46 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
 int main()
 {
-
     int t;
     cin >> t;
 
     while (t--)
     {
-        int n, sum = 0, make, possible = 0;
+        int n;
         cin >> n;
-        int *arr = new int[n];
 
-        for (int i = 0; i < n; i++)
+        int *arr = new int[n];
+        int sum = 0;
+
+        for (int i = 0; i < n; ++i)
         {
             cin >> arr[i];
-        }
-        for (int i = 0; i < n; i++)
-        {
             sum += arr[i];
         }
 
-        make = sum / n;
-
-        for (int i = n - 1; i >= 0 && arr[i] <= make; i--)
+        int make = sum / n;
+        bool possible = true;
+        for (int i = 0; i < n; ++i)
         {
-            for (int j = i - 1; j >= 0 && arr[i] < make; j--)
+            if (arr[i] > make)
             {
-                while (arr[j] > make && arr[i] < make)
+                if (i + 1 < n)
                 {
-                    arr[j] = arr[j] - 1;
-                    arr[i] = arr[i] + 1;
+                    int diff = arr[i] - make;
+                    arr[i] -= diff;
+                    arr[i + 1] += diff;
+                }
+                else
+                {
+                    possible = false;
+                    break;
                 }
             }
-        }
-
-        for (int i = 0; i < n; i++)
-        {
-            if (arr[i] == make)
+            else if (arr[i] < make)
             {
-                possible = 1;
-            }
-            else
-            {
-                possible = 0;
+                possible = false;
                 break;
             }
         }
@@ -58,7 +54,6 @@ int main()
             cout << "NO" << endl;
         }
     }
+
     return 0;
 }
-
-
