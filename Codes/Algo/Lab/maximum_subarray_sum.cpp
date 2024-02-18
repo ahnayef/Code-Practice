@@ -1,6 +1,25 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int MSA(int arr[], int n)
+{
+    int ans = -9999;
+    for (int start = 0; start < n; start++)
+    {
+        int sum = 0;
+        for (int SAsize = 1; SAsize <= n; SAsize++)
+        {
+            if (start + SAsize > n)
+            {
+                break;
+            }
+            sum += arr[start + SAsize - 1];
+            ans = max(ans, sum);
+        }
+    }
+    return ans;
+}
+
 int main()
 {
     int len, maxSum = -999999;
@@ -14,18 +33,7 @@ int main()
         cin >> arr[i];
     }
 
-    for (int i = 0; i < len; i++)
-    {
-        int sum = 0;
-
-        for (int j = i; j < len; j++)
-        {
-            sum += arr[j];
-        }
-        maxSum = max(maxSum, sum);
-    }
-
-    cout << maxSum;
+    cout << MSA(arr, len);
 
     return 0;
 }
