@@ -13,7 +13,7 @@ Hey there, future semicolon seeker! Welcome to your "git commit" haven, where co
 
 - **Pretend to Code:** Got the repo? Sweet. Now act like you're gonna do some real work. Whip up some folders with names that sound super important, like "NextBigRevolution". And hey, make sure those names are in camelCase,because JavaScript is your playground, where a simple `[] == ![]` somehow makes perfect sense, not to mention `0 == "0"`.
 
-- **The Commitment Issues:** Did you actually do something? Well, that's a surprise. Show off those changes you swear you made with:
+- **The Commitment Issues:** Did you actually do something? Well, that's a surprise. Show off those changes you swear you made, with:
 
     ```shell
         git add .
