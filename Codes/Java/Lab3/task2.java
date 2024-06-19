@@ -1,3 +1,6 @@
+// Question: Write a program that calculates the factorial of a given number using recursion.
+
+
 import java.util.Scanner;
 
 class Rec {

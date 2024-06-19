@@ -1,3 +1,7 @@
+// Question: Write a program that finds the second largest number in two different arrays using the same method in a class.
+
+
+
 import java.util.Scanner;
 
 class Demo {

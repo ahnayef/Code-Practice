@@ -1,3 +1,12 @@
+// Question: Write a program that override the method to find the second minimum number and the same method of parent class find the 2nd maximum number.
+// Sample input:
+// 5
+// 4 5 10 2 1
+// Sample output:
+// 2nd Minimum number is:2
+// 2nd Maximum number is:5
+
+
 import java.util.Scanner;
 
 class A{

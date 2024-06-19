@@ -1,3 +1,17 @@
+/* 
+
+Question: 
+
+Write a program with two methods 'retAddition' and 'retMultiplication' in a class 'Operations':
+
+1. retAddition(a, b) that returns the sum of a and b 
+
+2. retMultiplication(c) that calculates the formula : c * (2 * retAddition) * 10 
+
+Then create another method onlyPrint(), that prints the result of retMultiplication.
+
+*/
+
 import java.util.Scanner; 
  
 class Operations { 

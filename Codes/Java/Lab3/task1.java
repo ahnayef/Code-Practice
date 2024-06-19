@@ -1,3 +1,7 @@
+// Question: Write a program that calculates the sum of first N natural numbers using constructor overloading.
+
+
+
 import java.util.Scanner;
 
 class AddN {

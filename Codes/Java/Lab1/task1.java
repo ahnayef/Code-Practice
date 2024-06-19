@@ -1,3 +1,7 @@
+// Question: Create a program that sorts numbers using bubble sort, then finds a number using binary search. Both the array of numbers and the search number should be provided by the user. Print the sorted numbers and the found number's index or a not found message.
+
+
+
 import java.util.Scanner;
 
 class BubbleSort {
@@ -67,7 +71,7 @@ class Second {
         for (int i = 0; i < n; i++) {
             System.out.format("%d ", arr[i]);
         }
-        System.out.println("Sear Item: ");
+        System.out.println("Search Item: ");
 
         int s = sc.nextInt();
 
