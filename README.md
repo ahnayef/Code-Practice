@@ -16,9 +16,9 @@ Hey there, future semicolon seeker! Welcome to your "git commit" haven, where co
 - **The Commitment Issues:** Did you actually do something? Well, that's a surprise. Show off those changes you swear you made, with:
 
     ```shell
-        git add .
-        git commit -m "Did stuff, I guess"
-        git push
+    git add .
+    git commit -m "Did stuff, I guess"
+    git push
     ```
 
     If it doesn't work, blame Git. It's never your fault.
