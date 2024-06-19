@@ -1,8 +1,15 @@
+#  Everything
 *
+
+# Base
 !/.gitignore
 !/readme.md
+
+#  C and C++ files at the root
 !/*.c
 !/*.cpp
+
+#  C/C++ files
 !/*/
 !/*/*.c
 !/*/*.cpp
@@ -18,3 +25,8 @@
 !/*/*/*/*/*/
 !/*/*/*/*/*/*.c
 !/*/*/*/*/*/*.cpp
+
+
+# Include everything under Codes/Java
+!/Codes/Java/*
+!/Codes/Java/**
