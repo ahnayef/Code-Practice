@@ -157,7 +157,6 @@ public class Routine extends JFrame {
                 viewCourse.setBackground(primary);
                 contactCR.setBackground(primary);
                 exitButton.setBackground(Color.RED);
-                exitButton.addActionListener(e -> System.exit(1));
 
                 homePage.setLayout(new BoxLayout(homePage, BoxLayout.Y_AXIS));
                 homePage.add(Box.createVerticalGlue());
@@ -188,7 +187,6 @@ public class Routine extends JFrame {
                 routinePage.setLayout(new BoxLayout(routinePage, BoxLayout.Y_AXIS));
                 buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
                 headingPanel.setLayout(new BoxLayout(headingPanel, BoxLayout.Y_AXIS));
-                // routinePanel.setLayout(new GridLayout(todaySubjects.size(), 1));
                 routinePanel.setLayout(new BoxLayout(routinePanel, BoxLayout.Y_AXIS));
 
                 routinePage.setBackground(backgroundColor);
@@ -365,7 +363,7 @@ public class Routine extends JFrame {
                 viewRoutine.addActionListener(e -> cardLayout.show(cardPanel, "Routine"));
                 viewCourse.addActionListener(e -> cardLayout.show(cardPanel, "Course"));
                 contactCR.addActionListener(e -> cardLayout.show(cardPanel, "CR"));
-
+                exitButton.addActionListener(e -> System.exit(1));
                 // ------------------------------------------------------
                 // Add pages to cardPanel
                 cardPanel.add(homePage, "Home");
