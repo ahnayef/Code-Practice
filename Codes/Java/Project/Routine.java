@@ -73,6 +73,7 @@ public class Routine extends JFrame {
 
     Color backgroundColor = new Color(28, 28, 28);
     Color textColor = new Color(253, 253, 253);
+    Color grayTextColor = new Color(200, 200, 200);
     Color primary = new Color(0, 255, 127);
 
     Date date = new Date();
@@ -80,7 +81,7 @@ public class Routine extends JFrame {
     public Routine() {
         loadRoutineData();
         setTitle("Academic Schedule Viewer");
-        setSize(578, 1080);
+        setSize(400, 620);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
@@ -146,13 +147,12 @@ public class Routine extends JFrame {
         JLabel currentDate = new JLabel(new SimpleDateFormat("MMM dd, yyyy").format(date));
 
         currentDay.setForeground(textColor);
-        currentDate.setForeground(textColor);
+        currentDate.setForeground(grayTextColor);
         currentDay.setAlignmentX(Component.CENTER_ALIGNMENT);
         currentDate.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         headingPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         headingPanel.add(currentDay);
-        headingPanel.add(Box.createRigidArea(new Dimension(0, 20)));
         headingPanel.add(currentDate);
         headingPanel.add(Box.createRigidArea(new Dimension(0, 20)));
 
@@ -171,12 +171,12 @@ public class Routine extends JFrame {
             routineBox.setAlignmentX(Component.CENTER_ALIGNMENT);
             routineBox.setAlignmentY(Component.CENTER_ALIGNMENT);
             routineBox.setBorder(BorderFactory.createCompoundBorder(
-                BorderFactory.createLineBorder(primary, 1), // Outer border
-                BorderFactory.createEmptyBorder(10, 10, 10, 10) // Inner padding
+                BorderFactory.createLineBorder(primary, 1), 
+                BorderFactory.createEmptyBorder(10, 10, 10, 10) 
             ));
 
             subjectLabel.setForeground(textColor);
-            courseCodeLabel.setForeground(textColor);
+            courseCodeLabel.setForeground(grayTextColor);
             teacheLabel.setForeground(textColor);
             timeLabel.setForeground(textColor);
             roomLabel.setForeground(textColor);
