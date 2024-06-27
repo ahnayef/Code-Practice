@@ -1,8 +1,6 @@
 import java.util.List;
 import javax.swing.*;
 import java.awt.*;
-import java.net.URI;
-import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
