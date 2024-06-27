@@ -1,6 +1,8 @@
 import java.util.List;
 import javax.swing.*;
 import java.awt.*;
+import java.net.URI;
+import java.net.URLEncoder;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -149,21 +151,27 @@ public class Routine extends JFrame {
                 JButton viewRoutine = new JButton("View Routine");
                 JButton viewCourse = new JButton("View Courses");
                 JButton contactCR = new JButton("Contact CR");
+                JButton exitButton = new JButton("Exit");
 
                 viewRoutine.setBackground(primary);
                 viewCourse.setBackground(primary);
                 contactCR.setBackground(primary);
+                exitButton.setBackground(Color.RED);
+                exitButton.addActionListener(e -> System.exit(1));
 
                 homePage.setLayout(new BoxLayout(homePage, BoxLayout.Y_AXIS));
                 homePage.add(Box.createVerticalGlue());
-                viewRoutine.setAlignmentX(Component.CENTER_ALIGNMENT);
-                viewCourse.setAlignmentX(Component.CENTER_ALIGNMENT);
-                contactCR.setAlignmentX(Component.CENTER_ALIGNMENT);
+                viewRoutine.setAlignmentX(CENTER_ALIGNMENT);
+                viewCourse.setAlignmentX(CENTER_ALIGNMENT);
+                contactCR.setAlignmentX(CENTER_ALIGNMENT);
+                exitButton.setAlignmentX(CENTER_ALIGNMENT);
                 homePage.add(viewRoutine);
                 homePage.add(Box.createRigidArea(new Dimension(0, 20)));
                 homePage.add(viewCourse);
                 homePage.add(Box.createRigidArea(new Dimension(0, 20)));
                 homePage.add(contactCR);
+                homePage.add(Box.createRigidArea(new Dimension(0, 20)));
+                homePage.add(exitButton);
                 homePage.add(Box.createVerticalGlue());
 
                 // ------------------------------------------------
@@ -191,9 +199,9 @@ public class Routine extends JFrame {
                 routinePage.add(headingPanel);
                 routinePage.add(routinePanel);
 
-                buttonPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-                headingPanel.setAlignmentX(Component.CENTER_ALIGNMENT);
-                routinePanel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                buttonPanel.setAlignmentX(CENTER_ALIGNMENT);
+                headingPanel.setAlignmentX(CENTER_ALIGNMENT);
+                routinePanel.setAlignmentX(CENTER_ALIGNMENT);
 
                 JButton backHome = new JButton("🏠");
                 backHome.addActionListener(e -> cardLayout.show(cardPanel, "Home"));
@@ -205,8 +213,8 @@ public class Routine extends JFrame {
 
                 currentDay.setForeground(textColor);
                 currentDate.setForeground(grayTextColor);
-                currentDay.setAlignmentX(Component.CENTER_ALIGNMENT);
-                currentDate.setAlignmentX(Component.CENTER_ALIGNMENT);
+                currentDay.setAlignmentX(CENTER_ALIGNMENT);
+                currentDate.setAlignmentX(CENTER_ALIGNMENT);
 
                 headingPanel.add(Box.createRigidArea(new Dimension(0, 20)));
                 headingPanel.add(currentDay);
@@ -225,8 +233,8 @@ public class Routine extends JFrame {
                         routineBox.setLayout(new BoxLayout(routineBox, BoxLayout.Y_AXIS));
                         routineBox.setBackground(backgroundColor);
                         routineBox.setForeground(textColor);
-                        routineBox.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        routineBox.setAlignmentY(Component.CENTER_ALIGNMENT);
+                        routineBox.setAlignmentX(CENTER_ALIGNMENT);
+                        routineBox.setAlignmentY(CENTER_ALIGNMENT);
                         routineBox.setBorder(
                                         BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(primary, 1),
                                                         BorderFactory.createEmptyBorder(10, 10, 10, 10)));
@@ -237,17 +245,17 @@ public class Routine extends JFrame {
                         timeLabel.setForeground(textColor);
                         roomLabel.setForeground(textColor);
 
-                        subjectLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        courseCodeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        teacheLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        timeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
-                        roomLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                        subjectLabel.setAlignmentX(CENTER_ALIGNMENT);
+                        courseCodeLabel.setAlignmentX(CENTER_ALIGNMENT);
+                        teacheLabel.setAlignmentX(CENTER_ALIGNMENT);
+                        timeLabel.setAlignmentX(CENTER_ALIGNMENT);
+                        roomLabel.setAlignmentX(CENTER_ALIGNMENT);
 
-                        subjectLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
-                        courseCodeLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
-                        teacheLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
-                        timeLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
-                        roomLabel.setAlignmentY(Component.CENTER_ALIGNMENT);
+                        subjectLabel.setAlignmentY(CENTER_ALIGNMENT);
+                        courseCodeLabel.setAlignmentY(CENTER_ALIGNMENT);
+                        teacheLabel.setAlignmentY(CENTER_ALIGNMENT);
+                        timeLabel.setAlignmentY(CENTER_ALIGNMENT);
+                        roomLabel.setAlignmentY(CENTER_ALIGNMENT);
 
                         routineBox.setForeground(textColor);
                         routineBox.add(subjectLabel);
@@ -272,10 +280,10 @@ public class Routine extends JFrame {
                 JLabel courseListLabel = new JLabel("Course List");
 
                 courseListPage.setLayout(new BoxLayout(courseListPage, BoxLayout.Y_AXIS));
-                courseListPage.setAlignmentX(Component.CENTER_ALIGNMENT);
+                courseListPage.setAlignmentX(CENTER_ALIGNMENT);
 
-                coursebackHome.setAlignmentX(Component.CENTER_ALIGNMENT);
-                courseListLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                coursebackHome.setAlignmentX(CENTER_ALIGNMENT);
+                courseListLabel.setAlignmentX(CENTER_ALIGNMENT);
 
                 courseListPage.setBackground(backgroundColor);
                 courseListLabel.setForeground(textColor);
@@ -306,7 +314,51 @@ public class Routine extends JFrame {
                 // CR page :: Frame 4
 
                 JPanel crPage = new JPanel();
-                
+                JPanel infoPanel = new JPanel();
+
+                JLabel crLabel = new JLabel("Contact CR");
+                JButton crbackHome = new JButton("🏠");
+                crbackHome.addActionListener(e -> cardLayout.show(cardPanel, "Home"));
+                crbackHome.setBackground(primary);
+
+                JLabel crName = new JLabel("Hrithik Dev Nath");
+                JLabel tel = new JLabel("Phone: 01905078029");
+                JLabel email = new JLabel("Email: hrithikdevnath0924@gmail.com");
+                JLabel whatsapp = new JLabel("Whatsapp: 01905078029");
+
+                crPage.setLayout(new BoxLayout(crPage, BoxLayout.Y_AXIS));
+                infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
+
+                crbackHome.setAlignmentX(CENTER_ALIGNMENT);
+                crLabel.setAlignmentX(CENTER_ALIGNMENT);
+                crPage.setAlignmentX(CENTER_ALIGNMENT);
+                infoPanel.setAlignmentX(CENTER_ALIGNMENT);
+                crName.setAlignmentX(CENTER_ALIGNMENT);
+                email.setAlignmentX(CENTER_ALIGNMENT);
+                whatsapp.setAlignmentX(CENTER_ALIGNMENT);
+
+                crPage.setBackground(backgroundColor);
+                infoPanel.setBackground(backgroundColor);
+                crLabel.setForeground(textColor);
+                crPage.setForeground(textColor);
+                infoPanel.setForeground(textColor);
+                crName.setForeground(textColor);
+                tel.setForeground(textColor);
+                email.setForeground(textColor);
+                whatsapp.setForeground(textColor);
+
+                infoPanel.setBorder(
+                                BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(primary, 1),
+                                                BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+
+                crPage.add(crbackHome);
+                crPage.add(Box.createRigidArea(new Dimension(0, 20)));
+                crPage.add(crLabel);
+                crPage.add(Box.createRigidArea(new Dimension(0, 20)));
+                crPage.add(infoPanel);
+                infoPanel.add(crName);
+                infoPanel.add(email);
+                infoPanel.add(whatsapp);
 
                 // ------------------------------------------------------
                 // Handle button clicks
@@ -319,6 +371,7 @@ public class Routine extends JFrame {
                 cardPanel.add(homePage, "Home");
                 cardPanel.add(routinePage, "Routine");
                 cardPanel.add(courseListPage, "Course");
+                cardPanel.add(crPage, "CR");
                 add(cardPanel);
 
         }
