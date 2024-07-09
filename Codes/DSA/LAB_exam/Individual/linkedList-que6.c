@@ -65,11 +65,11 @@ int main()
     printf("Original liked list:\n"); // Printing to make it easy and understandable for you.
     printList();
 
-    printf("\nAfter deleting the first node:\n"); // Printing to make it easy and understandable for you.
+    printf("\nAfter deleting the first node:\n"); // Printing so you guys can understand
     insertLast();
     printList();
 
-    printf("\nAfter deleting the first node(efficient way):\n"); // Printing to make it easy and understandable for you.
+    printf("\nAfter deleting the first node(efficient way):\n"); // Printing so you guys can understand
     deleteFirstNodeV2();
     printList();
 
