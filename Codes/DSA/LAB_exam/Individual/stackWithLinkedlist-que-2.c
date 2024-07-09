@@ -98,7 +98,7 @@ int main()
     printf("Liked list:\n");
     printList();
 
-    printf("After pushing two elements:\n"); // Printing to make it easy and understandable for you.
+    printf("After pushing two elements:\n"); //Printing so you guys can understand
     push(50);
     push(60);
     printList();
