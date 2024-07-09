@@ -62,10 +62,10 @@ int main()
     newnode->data = 50; // hard coded, you can try taking input from user(2 lines of code 🙂)
     newnode->next = NULL;
 
-    printf("Original liked list:\n"); // Printing to make it easy for you to understand
+    printf("Original liked list:\n"); //Printing so you guys can understand
     printList();
 
-    printf("\nAfter adding a element:\n"); // Printing to make it easy for you to understand
+    printf("\nAfter adding a element:\n"); // Printing so guys you can understand
     insertAtBeginning(newnode);
     printList();
 
