@@ -1,10 +1,31 @@
 import java.awt.*;
 import javax.swing.*;
+import javax.swing.table.*;
 import java.util.*;
 import java.util.List;
 import java.text.*;
 
 public class Routine extends JFrame {
+
+        private class user {
+                private String userName;
+                private String password;
+
+                public user(String userName, String password) {
+                        this.userName = userName;
+                        this.password = password;
+                }
+
+                public String getUserName() {
+                        return userName;
+                }
+
+                public String getPassword() {
+                        return password;
+                }
+        }
+
+        user u1 = new user("ahn", "ahn123");
 
         class Subject {
                 String name;
@@ -25,7 +46,7 @@ public class Routine extends JFrame {
                 }
         }
 
-        private List<Map<String, String>> courseList = Arrays.asList(
+        private List<Map<String, String>> courseList = new ArrayList<>(Arrays.asList(
                         new HashMap<String, String>() {
                                 {
                                         put("Course Title", "Object Oriented Programming Language");
@@ -50,49 +71,100 @@ public class Routine extends JFrame {
                                         put("Instructor", "Mr. Mohammad Salah Uddin");
                                 }
                         },
-
                         new HashMap<String, String>() {
                                 {
                                         put("Course Title", "Principles of Accounting");
                                         put("Instructor", "Mr. Nasir Uddin");
                                 }
-                        });
+                        }));
 
         private Map<String, List<Subject>> weeklyRoutine = new HashMap<String, List<Subject>>() {
                 {
-                        put("sunday", Arrays.asList(
+                        put("sunday", new ArrayList<Subject>(Arrays.asList(
                                         new Subject("Basic Statistics and Probability", "Mr. Mohammad Salah Uddin",
                                                         "8:30 - 9:55", "R-412", "STA-05422101", false),
                                         new Subject("Digital Logic Design", "K. M. Asif-uz-zaman", "10:00 - 11:25",
-                                                        "R-214", "CSE-06132115", false),
-                                        new Subject("Algorithm Design & Analysis", "Muthmainna Mou", "11:30 - 12:55",
-                                                        "R-412", "CSE-06132113", false)));
-                        put("monday", Arrays.asList(
+                                                        "R-214", "CSE-06132115", false))));
+                        put("monday", new ArrayList<Subject>(Arrays.asList(
                                         new Subject("Algorithm Design & Analysis Lab", "Muthmainna Mou", "8:30 - 11:25",
                                                         "R-309", "CSE-06132114", true),
                                         new Subject("Object Oriented Programming Language", "Mr. Pranta Sarker",
-                                                        "11:30 - 12:55", "R-412", "CSE-06132111", false),
-                                        new Subject("Principles of Accounting", "Mr. Nasir Uddin", "1:00 - 2:25",
-                                                        "R-312", "BUS-04112101", false)));
-                        put("tuesday", Arrays.asList(
+                                                        "11:30 - 12:55", "R-412", "CSE-06132111", false))));
+                        put("tuesday", new ArrayList<Subject>(Arrays.asList(
                                         new Subject("Object Oriented Programming Language", "Mr. Pranta Sarker",
                                                         "10:00 - 11:25", "R-412", "CSE-06132111", false),
                                         new Subject("Digital Logic Design", "K. M. Asif-uz-zaman", "11:30 - 12:55",
-                                                        "R-309", "CSE-06132115", false),
-                                        new Subject("Algorithm Design & Analysis", "Muthmainna Mou", "1:00 - 2:25",
-                                                        "R-312", "CSE-06132113", false)));
-                        put("wednesday", Arrays.asList(
+                                                        "R-309", "CSE-06132115", false))));
+                        put("wednesday", new ArrayList<Subject>(Arrays.asList(
                                         new Subject("Digital Logic Design Lab", "K. M. Asif-uz-zaman", "8:30 - 11:25",
                                                         "R-309", "CSE-06132116", true),
                                         new Subject("Principles of Accounting", "Mr. Nasir Uddin", "1:00 - 2:25",
-                                                        "R-412", "BUS-04112101", false)));
-                        put("thursday", Arrays.asList(
+                                                        "R-412", "BUS-04112101", false))));
+                        put("thursday", new ArrayList<Subject>(Arrays.asList(
                                         new Subject("Basic Statistics and Probability", "Mr. Mohammad Salah Uddin",
                                                         "8:30 - 9:55", "R-412", "STA-05422101", false),
                                         new Subject("Object Oriented Programming Language Lab", "Mr. Pranta Sarker",
-                                                        "10:00 - 12:55", "R-309", "CSE-06132112", true)));
+                                                        "10:00 - 12:55", "R-309", "CSE-06132112", true))));
                 }
         };
+
+        String[] columnNames = { "Course Title", "Instructor" };
+        Object[][] data = new Object[courseList.size()][];
+        {
+                for (int i = 0; i < courseList.size(); i++) {
+                        data[i] = new Object[] { courseList.get(i).get("Course Title"),
+                                        courseList.get(i).get("Instructor") };
+                }
+        }
+        DefaultTableModel tableModel = new DefaultTableModel(data, columnNames);
+
+        void updateTableData(List<Map<String, String>> courseList, DefaultTableModel tableModel) {
+                tableModel.setRowCount(0);
+                for (Map<String, String> course : courseList) {
+                        Object[] row = { course.get("Course Title"), course.get("Instructor") };
+                        tableModel.addRow(row);
+                }
+        }
+
+        JPanel routinePanel;
+
+        void addSubjectToRoutinePanel(Subject course) {
+                JPanel routineBox = new JPanel();
+                JLabel subjectLabel = new JLabel(course.name);
+                JLabel courseCodeLabel = new JLabel(course.courseCode);
+                JLabel teacherLabel = new JLabel(course.teacher);
+                JLabel timeLabel = new JLabel(course.time);
+                JLabel roomLabel = new JLabel(course.roomNo);
+
+                routineBox.setLayout(new BoxLayout(routineBox, BoxLayout.Y_AXIS));
+                routineBox.setBackground(backgroundColor);
+                routineBox.setForeground(textColor);
+                routineBox.setAlignmentX(Component.CENTER_ALIGNMENT);
+                routineBox.setAlignmentY(Component.CENTER_ALIGNMENT);
+                routineBox.setBorder(BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(primary, 1),
+                                BorderFactory.createEmptyBorder(10, 10, 10, 10)));
+
+                subjectLabel.setForeground(textColor);
+                courseCodeLabel.setForeground(grayTextColor);
+                teacherLabel.setForeground(textColor);
+                timeLabel.setForeground(textColor);
+                roomLabel.setForeground(textColor);
+
+                subjectLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                courseCodeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                teacherLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                timeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                roomLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+
+                routineBox.add(subjectLabel);
+                routineBox.add(courseCodeLabel);
+                routineBox.add(teacherLabel);
+                routineBox.add(timeLabel);
+                routineBox.add(roomLabel);
+
+                routinePanel.add(Box.createRigidArea(new Dimension(0, 20)));
+                routinePanel.add(routineBox);
+        }
 
         CardLayout cardLayout = new CardLayout();
         JPanel cardPanel = new JPanel(cardLayout);
@@ -117,11 +189,13 @@ public class Routine extends JFrame {
                 JButton viewRoutine = new JButton("View Routine");
                 JButton viewCourse = new JButton("View Courses");
                 JButton contactCR = new JButton("Contact CR");
+                JButton login = new JButton("Admin Login");
                 JButton exitButton = new JButton("Exit");
 
                 viewRoutine.setBackground(primary);
                 viewCourse.setBackground(primary);
                 contactCR.setBackground(primary);
+                login.setBackground(primary);
                 exitButton.setBackground(Color.RED);
 
                 homePage.setLayout(new BoxLayout(homePage, BoxLayout.Y_AXIS));
@@ -129,12 +203,16 @@ public class Routine extends JFrame {
                 viewRoutine.setAlignmentX(CENTER_ALIGNMENT);
                 viewCourse.setAlignmentX(CENTER_ALIGNMENT);
                 contactCR.setAlignmentX(CENTER_ALIGNMENT);
+                login.setAlignmentX(CENTER_ALIGNMENT);
                 exitButton.setAlignmentX(CENTER_ALIGNMENT);
+
                 homePage.add(viewRoutine);
                 homePage.add(Box.createRigidArea(new Dimension(0, 20)));
                 homePage.add(viewCourse);
                 homePage.add(Box.createRigidArea(new Dimension(0, 20)));
                 homePage.add(contactCR);
+                homePage.add(Box.createRigidArea(new Dimension(0, 20)));
+                homePage.add(login);
                 homePage.add(Box.createRigidArea(new Dimension(0, 20)));
                 homePage.add(exitButton);
                 homePage.add(Box.createVerticalGlue());
@@ -148,7 +226,7 @@ public class Routine extends JFrame {
                 JPanel routinePage = new JPanel();
                 JPanel buttonPanel = new JPanel();
                 JPanel headingPanel = new JPanel();
-                JPanel routinePanel = new JPanel();
+                routinePanel = new JPanel();
 
                 routinePage.setLayout(new BoxLayout(routinePage, BoxLayout.Y_AXIS));
                 buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
@@ -185,51 +263,8 @@ public class Routine extends JFrame {
                 headingPanel.add(currentDate);
                 headingPanel.add(Box.createRigidArea(new Dimension(0, 20)));
 
-                for (Subject subject : todaySubjects) {
-
-                        JPanel routineBox = new JPanel();
-                        JLabel subjectLabel = new JLabel(subject.name);
-                        JLabel courseCodeLabel = new JLabel(subject.courseCode);
-                        JLabel teacheLabel = new JLabel(subject.teacher);
-                        JLabel timeLabel = new JLabel(subject.time);
-                        JLabel roomLabel = new JLabel(subject.roomNo);
-
-                        routineBox.setLayout(new BoxLayout(routineBox, BoxLayout.Y_AXIS));
-                        routineBox.setBackground(backgroundColor);
-                        routineBox.setForeground(textColor);
-                        routineBox.setAlignmentX(CENTER_ALIGNMENT);
-                        routineBox.setAlignmentY(CENTER_ALIGNMENT);
-                        routineBox.setBorder(
-                                        BorderFactory.createCompoundBorder(BorderFactory.createLineBorder(primary, 1),
-                                                        BorderFactory.createEmptyBorder(10, 10, 10, 10)));
-
-                        subjectLabel.setForeground(textColor);
-                        courseCodeLabel.setForeground(grayTextColor);
-                        teacheLabel.setForeground(textColor);
-                        timeLabel.setForeground(textColor);
-                        roomLabel.setForeground(textColor);
-
-                        subjectLabel.setAlignmentX(CENTER_ALIGNMENT);
-                        courseCodeLabel.setAlignmentX(CENTER_ALIGNMENT);
-                        teacheLabel.setAlignmentX(CENTER_ALIGNMENT);
-                        timeLabel.setAlignmentX(CENTER_ALIGNMENT);
-                        roomLabel.setAlignmentX(CENTER_ALIGNMENT);
-
-                        subjectLabel.setAlignmentY(CENTER_ALIGNMENT);
-                        courseCodeLabel.setAlignmentY(CENTER_ALIGNMENT);
-                        teacheLabel.setAlignmentY(CENTER_ALIGNMENT);
-                        timeLabel.setAlignmentY(CENTER_ALIGNMENT);
-                        roomLabel.setAlignmentY(CENTER_ALIGNMENT);
-
-                        routineBox.setForeground(textColor);
-                        routineBox.add(subjectLabel);
-                        routineBox.add(courseCodeLabel);
-                        routineBox.add(teacheLabel);
-                        routineBox.add(timeLabel);
-                        routineBox.add(roomLabel);
-
-                        routinePanel.add(Box.createRigidArea(new Dimension(0, 20)));
-                        routinePanel.add(routineBox);
+                for (Subject course : todaySubjects) {
+                        addSubjectToRoutinePanel(course);
                 }
 
                 // ------------------------------------------------
@@ -263,15 +298,8 @@ public class Routine extends JFrame {
                 courseListPanel.setBackground(backgroundColor);
                 courseListPanel.setForeground(textColor);
 
-                String[] columnNames = { "Course Title", "Instructor" };
-                Object[][] data = new Object[courseList.size()][];
+                JTable table = new JTable(tableModel);
 
-                for (int i = 0; i < courseList.size(); i++) {
-                        Map<String, String> course = courseList.get(i);
-                        data[i] = new Object[] { course.get("Course Title"), course.get("Instructor") };
-                }
-
-                JTable table = new JTable(data, columnNames);
                 table.setBackground(backgroundColor);
                 table.setForeground(textColor);
                 courseListPanel.add(table.getTableHeader());
@@ -328,18 +356,158 @@ public class Routine extends JFrame {
                 infoPanel.add(email);
                 infoPanel.add(whatsapp);
 
+                // ------------------------------------------------
+                // Login page :: Frame 5
+
+                JPanel LoginPage = new JPanel();
+
+                JPanel userNamePanel = new JPanel();
+                JPanel passwordPanel = new JPanel();
+                JPanel actionPanel = new JPanel();
+
+                LoginPage.setLayout(new BoxLayout(LoginPage, BoxLayout.Y_AXIS));
+
+                userNamePanel.setLayout(new BoxLayout(userNamePanel, BoxLayout.X_AXIS));
+                passwordPanel.setLayout(new BoxLayout(passwordPanel, BoxLayout.X_AXIS));
+                actionPanel.setLayout(new BoxLayout(actionPanel, BoxLayout.X_AXIS));
+
+                LoginPage.setBackground(backgroundColor);
+                userNamePanel.setBackground(backgroundColor);
+                passwordPanel.setBackground(backgroundColor);
+                actionPanel.setBackground(backgroundColor);
+
+                JLabel userNameLabel = new JLabel("User Name");
+                JTextField userNameField = new JTextField(20);
+                userNameField.setMaximumSize(new Dimension(150, 20));
+                JLabel passwordLabel = new JLabel("Password");
+                JPasswordField passwordField = new JPasswordField(20);
+                passwordField.setMaximumSize(new Dimension(150, 20));
+
+                JButton loginButton = new JButton("Login");
+                JButton loginBackButton = new JButton("Back");
+                userNameLabel.setForeground(textColor);
+                passwordLabel.setForeground(textColor);
+
+                userNameField.setBackground(backgroundColor);
+                userNameField.setForeground(textColor);
+
+                passwordField.setBackground(backgroundColor);
+                passwordField.setForeground(textColor);
+
+                loginButton.setBackground(primary);
+                loginBackButton.setBackground(primary);
+
+                userNamePanel.add(userNameLabel);
+                userNamePanel.add(Box.createRigidArea(new Dimension(20, 0)));
+                userNamePanel.add(userNameField);
+
+                passwordPanel.add(passwordLabel);
+                passwordPanel.add(Box.createRigidArea(new Dimension(20, 0)));
+                passwordPanel.add(passwordField);
+
+                actionPanel.add(loginButton);
+                actionPanel.add(Box.createRigidArea(new Dimension(20, 0)));
+                actionPanel.add(loginBackButton);
+
+                LoginPage.add(Box.createVerticalGlue());
+                LoginPage.add(userNamePanel);
+                LoginPage.add(Box.createRigidArea(new Dimension(0, 20)));
+                LoginPage.add(passwordPanel);
+                LoginPage.add(Box.createRigidArea(new Dimension(0, 20)));
+                LoginPage.add(actionPanel);
+                LoginPage.add(Box.createVerticalGlue());
+
+                loginButton.addActionListener(e -> {
+                        String userName = userNameField.getText();
+                        String password = new String(passwordField.getPassword());
+
+                        if (userName.equals(u1.getUserName()) && password.equals(u1.getPassword())) {
+                                cardLayout.show(cardPanel, "AdminPanelPage");
+                        } else {
+                                JOptionPane.showMessageDialog(null, "Invalid username or password", "Error",
+                                                JOptionPane.ERROR_MESSAGE);
+                        }
+                });
+
+                loginBackButton.addActionListener(e -> cardLayout.show(cardPanel, "Home"));
+
+                // ------------------------------------------------
+                // Admin panel page :: Frame 6
+
+                JPanel AdminPanelPage = new JPanel();
+
+                AdminPanelPage.setBackground(backgroundColor);
+                JButton addRoutine = new JButton("Add a new subject");
+                JButton addCourse = new JButton("Add Courses");
+
+                JButton adminBackHome = new JButton("🏠");
+                adminBackHome.addActionListener(e -> cardLayout.show(cardPanel, "Home"));
+
+                adminBackHome.setBackground(primary);
+                addRoutine.setBackground(primary);
+                addCourse.setBackground(primary);
+
+                AdminPanelPage.setLayout(new BoxLayout(AdminPanelPage, BoxLayout.Y_AXIS));
+                addRoutine.setAlignmentX(CENTER_ALIGNMENT);
+                addCourse.setAlignmentX(CENTER_ALIGNMENT);
+                adminBackHome.setAlignmentX(CENTER_ALIGNMENT);
+                AdminPanelPage.add(adminBackHome);
+                AdminPanelPage.add(Box.createVerticalGlue());
+                AdminPanelPage.add(addRoutine);
+                AdminPanelPage.add(Box.createRigidArea(new Dimension(0, 20)));
+                AdminPanelPage.add(addCourse);
+                AdminPanelPage.add(Box.createVerticalGlue());
+
+                addRoutine.addActionListener(e -> {
+                        String name = JOptionPane.showInputDialog("Enter subject name");
+                        String teacher = JOptionPane.showInputDialog("Enter teacher name");
+                        String time = JOptionPane.showInputDialog("Enter time (e.g. 8:30 - 9:55)");
+                        String roomNo = JOptionPane.showInputDialog("Enter room number");
+                        String courseCode = JOptionPane.showInputDialog("Enter course code");
+                        Boolean lab = JOptionPane.showConfirmDialog(null, "Is it a lab?", "Lab",
+                                        JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION;
+
+                        Subject subject = new Subject(name, teacher, time, roomNo, courseCode, lab);
+                        addSubjectToRoutinePanel(subject);
+                        JOptionPane.showMessageDialog(null, "Subject added successfully", "Success",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                        cardLayout.show(cardPanel, "Home");
+
+                });
+
+                addCourse.addActionListener(e -> {
+                        String courseTitle = JOptionPane.showInputDialog("Enter course title");
+                        String instructor = JOptionPane.showInputDialog("Enter instructor name");
+
+                        courseList.add(new HashMap<String, String>() {
+                                {
+                                        put("Course Title", courseTitle);
+                                        put("Instructor", instructor);
+                                }
+                        });
+
+                        updateTableData(courseList, tableModel);
+                        JOptionPane.showMessageDialog(null, "Subject added successfully", "Success",
+                                        JOptionPane.INFORMATION_MESSAGE);
+                        cardLayout.show(cardPanel, "Home");
+                });
+
                 // ------------------------------------------------------
                 // Handle button clicks
                 viewRoutine.addActionListener(e -> cardLayout.show(cardPanel, "Routine"));
                 viewCourse.addActionListener(e -> cardLayout.show(cardPanel, "Course"));
+                login.addActionListener(e -> cardLayout.show(cardPanel, "Admin"));
                 contactCR.addActionListener(e -> cardLayout.show(cardPanel, "CR"));
                 exitButton.addActionListener(e -> System.exit(1));
+
                 // ------------------------------------------------------
                 // Add pages to cardPanel
                 cardPanel.add(homePage, "Home");
                 cardPanel.add(routinePage, "Routine");
                 cardPanel.add(courseListPage, "Course");
                 cardPanel.add(crPage, "CR");
+                cardPanel.add(LoginPage, "Admin");
+                cardPanel.add(AdminPanelPage, "AdminPanelPage");
                 add(cardPanel);
 
         }
@@ -353,26 +521,28 @@ class Main {
         }
 }
 
-
-
-/* 
-
-Reference:
-
-Java Swing: https://youtu.be/xn1EEozPbx0
-
-App structure: https://stackoverflow.com/a/14567937
-
-Java Lambda: https://stackoverflow.com/a/29441980, https://www.tutorialspoint.com/how-to-implement-the-listeners-using-lambda-expressions-in-java
-
-Layout : https://youtu.be/JMkHA2ndook
-
-Box Layout: https://www.youtube.com/watch
-
-Table: https://www.geeksforgeeks.org/java-swing-jtable/
-
-Data Structure: https://www.w3schools.com/java/java_arraylist.asp, https://www.w3schools.com/java/java_hashmap.asp, https://www.w3schools.com/java/java_howto_loop_through_arraylist.asp
-
-Date format: https://www.javatpoint.com/java-simpledateformat
- 
-*/
+/*
+ * 
+ * Reference:
+ * 
+ * Java Swing: https://youtu.be/xn1EEozPbx0
+ * 
+ * App structure: https://stackoverflow.com/a/14567937
+ * 
+ * Java Lambda: https://stackoverflow.com/a/29441980,
+ * https://www.tutorialspoint.com/how-to-implement-the-listeners-using-lambda-
+ * expressions-in-java
+ * 
+ * Layout : https://youtu.be/JMkHA2ndook
+ * 
+ * Box Layout: https://www.youtube.com/watch
+ * 
+ * Table: https://www.geeksforgeeks.org/java-swing-jtable/
+ * 
+ * Data Structure: https://www.w3schools.com/java/java_arraylist.asp,
+ * https://www.w3schools.com/java/java_hashmap.asp,
+ * https://www.w3schools.com/java/java_howto_loop_through_arraylist.asp
+ * 
+ * Date format: https://www.javatpoint.com/java-simpledateformat
+ * 
+ */
