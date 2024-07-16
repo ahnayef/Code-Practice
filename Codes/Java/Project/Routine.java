@@ -1,22 +1,27 @@
-import java.util.List;
-import javax.swing.*;
 import java.awt.*;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import javax.swing.*;
+import java.util.*;
+import java.util.List;
+import java.text.*;
 
 public class Routine extends JFrame {
 
-        class Course {
-                String courseTitle;
-                String instructor;
+        class Subject {
+                String name;
+                String teacher;
+                String time;
+                String roomNo;
+                String courseCode;
+                Boolean lab;
 
-                public Course(String courseTitle, String instructor) {
-                        this.courseTitle = courseTitle;
-                        this.instructor = instructor;
+                public Subject(String name, String teacher, String time, String roomNo, String courseCode,
+                                Boolean lab) {
+                        this.name = name;
+                        this.teacher = teacher;
+                        this.time = time;
+                        this.roomNo = roomNo;
+                        this.courseCode = courseCode;
+                        this.lab = lab;
                 }
         }
 
@@ -53,77 +58,41 @@ public class Routine extends JFrame {
                                 }
                         });
 
-        private Map<String, List<Subject>> weeklyRoutine = new HashMap<>();
-
-        private void loadRoutineData() {
-                weeklyRoutine.put("sunday", Arrays.asList(
-                                new Subject("Basic Statistics and Probability", "Mr. Mohammad Salah Uddin",
-                                                "8:30 - 9:55", "R-412",
-                                                "STA-05422101", false),
-                                new Subject("Digital Logic Design", "K. M. Asif-uz-zaman", "10:00 - 11:25", "R-214",
-                                                "CSE-06132115",
-                                                false),
-                                new Subject("Algorithm Design & Analysis", "Muthmainna Mou", "11:30 - 12:55", "R-412",
-                                                "CSE-06132113",
-                                                false)));
-
-                weeklyRoutine.put("monday", Arrays.asList(
-                                new Subject("Algorithm Design & Analysis Lab", "Muthmainna Mou", "8:30 - 11:25",
-                                                "R-309",
-                                                "CSE-06132114", true),
-                                new Subject("Object Oriented Programming Language", "Mr. Pranta Sarker",
-                                                "11:30 - 12:55", "R-412",
-                                                "CSE-06132111", false),
-                                new Subject("Principles of Accounting", "Mr. Nasir Uddin", "1:00 - 2:25", "R-312",
-                                                "BUS-04112101",
-                                                false)));
-
-                weeklyRoutine.put("tuesday", Arrays.asList(
-                                new Subject("Object Oriented Programming Language", "Mr. Pranta Sarker",
-                                                "10:00 - 11:25", "R-412",
-                                                "CSE-06132111", false),
-                                new Subject("Digital Logic Design", "K. M. Asif-uz-zaman", "11:30 - 12:55", "R-309",
-                                                "CSE-06132115",
-                                                false),
-                                new Subject("Algorithm Design & Analysis", "Muthmainna Mou", "1:00 - 2:25", "R-312",
-                                                "CSE-06132113",
-                                                false)));
-
-                weeklyRoutine.put("wednesday", Arrays.asList(
-                                new Subject("Digital Logic Design Lab", "K. M. Asif-uz-zaman", "8:30 - 11:25", "R-309",
-                                                "CSE-06132116",
-                                                true),
-                                new Subject("Principles of Accounting", "Mr. Nasir Uddin", "1:00 - 2:25", "R-412",
-                                                "BUS-04112101",
-                                                false)));
-
-                weeklyRoutine.put("thursday", Arrays.asList(
-                                new Subject("Basic Statistics and Probability", "Mr. Mohammad Salah Uddin",
-                                                "8:30 - 9:55", "R-412",
-                                                "STA-05422101", false),
-                                new Subject("Object Oriented Programming Language Lab", "Mr. Pranta Sarker",
-                                                "10:00 - 12:55", "R-309",
-                                                "CSE-06132112", true)));
-        }
-
-        class Subject {
-                String name;
-                String teacher;
-                String time;
-                String roomNo;
-                String courseCode;
-                Boolean lab;
-
-                public Subject(String name, String teacher, String time, String roomNo, String courseCode,
-                                Boolean lab) {
-                        this.name = name;
-                        this.teacher = teacher;
-                        this.time = time;
-                        this.roomNo = roomNo;
-                        this.courseCode = courseCode;
-                        this.lab = lab;
+        private Map<String, List<Subject>> weeklyRoutine = new HashMap<String, List<Subject>>() {
+                {
+                        put("sunday", Arrays.asList(
+                                        new Subject("Basic Statistics and Probability", "Mr. Mohammad Salah Uddin",
+                                                        "8:30 - 9:55", "R-412", "STA-05422101", false),
+                                        new Subject("Digital Logic Design", "K. M. Asif-uz-zaman", "10:00 - 11:25",
+                                                        "R-214", "CSE-06132115", false),
+                                        new Subject("Algorithm Design & Analysis", "Muthmainna Mou", "11:30 - 12:55",
+                                                        "R-412", "CSE-06132113", false)));
+                        put("monday", Arrays.asList(
+                                        new Subject("Algorithm Design & Analysis Lab", "Muthmainna Mou", "8:30 - 11:25",
+                                                        "R-309", "CSE-06132114", true),
+                                        new Subject("Object Oriented Programming Language", "Mr. Pranta Sarker",
+                                                        "11:30 - 12:55", "R-412", "CSE-06132111", false),
+                                        new Subject("Principles of Accounting", "Mr. Nasir Uddin", "1:00 - 2:25",
+                                                        "R-312", "BUS-04112101", false)));
+                        put("tuesday", Arrays.asList(
+                                        new Subject("Object Oriented Programming Language", "Mr. Pranta Sarker",
+                                                        "10:00 - 11:25", "R-412", "CSE-06132111", false),
+                                        new Subject("Digital Logic Design", "K. M. Asif-uz-zaman", "11:30 - 12:55",
+                                                        "R-309", "CSE-06132115", false),
+                                        new Subject("Algorithm Design & Analysis", "Muthmainna Mou", "1:00 - 2:25",
+                                                        "R-312", "CSE-06132113", false)));
+                        put("wednesday", Arrays.asList(
+                                        new Subject("Digital Logic Design Lab", "K. M. Asif-uz-zaman", "8:30 - 11:25",
+                                                        "R-309", "CSE-06132116", true),
+                                        new Subject("Principles of Accounting", "Mr. Nasir Uddin", "1:00 - 2:25",
+                                                        "R-412", "BUS-04112101", false)));
+                        put("thursday", Arrays.asList(
+                                        new Subject("Basic Statistics and Probability", "Mr. Mohammad Salah Uddin",
+                                                        "8:30 - 9:55", "R-412", "STA-05422101", false),
+                                        new Subject("Object Oriented Programming Language Lab", "Mr. Pranta Sarker",
+                                                        "10:00 - 12:55", "R-309", "CSE-06132112", true)));
                 }
-        }
+        };
 
         CardLayout cardLayout = new CardLayout();
         JPanel cardPanel = new JPanel(cardLayout);
@@ -136,7 +105,6 @@ public class Routine extends JFrame {
         Date date = new Date();
 
         public Routine() {
-                loadRoutineData();
                 setTitle("Academic Schedule Viewer");
                 setSize(400, 620);
                 setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -183,7 +151,7 @@ public class Routine extends JFrame {
                 JPanel routinePanel = new JPanel();
 
                 routinePage.setLayout(new BoxLayout(routinePage, BoxLayout.Y_AXIS));
-                buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+                buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS));
                 headingPanel.setLayout(new BoxLayout(headingPanel, BoxLayout.Y_AXIS));
                 routinePanel.setLayout(new BoxLayout(routinePanel, BoxLayout.Y_AXIS));
 
@@ -296,9 +264,13 @@ public class Routine extends JFrame {
                 courseListPanel.setForeground(textColor);
 
                 String[] columnNames = { "Course Title", "Instructor" };
-                Object[][] data = courseList.stream()
-                                .map(course -> new Object[] { course.get("Course Title"), course.get("Instructor") })
-                                .toArray(Object[][]::new);
+                Object[][] data = new Object[courseList.size()][];
+
+                for (int i = 0; i < courseList.size(); i++) {
+                        Map<String, String> course = courseList.get(i);
+                        data[i] = new Object[] { course.get("Course Title"), course.get("Instructor") };
+                }
+
                 JTable table = new JTable(data, columnNames);
                 table.setBackground(backgroundColor);
                 table.setForeground(textColor);
@@ -376,6 +348,26 @@ public class Routine extends JFrame {
 
 class Main {
         public static void main(String[] args) {
-                new Routine().setVisible(true);
+                Routine app = new Routine();
+                app.setVisible(true);
         }
 }
+
+
+
+/* 
+
+Reference:
+
+Java Swing: https://youtu.be/xn1EEozPbx0
+
+App structure: https://stackoverflow.com/a/14567937
+
+Java Lambda: https://stackoverflow.com/a/29441980
+
+Layout : https://youtu.be/JMkHA2ndook
+
+Box Layout: https://www.youtube.com/watch
+
+ 
+*/
