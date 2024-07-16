@@ -363,11 +363,16 @@ Java Swing: https://youtu.be/xn1EEozPbx0
 
 App structure: https://stackoverflow.com/a/14567937
 
-Java Lambda: https://stackoverflow.com/a/29441980
+Java Lambda: https://stackoverflow.com/a/29441980, https://www.tutorialspoint.com/how-to-implement-the-listeners-using-lambda-expressions-in-java
 
 Layout : https://youtu.be/JMkHA2ndook
 
 Box Layout: https://www.youtube.com/watch
 
+Table: https://www.geeksforgeeks.org/java-swing-jtable/
+
+Data Structure: https://www.w3schools.com/java/java_arraylist.asp, https://www.w3schools.com/java/java_hashmap.asp, https://www.w3schools.com/java/java_howto_loop_through_arraylist.asp
+
+Date format: https://www.javatpoint.com/java-simpledateformat
  
 */
