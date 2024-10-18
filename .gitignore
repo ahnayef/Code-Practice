@@ -9,24 +9,34 @@
 !/*.c
 !/*.cpp
 
+
 #  C/C++ files
 !/*/
 !/*/*.c
 !/*/*.cpp
+
 !/*/*/
 !/*/*/*.c
 !/*/*/*.cpp
+
 !/*/*/*/
 !/*/*/*/*.c
 !/*/*/*/*.cpp
+
 !/*/*/*/*/
 !/*/*/*/*/*.c
 !/*/*/*/*/*.cpp
+
 !/*/*/*/*/*/
 !/*/*/*/*/*/*.c
 !/*/*/*/*/*/*.cpp
 
 
+
 # Include everything under Codes/Java
 !/Codes/Java/*
 !/Codes/Java/**
+
+# Include everything under Codes/Numerical
+!/Codes/Numerical/*
+!/Codes/Numerical/**
