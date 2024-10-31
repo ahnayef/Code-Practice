@@ -40,3 +40,4 @@
 # Include everything under Codes/Numerical
 !/Codes/Numerical/*
 !/Codes/Numerical/**
+Codes/Numerical/.excalidraw
