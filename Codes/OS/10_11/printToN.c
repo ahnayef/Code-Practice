@@ -47,7 +47,7 @@ int main()
     else
     {
         wait(&status);
-        Total = Total + parent_s(n) + WEXITSTATUS(status);
+        Total = parent_s(n) + WEXITSTATUS(status);
         printf("%d\n", Total);
     }
 }
