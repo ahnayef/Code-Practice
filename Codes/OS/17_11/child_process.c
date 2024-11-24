@@ -14,6 +14,8 @@ int main()
     }
     else
     {
+        // printf("\n%d\n",p1);
+        // printf("\n%d\n",getpid());
         p2 = fork();
         if (p2 == 0)
         {
