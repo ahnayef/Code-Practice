@@ -37,7 +37,7 @@ int main()
 
     if (pid1 == 0 || pid2 == 0 || pid3 == 0)
     {
-        execl("/home/ahn/Documents/Practice/C-Practice/count", "./count", NULL);
+        execl("/home/ahn/Documents/Practice/C-Practice/Codes/OS/24_10/count", "./count", NULL);
     }
     else
     {
