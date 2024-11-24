@@ -41,7 +41,7 @@ int main()
     }
     else if (p == 0)
     {
-        Total = Total + child_s(n);
+        Total = child_s(n);
         exit(Total);
     }
     else
