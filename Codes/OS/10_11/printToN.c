@@ -45,8 +45,12 @@ int main()
         exit(Total);
     }
     else
-    { 
-        wait(&status);
+    {
+        wait(&status)
+
+        // status = Total + chlid exit info;
+        //  WEXITSTATUS(status) + WIFEXITED(status)
+
         Total = parent_s(n) + WEXITSTATUS(status);
         printf("%d\n", Total);
     }
