@@ -1,3 +1,5 @@
+//Que: Create 3 child process
+
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
