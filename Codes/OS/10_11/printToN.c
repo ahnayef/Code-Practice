@@ -46,7 +46,7 @@ int main()
     }
     else
     {
-        wait(&status)
+        wait(&status);
 
         // status = Total + chlid exit info;
         //  WEXITSTATUS(status) + WIFEXITED(status)
