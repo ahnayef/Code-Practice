@@ -10,6 +10,7 @@
 !/*.cpp
 
 
+
 #  C/C++ files
 !/*/
 !/*/*.c
@@ -41,3 +42,6 @@
 !/Codes/Numerical/*
 !/Codes/Numerical/**
 Codes/Numerical/.excalidraw
+
+# Include png under Codes/OS
+!/Codes/OS/**/*.png
