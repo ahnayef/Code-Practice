@@ -44,16 +44,12 @@ int main()
 
     pid1 = fork();
 
-    if (pid1 < 0)
-    {
-        printf("Failed to create process");
-    }
-    else if (pid1 == 0)
+    if (pid1 == 0)
     {
         sum1 = cal_sum1(n);
         exit(sum1);
     }
-    else
+    else if (pid1 > 0)
     {
         pid2 = fork();
         if (pid2 == 0)
@@ -61,12 +57,14 @@ int main()
             sum2 = cal_sum2(n);
             exit(sum2);
         }
+        else if (pid2 > 0)
+        {
+            wait(&status1);
+            wait(&status2);
+
+            total = WEXITSTATUS(status1) + WEXITSTATUS(status2);
+
+            printf("%d", total);
+        }
     }
-
-    wait(&status1);
-    wait(&status2);
-
-    total = WEXITSTATUS(status1) + WEXITSTATUS(status2);
-
-    printf("%d", total);
 }

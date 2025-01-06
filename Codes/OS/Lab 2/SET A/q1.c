@@ -47,7 +47,7 @@ int main()
         product1 = cal_product1(n);
         exit((product1));
     }
-    else
+    else if(pid1 > 0)
     {
         pid2 = fork();
         if (pid2 == 0)
@@ -55,13 +55,15 @@ int main()
             product2 = cal_product2(n);
             exit(product2);
         }
+        else if (pid2 > 0)
+        {
+            wait(&status1);
+            wait(&status2);
+
+            unsigned long long total = WEXITSTATUS(status1) * WEXITSTATUS(status2);
+            printf("%d", total);
+        }
     }
-
-    wait(&status1);
-    wait(&status2);
-
-    unsigned long long total = WEXITSTATUS(status1) * WEXITSTATUS(status2);
-    printf("%d", total);
 
     return 0;
 }

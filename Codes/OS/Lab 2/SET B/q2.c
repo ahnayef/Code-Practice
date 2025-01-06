@@ -19,7 +19,7 @@ int main()
         execl("./b", "./b", NULL);
         exit(1);
     }
-    else
+    else if (p1 > 0)
     {
         p2 = fork();
         if (p2 == 0)
@@ -28,7 +28,7 @@ int main()
             execl("./b", "./b", NULL);
             exit(1);
         }
-        else
+        else if (p2 > 0)
         {
             p3 = fork();
             if (p3 == 0)
