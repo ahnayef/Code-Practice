@@ -12,27 +12,27 @@ MAIN PROC
     INT 21H
 
     ;Printing a new line
-    MOV DL, OAH
+    MOV DL, 0AH
     INT 21H
-    MOV DL, ODH
+    MOV DL, 0DH
     INT 21H
 
     MOV DL, 042H ;B
     INT 21H
 
     ;Printing a new line
-    MOV DL, DAH
+    MOV DL, 0AH
     INT 21H
-    MOV DL, ODH
+    MOV DL, 0DH
     INT 21H
 
     MOV DL, 043H ;c
     INT 21H
 
     ;Printing a new line
-    MOV DL, DAH
+    MOV DL, 0AH
     INT 21H
-    MOV DL, ODH
+    MOV DL, 0DH
     INT 21H
 
     MOV DL, 'a'
