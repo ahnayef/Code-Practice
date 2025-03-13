@@ -43,5 +43,9 @@
 !/Codes/Numerical/**
 Codes/Numerical/.excalidraw
 
+# Include everything under Codes/Microprocessor
+!/Codes/Microprocessor/*
+!/Codes/Microprocessor/**
+
 # Include png under Codes/OS
 !/Codes/OS/**/*.png
