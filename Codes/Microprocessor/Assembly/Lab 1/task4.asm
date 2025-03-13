@@ -3,7 +3,9 @@
 .MODEL small
 .STACK 100H
 .DATA 
-MSG db "Hello World$"
+MSG db "Hello World", 0AH, 0DH, '$'
+MSG2 db "NEUB", 0AH, 0DH, '$'
+
 .CODE
 
 MAIN PROC
@@ -13,6 +15,9 @@ MAIN PROC
 
     MOV AH, 9
     LEA DX, MSG
+    INT 21H
+    
+    LEA DX, MSG2
     INT 21H
 
     
