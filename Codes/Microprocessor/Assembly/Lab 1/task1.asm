@@ -38,7 +38,7 @@ MAIN PROC
     MOV DL, 'a'
     INT 21H
 
-
+    ; Terminate the program
     MOV AH, 4CH
     INT 21H
 
