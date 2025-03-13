@@ -9,3 +9,6 @@
 | Arduino Code                             | 30        |
 | Project                                  | 30        |
 | **Total**                                | **100**   |
+
+## Software Needed
+[emu8086](Assets/emu8086.zip)
