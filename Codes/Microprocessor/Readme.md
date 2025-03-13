@@ -11,4 +11,4 @@
 | **Total**                                | **100**   |
 
 ## Software Needed
-[emu8086](Assets/emu8086.zip?raw=true)
+emu8086: [Download](Assets/emu8086.zip)
