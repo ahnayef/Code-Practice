@@ -1,0 +1,1 @@
+; Printing the string "Hello World" using @data directive
