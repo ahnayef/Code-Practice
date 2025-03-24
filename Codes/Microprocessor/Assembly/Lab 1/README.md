@@ -12,3 +12,6 @@
 
 ## Software Needed
 emu8086: [Download](https://github.com/ahnayef/Code-Practice/blob/main/Codes/Microprocessor/Assets/emu8086.zip)
+
+## Resources
+- [Online Class](https://youtu.be/vnGEzz8iMAE)
