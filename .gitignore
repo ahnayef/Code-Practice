@@ -32,6 +32,10 @@
 !/*/*/*/*/*/*.c
 !/*/*/*/*/*/*.cpp
 
+#Include images under Codes/CF
+!/Codes/CF/**/*.png
+!/Codes/CF/**/*.jpg
+!/Codes/CF/**/*.jpeg
 
 
 # Include everything under Codes/Java
