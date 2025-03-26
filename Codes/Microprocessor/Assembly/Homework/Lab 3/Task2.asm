@@ -1,3 +1,18 @@
+; Draw a 10*10 box of stars without using any string. Use only flow control instructions and loop to draw the box.
+
+; Sample Execution
+
+; **********
+; **********
+; **********
+; **********
+; **********
+; **********
+; **********
+; **********
+; **********
+; **********
+
 .MODEL SMALL
 .STACK 100H
 .CODE

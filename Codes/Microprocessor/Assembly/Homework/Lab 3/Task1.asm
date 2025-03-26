@@ -1,3 +1,24 @@
+; Write a program to:
+; a) Display "?", 
+; b) Read three initials,
+; c) Display them in the middle of an 11 x 11 box of asterisks.
+
+; Sample Execution:
+
+; ?AHN
+; ***********
+; ***********
+; ***********
+; ***********
+; *****A*****
+; *****H*****
+; *****N*****
+; ***********
+; ***********
+; ***********
+; ***********
+
+
 .MODEL SMALL
 .STACK 100H
 .DATA
