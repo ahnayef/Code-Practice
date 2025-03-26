@@ -1,5 +1,5 @@
 ---
-name: Custom issue template
+name: Code Practice Issue Template
 about: Code practice repo issue
 title: ''
 labels: bug, documentation, duplicate, enhancement, good first issue, help wanted,
