@@ -54,6 +54,7 @@ Codes/Numerical/.excalidraw
 # Include png under Codes/OS
 !/Codes/OS/**/*.png
 
-# Include .cpp & .py under Codes/AI
+# Include .cpp & .py and .vscode under Codes/AI
 !/Codes/AI/**/*.cpp
 !/Codes/AI/**/*.py
+!/Codes/AI/**/.vscode/*
