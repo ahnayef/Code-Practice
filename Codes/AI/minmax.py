@@ -19,7 +19,7 @@ score = []
 
 x = int(input("Enter the number of leaf node: "))
 for i in range(x):
-    score.append(int(input("Enter the score of leaf node: ")))
+    score.append(int(input("Enter the score of leaf node", str(i+1) + ": ")))
 
 
 totalDepth = math.log2(len(score))
