@@ -1,72 +1,13 @@
-#  Everything
+# Ignore all files without extensions (compiled C/C++ binaries)
 *
+!*.*
+!*/
 
-# Base
+# Exeptions
 !/.gitignore
+!/.gitattributes
+!/LICENSE
+!/README.md
+!/SECURITY.md
 !/readme.md
 
-#  C and C++ files at the root
-!/*.c
-!/*.cpp
-
-
-
-#  C/C++ files
-!/*/
-!/*/*.c
-!/*/*.cpp
-
-!/*/*/
-!/*/*/*.c
-!/*/*/*.cpp
-
-!/*/*/*/
-!/*/*/*/*.c
-!/*/*/*/*.cpp
-
-!/*/*/*/*/
-!/*/*/*/*/*.c
-!/*/*/*/*/*.cpp
-
-!/*/*/*/*/*/
-!/*/*/*/*/*/*.c
-!/*/*/*/*/*/*.cpp
-
-#Include images under Codes/CF
-!/Codes/CF/**/*.png
-!/Codes/CF/**/*.jpg
-!/Codes/CF/**/*.jpeg
-
-
-# Include everything under Codes/Java
-!/Codes/Java/*
-!/Codes/Java/**
-
-# Include everything under Codes/Numerical
-!/Codes/Numerical/*
-!/Codes/Numerical/**
-Codes/Numerical/.excalidraw
-
-# Include everything under Codes/Microprocessor
-!/Codes/Microprocessor/*
-!/Codes/Microprocessor/**
-
-# Include png under Codes/OS
-!/Codes/OS/**/*.png
-
-# Include .cpp & .py and .vscode under Codes/AI
-!/Codes/AI/**/*.cpp
-!/Codes/AI/**/*.py
-!/Codes/AI/**/.vscode/*
-
-
-# Include all .excalidraw file form everywhere
-!/Codes/AI/**/*.excalidraw
-!/Codes/Algo/**/*.excalidraw
-!/Codes/CF/**/*.excalidraw
-!/Codes/DSA/**/*.excalidraw
-!/Codes/Homework/**/*.excalidraw
-!/Codes/Java/**/*.excalidraw
-!/Codes/Microprocessor/**/*.excalidraw
-!/Codes/Normal/**/*.excalidraw
-!/Codes/OS/**/*.excalidraw

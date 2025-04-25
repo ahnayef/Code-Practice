@@ -1,0 +1,5 @@
+Implement a stack using an array list.
+Push some elements onto the stack.
+Sort the stack using bubble sort.
+Implement binary search to find a specific element.
+If the element is not found, display the message “Item not found”.
