@@ -58,3 +58,15 @@ Codes/Numerical/.excalidraw
 !/Codes/AI/**/*.cpp
 !/Codes/AI/**/*.py
 !/Codes/AI/**/.vscode/*
+
+
+# Include all .excalidraw file form everywhere
+!/Codes/AI/**/*.excalidraw
+!/Codes/Algo/**/*.excalidraw
+!/Codes/CF/**/*.excalidraw
+!/Codes/DSA/**/*.excalidraw
+!/Codes/Homework/**/*.excalidraw
+!/Codes/Java/**/*.excalidraw
+!/Codes/Microprocessor/**/*.excalidraw
+!/Codes/Normal/**/*.excalidraw
+!/Codes/OS/**/*.excalidraw
