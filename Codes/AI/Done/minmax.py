@@ -22,10 +22,10 @@ for i in range(x):
     score.append(int(input("Enter the score of leaf node" + str(i+1) + ": ")))
 
 
-totalDepth = math.log2(len(score))
+totalDepth = int(math.log2(len(score)))
 
 currentDepth = 0
-startingNode = int(input("Enter the starting node: "))
+startingNode = 0
 
 maxTurn = True
 
