@@ -21,11 +21,10 @@ vector<int> bestFirstSearch(vector<vector<int>> edges,
     priority_queue<vector<int>, vector<vector<int>>, 
             greater<vector<int>>> pq;
 
-
     // Push the source node into the min heap with cost 0
     pq.push({0, src});
 
-    // Mark the source  node as visited
+    // Mark the source node as visited
     visited[src] = true;
 
     // Vector to store the path from source to target

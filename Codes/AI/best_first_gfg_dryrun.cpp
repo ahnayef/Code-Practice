@@ -1,123 +1,85 @@
-#include <bits/stdc++.h> // Include all standard C++ libraries
+#include <bits/stdc++.h>
 using namespace std;
 
 // Function to perform Best First Search
-vector<int> bestFirstSearch(vector<vector<int>> edges, 
-        int src, int target, int n) {
+vector<int> bestFirstSearch(vector<vector<int>> edges, int src, int target, int n) {
+    // cout << "=== Starting Best First Search ===" << endl;
+    // cout << "Source: " << src << ", Target: " << target << endl;
 
-    cout << "=== Starting Best First Search ===" << endl;
-    cout << "Source: " << src << ", Target: " << target << endl;
-
-    // Create the adjacency list to represent the graph
-    vector<vector<vector<int>>> adj(n);
-    for (int i = 0; i < edges.size(); i++) {
-        // Add edge from source to destination with weight
-        adj[edges[i][0]].push_back({edges[i][1], edges[i][2]});
-        // Add edge from destination to source (undirected graph)
-        adj[edges[i][1]].push_back({edges[i][0], edges[i][2]});
+    // Adjacency list: adj[node] = vector of {neighbor, weight}
+    vector<vector<pair<int, int>>> adj(n);
+    for (auto& edge : edges) {
+        int u = edge[0], v = edge[1], w = edge[2];
+        adj[u].emplace_back(v, w);
+        adj[v].emplace_back(u, w); // Undirected graph
     }
 
-    // Print adjacency list for verification
-    cout << "\n=== Adjacency List ===" << endl;
-    for (int i = 0; i < n; i++) {
-        cout << "Node " << i << " -> ";
-        for (auto& neighbor : adj[i]) {
-            cout << "(" << neighbor[0] << ", w:" << neighbor[1] << ") ";
-        }
-        cout << endl;
-    }
+    // Print adjacency list
+    // cout << "\n=== Adjacency List ===" << endl;
+    // for (int i = 0; i < n; ++i) {
+    //     cout << "Node " << i << " -> ";
+    //     for (auto& p : adj[i]) {
+    //         cout << "(" << p.first << ", w:" << p.second << ") ";
+    //     }
+    //     cout << endl;
+    // }
 
-    // Create a visited array to keep track of visited nodes
     vector<bool> visited(n, false);
-
-    // Create a min heap (priority queue) to store nodes based on cost
-    priority_queue<vector<int>, vector<vector<int>>, 
-            greater<vector<int>>> pq;
-
-    // Push the source node into the min heap with cost 0
-    pq.push({0, src});
-    cout << "\n=== Search Progress ===" << endl;
-    cout << "Added source node " << src << " to queue with cost 0" << endl;
-
-    // Mark the source node as visited
-    visited[src] = true;
-    cout << "Marked node " << src << " as visited" << endl;
-
-    // Vector to store the path from source to target
-    vector<int> path;
+    // Min-heap: stores {cost, node}
     
-    int step = 1;
-    // Loop until the min heap is empty
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
+
+    pq.push({0, src});
+    visited[src] = true;
+
+    vector<int> path;
+    // int step = 1;
+
+    // cout << "\n=== Search Progress ===" << endl;
+
     while (!pq.empty()) {
-        cout << "\n--- Step " << step++ << " ---" << endl;
-        
-        // Print current state of priority queue
-        cout << "Priority Queue: ";
-        priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pqCopy = pq;
-        while (!pqCopy.empty()) {
-            cout << "{" << pqCopy.top()[0] << "," << pqCopy.top()[1] << "} ";
-            pqCopy.pop();
-        }
-        cout << endl;
+        // cout << "\n--- Step " << step++ << " ---" << endl;
 
-        // Get the node with the lowest cost from the min heap
-        int cost = pq.top()[0];
-        int x = pq.top()[1];
-        cout << "Processing node " << x << " with cost " << cost << endl;
-
-        // Add the current node to the path
-        path.push_back(x);
-        cout << "Added node " << x << " to path" << endl;
-
-        // Remove the top element from the min heap
+        // Get the node with the lowest cost
+        auto [cost, node] = pq.top();
         pq.pop();
 
-        // If the current node is the target node, stop searching
-        if (x == target) {
-            cout << "Target node " << target << " found! Search complete." << endl;
+        // cout << "Processing node " << node << " with cost " << cost << endl;
+
+        path.push_back(node);
+
+        if (node == target) {
+            // cout << "Target node " << target << " found! Search complete." << endl;
             break;
         }
 
-        // Loop through all adjacent nodes of the current node
-        cout << "Checking neighbors of node " << x << ":" << endl;
-        for (int i = 0; i < adj[x].size(); i++) {
-            int neighbor = adj[x][i][0];
-            int weight = adj[x][i][1];
-
-            // If the adjacent node has not been visited
+        // cout << "Checking neighbors of node " << node << ":" << endl;
+        for (auto& [neighbor, weight] : adj[node]) {
             if (!visited[neighbor]) {
-                cout << "  Neighbor " << neighbor << " (weight: " << weight << ") not visited" << endl;
-
-                // Mark the adjacent node as visited
                 visited[neighbor] = true;
-                cout << "  Marked node " << neighbor << " as visited" << endl;
-
-                // Push the adjacent node into the min heap with its edge weight
                 pq.push({weight, neighbor});
                 cout << "  Added node " << neighbor << " to queue with cost " << weight << endl;
             } else {
                 cout << "  Neighbor " << neighbor << " already visited, skipping" << endl;
             }
         }
-        
-        // Print current path
-        cout << "Current path: ";
-        for (int node : path) cout << node << " ";
+
+        // // Show path progress
+        // cout << "Current path: ";
+        // for (int x : path) cout << x << " ";
         cout << endl;
     }
 
-    cout << "\n=== Search Finished ===" << endl;
-    cout << "Final path: ";
-    for (int node : path) cout << node << " ";
-    cout << endl;
+    // cout << "\n=== Search Finished ===" << endl;
+    // cout << "Final path: ";
+    // for (int x : path) cout << x << " ";
+    // cout << endl;
 
-    // Return the path found from source to target
     return path;
 }
 
 int main() {
-    int n = 14; // Number of nodes in the graph
-    // Define the graph edges: {source, destination, weight}
+    int n = 14;
     vector<vector<int>> edgeList = {
         {0, 1, 3}, {0, 2, 6}, {0, 3, 5},
         {1, 4, 9}, {1, 5, 8}, {2, 6, 12},
@@ -126,22 +88,18 @@ int main() {
         {9, 13, 2}
     };
 
-    int source = 0; // Starting node
-    int target = 9; // Target node to reach
+    int source = 0;
+    int target = 9;
 
     cout << "=== Best First Search Example ===" << endl;
     cout << "Graph has " << n << " nodes" << endl;
-    cout << "Finding path from node " << source << " to node " << target << endl << endl;
 
-    // Call Best First Search to find the path
     vector<int> path = bestFirstSearch(edgeList, source, target, n);
 
-    // Print the path from source to target
-    cout << "\n=== Result ===" << endl;
-    cout << "Path from node " << source << " to node " << target << ": ";
-    for (int i = 0; i < path.size(); i++) {
-        cout << path[i] << " ";
-    }
+    // cout << "\n=== Result ===" << endl;
+    // cout << "Path from " << source << " to " << target << ": ";
+    for (int node : path) cout << node << " ";
     cout << endl;
+
     return 0;
 }
