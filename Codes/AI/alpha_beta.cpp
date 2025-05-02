@@ -1,6 +1,4 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include<bits/stdc++.h>
 using namespace std;
 
 // Alpha-Beta Pruning implementation
@@ -10,9 +8,9 @@ int alphaBeta(int depth, int nodeIndex, bool isMax,
     // Base case: reached a leaf node
     if (depth == height)
         return leaves[nodeIndex];
-
-    if (isMax)
+    if (isMax==true)
     {
+
         int best = -1000;
         // Left child
         int val = alphaBeta(depth + 1, nodeIndex * 2, false, leaves, height, alpha, beta);
@@ -20,6 +18,7 @@ int alphaBeta(int depth, int nodeIndex, bool isMax,
         alpha = max(alpha, best);
         if (beta <= alpha)
             return best; // Prune
+
         // Right child
         val = alphaBeta(depth + 1, nodeIndex * 2 + 1, false, leaves, height, alpha, beta);
         best = max(best, val);
@@ -34,7 +33,8 @@ int alphaBeta(int depth, int nodeIndex, bool isMax,
         best = min(best, val);
         beta = min(beta, best);
         if (beta <= alpha)
-            return best; // Prune
+            return best; // Prune 
+
         // Right child
         val = alphaBeta(depth + 1, nodeIndex * 2 + 1, true, leaves, height, alpha, beta);
         best = min(best, val);
