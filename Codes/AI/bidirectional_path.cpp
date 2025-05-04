@@ -13,7 +13,7 @@ vector<int> reconstructPath(unordered_map<int, int>& parentStart, unordered_map<
 pair<bool, vector<int>> bidirectionalSearch(int start, int target, vector<vector<int>> &graph)
 {
     unordered_set<int> visitedStart, visitedTarget;
-    queue<int> queueStart, queueTarget;
+    queue<int> queueStart, queueTarget; 
     unordered_map<int, int> parentStart, parentTarget;
 
     queueStart.push(start);
