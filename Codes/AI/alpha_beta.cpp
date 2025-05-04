@@ -16,6 +16,8 @@ int alphaBeta(int depth, int nodeIndex, bool isMax,
         int val = alphaBeta(depth + 1, nodeIndex * 2, false, leaves, height, alpha, beta);
         best = max(best, val);
         alpha = max(alpha, best);
+
+
         if (beta <= alpha)
             return best; // Prune
 
@@ -32,6 +34,8 @@ int alphaBeta(int depth, int nodeIndex, bool isMax,
         int val = alphaBeta(depth + 1, nodeIndex * 2, true, leaves, height, alpha, beta);
         best = min(best, val);
         beta = min(beta, best);
+
+
         if (beta <= alpha)
             return best; // Prune 
 
@@ -47,16 +51,18 @@ int main()
 {
     int height;
     cout << "Enter height of the game tree (e.g., 3): ";
-    cin >> height;
+    // cin >> height;
+    height = 2;
 
     int leafCount = 1 << height; // 2^height
-    vector<int> leaves(leafCount);
+    // vector<int> leaves(leafCount);
+    vector<int> leaves = {3, 5, 2, 9};
 
-    cout << "Enter " << leafCount << " leaf node values:\n";
-    for (int i = 0; i < leafCount; ++i)
-    {
-        cin >> leaves[i];
-    }
+    // cout << "Enter " << leafCount << " leaf node values:\n";
+    // for (int i = 0; i < leafCount; ++i)
+    // {
+    //     cin >> leaves[i];
+    // }
 
     int alpha = -1000, beta = 1000;
     int optimalValue = alphaBeta(0, 0, true, leaves, height, alpha, beta);
