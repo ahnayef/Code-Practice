@@ -58,9 +58,9 @@ vector<int> bestFirstSearch(vector<vector<int>> edges, int src, int target, int 
             if (!visited[neighbor]) {
                 visited[neighbor] = true;
                 pq.push({weight, neighbor});
-                cout << "  Added node " << neighbor << " to queue with cost " << weight << endl;
+                // cout << "  Added node " << neighbor << " to queue with cost " << weight << endl;
             } else {
-                cout << "  Neighbor " << neighbor << " already visited, skipping" << endl;
+                // cout << "  Neighbor " << neighbor << " already visited, skipping" << endl;
             }
         }
 
@@ -91,8 +91,8 @@ int main() {
     int source = 0;
     int target = 9;
 
-    cout << "=== Best First Search Example ===" << endl;
-    cout << "Graph has " << n << " nodes" << endl;
+    // cout << "=== Best First Search Example ===" << endl;
+    // cout << "Graph has " << n << " nodes" << endl;
 
     vector<int> path = bestFirstSearch(edgeList, source, target, n);
 
