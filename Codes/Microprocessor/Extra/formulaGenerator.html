@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formula Generator</title>
+    <style>
+        body {
+            background: #f4f6fb;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: #fff;
+            margin-top: 60px;
+            padding: 32px 28px 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 6px 32px rgba(60, 72, 88, 0.15);
+            max-width: 480px;
+            width: 100%;
+        }
+        h1 {
+            color: #2d3a4b;
+            font-size: 2rem;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        label {
+            font-weight: 500;
+            color: #3a4a5d;
+            margin-bottom: 8px;
+            display: block;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1.5px solid #c3cfe2;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 18px;
+            outline: none;
+            transition: border 0.2s;
+        }
+        input[type="number"]:focus {
+            border-color: #4f8cff;
+        }
+        .formula-box {
+            background: #f0f4fa;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            font-family: 'Consolas', 'Menlo', monospace;
+            font-size: 1.05rem;
+            color: #2d3a4b;
+            word-break: break-all;
+            min-height: 32px;
+        }
+        .copy-btn {
+            background: #4f8cff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 8px 18px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.18s;
+        }
+        .copy-btn:active {
+            background: #3466c2;
+        }
+        .copied-msg {
+            color: #2e7d32;
+            font-size: 0.98rem;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Formula Generator</h1>
+        <label for="x">Enter a number:</label>
+        <input type="number" id="x" placeholder="e.g. 5" min="1">
+        <div id="output">
+            <div class="formula-box" id="formula"></div>
+            <button class="copy-btn" id="copy" style="display:none;">Copy Formula</button>
+            <span class="copied-msg" id="copied" style="display:none;">Copied!</span>
+        </div>
+    </div>
+    <script>
+        const xInput = document.getElementById('x');
+        const formulaDiv = document.getElementById('formula');
+        const copyBtn = document.getElementById('copy');
+        const copiedMsg = document.getElementById('copied');
+
+        function generateFormula(x) {
+            return `(E${x} * 90)+ (F${x} * 500)+ (G${x} * 0.20)+ (H${x} * 0.20)+ (I${x} * 0.20)+ (J${x} * 0.80)+ (K${x} * 0.80)+ (L${x} * 0.80)+ (M${x} * 0.80)+ (N${x} * 1.75)+ (O${x} * 1.75)+ (P${x} * 1.75)+ (Q${x} * 3)+ (R${x} * 5)+ (S${x} * 10)+ (T${x} * 20)+ (U${x} * 70)+ (V${x} * 120)+ (W${x} * 110)`;
+        }
+
+        function updateFormula() {
+            const x = xInput.value;
+            copiedMsg.style.display = 'none';
+            if (x) {
+                const formula = generateFormula(x);
+                formulaDiv.textContent = formula;
+                copyBtn.style.display = 'inline-block';
+            } else {
+                formulaDiv.textContent = '';
+                copyBtn.style.display = 'none';
+            }
+        }
+
+        xInput.addEventListener('input', updateFormula);
+
+        copyBtn.addEventListener('click', function () {
+            const formula = formulaDiv.textContent;
+            if (formula) {
+                navigator.clipboard.writeText(formula).then(() => {
+                    copiedMsg.style.display = 'inline';
+                    setTimeout(() => copiedMsg.style.display = 'none', 1200);
+                });
+            }
+        });
+
+        updateFormula();
+    </script>
+</body>
+
+</html>
+
+
+<!-- `(E${x} * 90)+ (F${x} * 500)+ (G${x} * 0.20)+ (H${x} * 0.20)+ (I${x} * 0.20)+ (J${x} * 0.80)+ (K${x} * 0.80)+ (L${x} *
+0.80)+ (M${x} * 0.80)+ (N${x} * 1.75)+ (O${x} * 1.75)+ (P${x} * 1.75)+ (Q${x} * 3)+ (R${x} * 5)+ (S${x} * 10)+ (T${x} *
+20)+ (U${x} * 70)+ (V${x} * 120)+ (W${x} * 110)` -->
