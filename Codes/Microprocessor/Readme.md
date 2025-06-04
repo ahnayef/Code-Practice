@@ -105,5 +105,5 @@ This repository contains all the lab exercises, code samples, circuit diagrams, 
 - [emu8086](https://github.com/ahnayef/Code-Practice/blob/main/Codes/Microprocessor/Assets/emu8086.zip)
 - [Arduino Reference](https://www.arduino.cc/reference/en/)
 - [8086 Assembly Language Programming](https://www.tutorialspoint.com/microprocessor/microprocessor_8086_instruction_sets.htm)
-- [Course Online Materials](https://www.youtube.com/watch?v=ulclNTYsoGQ)
+- [Course Online Materials](Codes/Microprocessor/Classes)
 
