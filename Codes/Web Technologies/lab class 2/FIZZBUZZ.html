@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+</head>
+
+<body>
+
+     <script>
+          let start = parseInt(prompt("Enter starting number"))
+          let end = parseInt(prompt("Enter ending number"))
+
+          if (isNaN(start) || isNaN(end) || start < 1 || end > 100 || start >= end) {
+               alert("Invalid input");
+               location.reload();
+          }
+
+          for (let i = start; i <= end; i++) {
+               if (i % 3 === 0 && i % 5 === 0) {
+                    console.log(`${i} FIZZBUZZ`);
+               } else if (i % 3 === 0) {
+                    console.log(`${i} FIZZ`);
+               } else if (i % 5 === 0) {
+                    console.log(`${i} BUZZ`);
+               }
+          }
+     </script>
+
+</body>
+
+</html>

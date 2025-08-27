@@ -1,0 +1,687 @@
+﻿[
+    {
+        "cid": "CSE-06131111",
+        "cidAlt": "CSE 06131111",
+        "name": "Discrete Mathematics",
+        "credit": "3",
+        "semester": "1",
+        "cgpa":"3.25"
+    },
+    {
+        "cid": "CSE-06131113",
+        "cidAlt": "CSE 06131113",
+        "name": "Structured Programming Language",
+        "credit": "3",
+        "semester": "1",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06131114",
+        "cidAlt": "CSE 06131114",
+        "name": "Structured Programming Language Lab",
+        "credit": "1.5",
+        "semester": "1",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06131115",
+        "cidAlt": "CSE 06131115",
+        "name": "Basic Electrical Engineering",
+        "credit": "3",
+        "semester": "1",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06131116",
+        "cidAlt": "CSE 06131116",
+        "name": "Basic Electrical Engineering Lab",
+        "credit": "1.5",
+        "semester": "1",
+        "cgpa":"4"
+    },
+    {
+        "cid": "MAT-05411101",
+        "cidAlt": "MAT 05411101",
+        "name": "Calculus",
+        "credit": "3",
+        "semester": "1",
+        "cgpa":"3.25"
+    },
+    {
+        "cid": "SSW-03141101",
+        "cidAlt": "SSW 03141101",
+        "name": "History of the Emergence of Bangladesh",
+        "credit": "3",
+        "semester": "1",
+        "cgpa":"3.25"
+    },
+    {
+        "cid": "CSE-06131211",
+        "cidAlt": "CSE 06131211",
+        "name": "Data Structures and Algorithms",
+        "credit": "3",
+        "semester": "2",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06131212",
+        "cidAlt": "CSE 06131212",
+        "name": "Data Structures and Algorithms Lab",
+        "credit": "1.5",
+        "semester": "2",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06131213",
+        "cidAlt": "CSE 06131213",
+        "name": "Electronic Devices and Circuits",
+        "credit": "3",
+        "semester": "2",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06131214",
+        "cidAlt": "CSE 06131214",
+        "name": "Electronic Devices and Circuits Lab",
+        "credit": "1.5",
+        "semester": "2",
+        "cgpa":"4"
+    },
+    {
+        "cid": "MAT-05411203",
+        "cidAlt": "MAT 05411203",
+        "name": "Linear Algebra ",
+        "credit": "3",
+        "semester": "2",
+        "cgpa":"4"
+    },
+    {
+        "cid": "PHY-05331201",
+        "cidAlt": "PHY 05331201",
+        "name": "Fundamentals of Physics",
+        "credit": "3",
+        "semester": "2",
+        "cgpa":"4"
+    },
+    {
+        "cid": "ENG-02321201",
+        "cidAlt": "ENG 02321201",
+        "name": "Advanced Functional English",
+        "credit": "3",
+        "semester": "2",
+        "cgpa":"4"
+    },
+    {
+        "cid": "SSW-03141202",
+        "cidAlt": "SSW 03141202",
+        "name": "Bangladesh Studies",
+        "credit": "3",
+        "semester": "2",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132111",
+        "cidAlt": "CSE 06132111",
+        "name": "Object Oriented Programming Language",
+        "credit": "3",
+        "semester": "3",
+        "cgpa":"3.50"
+    },
+    {
+        "cid": "CSE-06132112",
+        "cidAlt": "CSE 06132112",
+        "name": "Object Oriented Programming Language Lab",
+        "credit": "1.5",
+        "semester": "3",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132113",
+        "cidAlt": "CSE 06132113",
+        "name": "Algorithm Design and Analysis",
+        "credit": "3",
+        "semester": "3",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132114",
+        "cidAlt": "CSE 06132114",
+        "name": "Algorithm Design and Analysis Lab",
+        "credit": "1.5",
+        "semester": "3",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132115",
+        "cidAlt": "CSE 06132115",
+        "name": "Digital Logic Design",
+        "credit": "3",
+        "semester": "3",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132116",
+        "cidAlt": "CSE 06132116",
+        "name": "Digital Logic Design Lab",
+        "credit": "1.5",
+        "semester": "3",
+        "cgpa":"4"
+    },
+    {
+        "cid": "STA-05422101",
+        "cidAlt": "STA 05422101",
+        "name": "Basic Statistics and Probability",
+        "credit": "3",
+        "semester": "3",
+        "cgpa":"4"
+    },
+    {
+        "cid": "BUS-04112101",
+        "cidAlt": "BUS 04112101",
+        "name": "Principles of Accounting",
+        "credit": "3",
+        "semester": "3",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132211",
+        "cidAlt": "CSE 06132211",
+        "name": "Introduction to Database Systems",
+        "credit": "3",
+        "semester": "4",
+        "cgpa":"3.75"
+    },
+    {
+        "cid": "CSE-06132212",
+        "cidAlt": "CSE 06132212",
+        "name": "Introduction to Database Systems Lab",
+        "credit": "1.5",
+        "semester": "4",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132213",
+        "cidAlt": "CSE 06132213",
+        "name": "Operating System",
+        "credit": "3",
+        "semester": "4",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132214",
+        "cidAlt": "CSE 06132214",
+        "name": "Operating System Lab",
+        "credit": "1.5",
+        "semester": "4",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132215",
+        "cidAlt": "CSE 06132215",
+        "name": "Theory of Computation",
+        "credit": "3",
+        "semester": "4",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132217",
+        "cidAlt": "CSE 06132217",
+        "name": "Numerical Analysis",
+        "credit": "3",
+        "semester": "4",
+        "cgpa":"3.75"
+    },
+    {
+        "cid": "CSE-06132218",
+        "cidAlt": "CSE 06132218",
+        "name": "Numerical Analysis Lab",
+        "credit": "1.5",
+        "semester": "4",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06132220",
+        "cidAlt": "CSE 06132220",
+        "name": "Project Work I",
+        "credit": "1.5",
+        "semester": "4",
+        "cgpa":"4"
+    },
+    {
+        "cid": "MAT-05412205",
+        "cidAlt": "MAT 05412205",
+        "name": "Complex Variables, Laplace Transform and Fourier Series",
+        "credit": "3",
+        "semester": "4",
+        "cgpa":"3.75"
+    },
+    {
+        "cid": "CSE-06133111",
+        "cidAlt": "CSE 06133111",
+        "name": "Computer Networks",
+        "credit": "3",
+        "semester": "5",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06133112",
+        "cidAlt": "CSE 06133112",
+        "name": "Computer Networks Lab",
+        "credit": "1.5",
+        "semester": "5",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06133113",
+        "cidAlt": "CSE 06133113",
+        "name": "Software Engineering and Design Patterns",
+        "credit": "3",
+        "semester": "5",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06133114",
+        "cidAlt": "CSE 06133114",
+        "name": "Software Engineering and Design Patterns Lab",
+        "credit": "1.5",
+        "semester": "5",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06133115",
+        "cidAlt": "CSE 06133115",
+        "name": "Artificial Intelligence",
+        "credit": "3",
+        "semester": "5",
+        "cgpa":"2.50"
+    },
+    {
+        "cid": "CSE-06133116",
+        "cidAlt": "CSE 06133116",
+        "name": "Artificial Intelligence Lab",
+        "credit": "1.5",
+        "semester": "5",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06133117",
+        "cidAlt": "CSE 06133117",
+        "name": "Microprocessor and Interfacing",
+        "credit": "3",
+        "semester": "5",
+        "cgpa":"2.50"
+    },
+    {
+        "cid": "CSE-06133118",
+        "cidAlt": "CSE 06133118",
+        "name": "Microprocessor and Interfacing Lab",
+        "credit": "1.5",
+        "semester": "5",
+        "cgpa":"4"
+    },
+    {
+        "cid": "CSE-06133119",
+        "cidAlt": "CSE 06133119",
+        "name": "Data Communication",
+        "credit": "3",
+        "semester": "5",
+        "cgpa":"3.75"
+    },
+    {
+        "cid": "CSE-06133211",
+        "cidAlt": "CSE 06133211",
+        "name": "Introduction to Computer Security",
+        "credit": "3",
+        "semester": "6"
+    },
+    {
+        "cid": "CSE-06133212",
+        "cidAlt": "CSE 06133212",
+        "name": "Introduction to Computer Security Lab",
+        "credit": "1.5",
+        "semester": "6"
+    },
+    {
+        "cid": "CSE-06133213",
+        "cidAlt": "CSE 06133213",
+        "name": "Machine Learning",
+        "credit": "3",
+        "semester": "6"
+    },
+    {
+        "cid": "CSE-06133214",
+        "cidAlt": "CSE 06133214",
+        "name": "Machine Learning Lab",
+        "credit": "1.5",
+        "semester": "6"
+    },
+    {
+        "cid": "CSE-06133215",
+        "cidAlt": "CSE 06133215",
+        "name": "Computer Architecture",
+        "credit": "3",
+        "semester": "6"
+    },
+    {
+        "cid": "CSE-06133216",
+        "cidAlt": "CSE 06133216",
+        "name": "Web Technologies",
+        "credit": "1.5",
+        "semester": "6"
+    },
+    {
+        "cid": "CSE-06133218",
+        "cidAlt": "CSE 06133218",
+        "name": "Technical Writing and Research Methodology",
+        "credit": "1.5",
+        "semester": "6"
+    },
+    {
+        "cid": "CSE-06133230",
+        "cidAlt": "CSE 06133230",
+        "name": "Project Work II",
+        "credit": "1.5",
+        "semester": "6"
+    },
+    {
+        "cid": "ECO-03113203",
+        "cidAlt": "ECO 03113203",
+        "name": "Principles of Economics",
+        "credit": "3",
+        "semester": "6"
+    },
+    {
+        "cid": "CSE-06134111",
+        "cidAlt": "CSE 06134111",
+        "name": "Software Testing and Management",
+        "credit": "3",
+        "semester": "7"
+    },
+    {
+        "cid": "CSE-06134112",
+        "cidAlt": "CSE 06134112",
+        "name": "Software Testing and Management Lab",
+        "credit": "1.5",
+        "semester": "7"
+    },
+    {
+        "cid": "CSE-06134113",
+        "cidAlt": "CSE 06134113",
+        "name": "Digital Signal Processing",
+        "credit": "3",
+        "semester": "7"
+    },
+    {
+        "cid": "CSE-06134114",
+        "cidAlt": "CSE 06134114",
+        "name": "Digital Signal Processing Lab",
+        "credit": "1.5",
+        "semester": "7"
+    },
+    {
+        "cid": "GED-02234101",
+        "cidAlt": "GED 02234101",
+        "name": "Engineering Ethics and Cyber Law",
+        "credit": "3",
+        "semester": "7"
+    },
+    {
+        "cid": "CSE-06134140",
+        "cidAlt": "CSE 06134140",
+        "name": "Thesis I",
+        "credit": "2",
+        "semester": "7"
+    },
+    {
+        "cid": "CSE-06134142",
+        "cidAlt": "CSE 06134142",
+        "name": "Project I",
+        "credit": "2",
+        "semester": "7"
+    },
+    {
+        "cid": "CSE-06134211",
+        "cidAlt": "CSE 06134211",
+        "name": "Computer Graphics",
+        "credit": "3",
+        "semester": "8"
+    },
+    {
+        "cid": "CSE-06134212",
+        "cidAlt": "CSE 06134212",
+        "name": "Computer Graphics Lab",
+        "credit": "1.5",
+        "semester": "8"
+    },
+    {
+        "cid": "CSE-06134213",
+        "cidAlt": "CSE 06134213",
+        "name": "Compiler Construction",
+        "credit": "3",
+        "semester": "8"
+    },
+    {
+        "cid": "CSE-06134214",
+        "cidAlt": "CSE 06134214",
+        "name": "Compiler Construction Lab",
+        "credit": "1.5",
+        "semester": "8"
+    },
+    {
+        "cid": "CSE-06134260",
+        "cidAlt": "CSE 06134260",
+        "name": "Viva Voce",
+        "credit": "2",
+        "semester": "8"
+    },
+    {
+        "cid": "CSE-06134250",
+        "cidAlt": "CSE 06134250",
+        "name": "Thesis II",
+        "credit": "2",
+        "semester": "8"
+    },
+    {
+        "cid": "CSE-06134252",
+        "cidAlt": "CSE 06134252",
+        "name": "Project II",
+        "credit": "2",
+        "semester": "8"
+    },
+    {
+        "cid": "CSE-06134011",
+        "cidAlt": "CSE 06134011",
+        "name": "Advanced Algorithm and Data Structure",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134012",
+        "cidAlt": "CSE 06134012",
+        "name": "Advanced Algorithm and Data Structure Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134013",
+        "cidAlt": "CSE 06134013",
+        "name": "Advanced Database Systems",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134014",
+        "cidAlt": "CSE 06134014",
+        "name": "Advanced Database Systems Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134015",
+        "cidAlt": "CSE 06134015",
+        "name": "Digital Image Processing",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134016",
+        "cidAlt": "CSE 06134016",
+        "name": "Digital Image Processing Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134017",
+        "cidAlt": "CSE 06134017",
+        "name": "Computer Vision",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134018",
+        "cidAlt": "CSE 06134018",
+        "name": "Computer Vision Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134021",
+        "cidAlt": "CSE 06134021",
+        "name": "Natural Language Processing",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134022",
+        "cidAlt": "CSE 06134022",
+        "name": "Natural Language Processing Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134023",
+        "cidAlt": "CSE 06134023",
+        "name": "Deep Learning",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134024",
+        "cidAlt": "CSE 06134024",
+        "name": "Deep Learning Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134025",
+        "cidAlt": "CSE 06134025",
+        "name": "Reinforcement Learning",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134026",
+        "cidAlt": "CSE 06134026",
+        "name": "Reinforcement Learning Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134027",
+        "cidAlt": "CSE 06134027",
+        "name": "Bioinformatics ",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134028",
+        "cidAlt": "CSE 06134028",
+        "name": "Bioinformatics Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134033",
+        "cidAlt": "CSE 06134033",
+        "name": "Cloud Computing",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134034",
+        "cidAlt": "CSE 06134034",
+        "name": "Cloud Computing Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134035",
+        "cidAlt": "CSE 06134035",
+        "name": "Distributed and Parallel Computing",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134036",
+        "cidAlt": "CSE 06134036",
+        "name": "Distributed and Parallel Computing Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134037",
+        "cidAlt": "CSE 06134037",
+        "name": "Mobile and Wireless Communication",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134038",
+        "cidAlt": "CSE 06134038",
+        "name": "Mobile and Wireless Communication Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134041",
+        "cidAlt": "CSE 06134041",
+        "name": "Contemporary Course on Computer Science and Engineering – I",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134042",
+        "cidAlt": "CSE 06134042",
+        "name": "Contemporary Course on Computer Science and Engineering – I Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134043",
+        "cidAlt": "CSE 06134043",
+        "name": "Contemporary Course on Computer Science and Engineering – II",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134044",
+        "cidAlt": "CSE 06134044",
+        "name": "Contemporary Course on Computer Science and Engineering – II Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134045",
+        "cidAlt": "CSE 06134045",
+        "name": "Contemporary Course on Computer Science and Engineering – III",
+        "credit": "3",
+        "semester": "Option"
+    },
+    {
+        "cid": "CSE-06134046",
+        "cidAlt": "CSE 06134046",
+        "name": "Contemporary Course on Computer Science and Engineering – III Lab",
+        "credit": "1.5",
+        "semester": "Option"
+    }
+]

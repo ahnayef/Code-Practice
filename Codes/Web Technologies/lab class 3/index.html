@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>NEUB Spring 25 Assignment</title>
+</head>
+
+<body>
+
+     <table border="1" style="width: 100%; border-collapse: collapse;">
+          <thead>
+               <tr>
+                    <th>Course ID</th>
+                    <th>Name</th>
+                    <th>Credit</th>
+                    <th>Semester</th>
+                    <th>CGPA</th>
+               </tr>
+          </thead>
+          <tbody id="data-table">
+          </tbody>
+     </table>
+
+</body>
+
+
+<script>
+     async function fetchData() {
+          try {
+               const response = await fetch('obeCourses.json');
+               if (!response.ok) {
+                    throw new Error('Err');
+               }
+               return await response.json();
+          } catch (error) {
+               console.error(error);
+          }
+     }
+
+     async function displayData() {
+          const data = await fetchData();
+          const tableBody = document.getElementById('data-table');
+          const semesterGroups = {};
+
+          data.forEach(course => {
+               if (course.semester && course.cid && course.name && course.credit && course.cgpa) {
+                    if (!semesterGroups[course.semester]) {
+                         semesterGroups[course.semester] = [];
+                    }
+                    semesterGroups[course.semester].push(course);
+               }
+          });
+
+          const sortedSemesters = Object.keys(semesterGroups).sort((a, b) => {
+               if (a === "Option") return 1;
+               if (b === "Option") return -1;
+               return parseInt(a) - parseInt(b);
+          });
+
+          sortedSemesters.forEach(semester => {
+               let totalCGPA = 0;
+               let totalCredits = 0;
+
+               semesterGroups[semester].forEach(course => {
+                    if (course.cgpa && course.credit) {
+                         const cgpaValue = parseFloat(course.cgpa);
+                         const creditValue = parseFloat(course.credit);
+                         if (!isNaN(cgpaValue) && !isNaN(creditValue)) {
+                              totalCGPA += cgpaValue * creditValue;
+                              totalCredits += creditValue;
+                         }
+                    }
+               });
+
+               const semCG = (totalCGPA / totalCredits).toFixed(2);
+
+               const semesterRow = document.createElement('tr');
+               const semesterCell = document.createElement('td');
+               semesterCell.colSpan = 5;
+               semesterCell.style.backgroundColor = '#f2f2f2';
+               semesterCell.style.fontWeight = 'bold';
+               semesterCell.style.textAlign = 'center';
+               semesterCell.textContent = `Semester ${semester} - CG: ${semCG}`;
+               semesterRow.appendChild(semesterCell);
+               tableBody.appendChild(semesterRow);
+
+               semesterGroups[semester].forEach(course => {
+                    const row = document.createElement('tr');
+
+                    ['cidAlt', 'name', 'credit', 'semester', 'cgpa'].forEach(prop => {
+                         const cell = document.createElement('td');
+                         cell.textContent = prop === 'cidAlt' ? (course[prop] || course.cid) : course[prop];
+                         row.appendChild(cell);
+                    });
+                    tableBody.appendChild(row);
+               });
+          });
+     }
+
+     displayData();
+</script>
+
+</html>
