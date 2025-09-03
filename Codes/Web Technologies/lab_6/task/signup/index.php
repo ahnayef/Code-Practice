@@ -6,10 +6,24 @@
      <title>Sign Up</title>
 </head>
 <body>
-
-<form action="signup.php" method="POST">
-     <label for="name">Name:</label>
-</form>
-     
+     <h2>Sign Up</h2>
+     <form action="signup.php" method="POST">
+          <div>
+               <label for="username">Username:</label>
+               <input type="text" id="username" name="username" required>
+          </div>
+          <div>
+               <label for="password">Password:</label>
+               <input type="password" id="password" name="password" required>
+          </div>
+          <div>
+               <label for="confirm_password">Confirm Password:</label>
+               <input type="password" id="confirm_password" name="confirm_password" required>
+          </div>
+          <div>
+               <input type="submit" value="Sign Up">
+          </div>
+     </form>
+     <p>Already have an account? <a href="../login/index.php">Login here</a></p>
 </body>
 </html>
