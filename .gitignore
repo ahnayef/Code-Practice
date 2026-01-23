@@ -11,3 +11,5 @@
 !/SECURITY.md
 !/readme.md
 
+# Ignore all node_modules everywhere
+**/node_modules/

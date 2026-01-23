@@ -1,0 +1,15 @@
+{
+  "name": "ict-fest-qr-code-generator",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "qr.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4"
+  }
+}
