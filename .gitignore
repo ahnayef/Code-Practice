@@ -13,3 +13,12 @@
 
 # Ignore all node_modules everywhere
 **/node_modules/
+
+# Ignore all png,jpg, jpeg, gif, svg, pdf files Codes/Scripts
+**/*.png
+**/*.jpg
+**/*.jpeg
+**/*.gif
+**/*.svg
+**/*.pdf 
+

@@ -4,14 +4,15 @@ const fs = require("fs");
 const path = require("path");
 
 const BASE_URL = "https://fest.neubcse.org/volunteers/";
-const OUTPUT_DIR = "./qrcodes";
+const OUTPUT_DIR = path.join(__dirname, "qrcodes_5ht_phase");
+
 
 // Ensure output directory exists
 if (!fs.existsSync(OUTPUT_DIR)) {
      fs.mkdirSync(OUTPUT_DIR);
 }
 
-const entries = [
+const old_entries = [
      { name: "Md Ali Ahmed Farhan", id: "05625205101012" },
      { name: "Rysa Hoque Chowdhury", id: "01624205101018" },
      { name: "Md Ajharul Islam", id: "05624205101055" },
@@ -65,15 +66,23 @@ const entries = [
      { name: "Ahsan Habib Nayef", id: "0562310005101027" },
 ];
 
+const new_entries = [
+     { name: "Oli Ahmed", id: "0562310005101019" },
+     { name: "Majharul Islam Munna", id: "5625105101007" },
+     { name: "Md Masum Prodhania", id: "0562310005101003" },
+     { name: "Lubna Yesmin", id: "0562220005101006" },
+     { name: "Fahima Haque Talukder Jely", id: "0562310005101043" },
+     { name: "Noyon Das Joy", id: "0562220005101032" },
+]
+
 function safeSlug(value) {
      return value
-          .toLowerCase()
-          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/[^a-zA-Z0-9]+/g, " ")
           .replace(/^-+|-+$/g, "");
 }
 
 async function generateQRCodes() {
-     for (const { name, id } of entries) {
+     for (const { name, id } of new_entries) {
           const url = `${BASE_URL}${id}`;
           const suffix = name ? `${safeSlug(name)}-` : "";
           const fileName = `${suffix}${id}.png`;
