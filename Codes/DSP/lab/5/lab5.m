@@ -35,6 +35,9 @@
 % x = max(0, n);
 % stem(n, x, "filled");
 
-
+% Unit Ramp
+y = -5:5;
+x = y;
+stem(y, x, "filled");
 
 pause

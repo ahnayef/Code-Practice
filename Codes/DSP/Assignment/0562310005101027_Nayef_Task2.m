@@ -1,12 +1,15 @@
-% Unit impulse signal
+n = -5:5;
+x = zeros(1, length(n));
 
-% n = -5:5;
-% x = zeros(1, length(n));
+
+
+% 1st
+
 % x=(n == 0);
 % stem(n, x, "filled");
 
-n = -5:5;
-x = zeros(1, length(n));
+
+% 2nd
 
 for i = 1:length(n)
     if n(i) == 0
