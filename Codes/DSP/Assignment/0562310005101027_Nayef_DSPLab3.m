@@ -1,9 +1,11 @@
+t = -10:10;
+
+
 % Part A
 
 % Generate a Unit Impulse Signal delta[n].
 % Use the cumulative summation function (cumsum) on your impulse signal array to obtain the corresponding Unit Step Signal u[n].
 
-t = -10:10;
 imp = (t==0);
 unit = cumsum(imp)
 stem(t,unit);
@@ -15,7 +17,7 @@ stem(t,unit);
 % Generate a Unit Step Signal u[n].
 % Use the cumulative summation function on your step signal to obtain the Ramp Signal r[n].
 
-t = -10:10;
+
 unit = (t>=0);
 ramp = (cumsum(unit)-unit);
 stem(t,ramp);
@@ -25,7 +27,7 @@ stem(t,ramp);
 % Use the first difference operation on your ramp signal to recover the Unit Step Signal u[n].
 % Verify the mathematical relationship: u[n] = r[n] - r[n-1]
 
-t = -5:5;
+
 unit = (t >= 0);
 ramp = cumsum(unit)-unit;
 unit = zeros(size(ramp));
