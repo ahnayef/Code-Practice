@@ -2,32 +2,25 @@ t = -10:10;
 
 
 % Part A
-
 % Generate a Unit Impulse Signal delta[n].
 % Use the cumulative summation function (cumsum) on your impulse signal array to obtain the corresponding Unit Step Signal u[n].
-
 imp = (t==0);
 unit = cumsum(imp)
 stem(t,unit);
 
 
-
-
 % Part B
 % Generate a Unit Step Signal u[n].
 % Use the cumulative summation function on your step signal to obtain the Ramp Signal r[n].
-
-
 unit = (t>=0);
 ramp = (cumsum(unit)-unit);
 stem(t,ramp);
+
 
 % Part C
 % Generate a Ramp Signal r[n].
 % Use the first difference operation on your ramp signal to recover the Unit Step Signal u[n].
 % Verify the mathematical relationship: u[n] = r[n] - r[n-1]
-
-
 unit = (t >= 0);
 ramp = cumsum(unit)-unit;
 unit = zeros(size(ramp));
@@ -36,10 +29,9 @@ stem(t-1, unit);
 
 
 
+% Brief text discussion verifying that my programmed outputs match the theoretical mathematical definitions.
 
-% Q: Brief text discussion verifying that my programmed outputs match the theoretical mathematical definitions.
-
-% Ans: The programmed outputs for the Unit Impulse, Unit Step, and Ramp signals match the theoretical mathematical definitions. The Unit Impulse signal is generated as a single non-zero value at n=0, which is consistent with the definition of an impulse. The Unit Step signal is obtained by taking the cumulative sum of the impulse signal, resulting in a step function that transitions from 0 to 1 at n=0. The Ramp signal is derived from the cumulative sum of the Unit Step signal, producing a linear increase starting from n=0. Additionally, applying the first difference operation to the Ramp signal successfully recovers the Unit Step signal, confirming the mathematical relationship u[n] = r[n] - r[n-1].
+% The programmed outputs for the Unit Impulse, Unit Step, and Ramp signals match the theoretical mathematical definitions. The Unit Impulse signal is generated as a single non-zero value at n=0, which is consistent with the definition of an impulse. The Unit Step signal is obtained by taking the cumulative sum of the impulse signal, resulting in a step function that transitions from 0 to 1 at n=0. The Ramp signal is derived from the cumulative sum of the Unit Step signal, producing a linear increase starting from n=0. Additionally, applying the first difference operation to the Ramp signal successfully recovers the Unit Step signal, confirming the mathematical relationship u[n] = r[n] - r[n-1].
 
 
 
