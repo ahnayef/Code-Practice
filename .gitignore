@@ -22,3 +22,5 @@
 **/*.svg
 **/*.pdf 
 
+# any tempCodeRunnerFile.c files in any subdirectory
+**/tempCodeRunnerFile.c
