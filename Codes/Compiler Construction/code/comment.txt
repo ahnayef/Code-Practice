@@ -1,0 +1,14 @@
+%%
+stop        {return 0;}
+\".*\" {printf("String");}
+.*          {printf("Invalid");}
+%%
+
+But the problem is that it is also accepting escape sequence like \1 \(anything), but it should only accept escape sequences that are valid, like: \n \t etc. 
+Example:
+"This is a string" - Valid
+"This is some numbers 12345" - Valid
+"This is some spachial charecters -+*()&" - Valid
+"Test \1" - Invalid
+"This is a \n new line" - Valid
+"Hello \y World" - Invalid
