@@ -1,8 +1,6 @@
 %{
-    Library 
-%}
 
-/*options noyywrap*/
+%}
 
 
 %%

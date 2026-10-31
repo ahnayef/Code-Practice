@@ -7,7 +7,9 @@
 %%
 [0-9]+    { printf("Integer"); }
 [a-zA-Z]+   { printf("Word"); }
+[+\-*/=<>!&]|"=="|"!="|"<="|">="|"&&"|"||"|"++"|"--" {printf("Operator");}
 .*           {printf("Invalid");}
+
 %%
 
 int yywrap(){
@@ -17,11 +19,7 @@ int yywrap(){
 
 int main(){
 
-     yyin = fopen("input.txt", "r");
-     if(yyin == NULL){
-          printf("File Not found");
-          return 0;
-     }
+
      yylex();
      return 0;
 }

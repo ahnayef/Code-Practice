@@ -30,13 +30,25 @@ int main()
     }
 
     yylex();
-     printf("Lines: %d\n", lines);
-     printf("Keywords: %d\n", keywords);
-     printf("Identifiers: %d\n", identifier);
-     printf("Integers: %d\n", integer);
-     printf("Floating point numbers: %d\n", floating);
-     printf("Operators: %d\n", operator);
-     printf("Others: %d\n", other);
+    /* 
+    //  printf("Lines: %d\n", lines);
+    //  printf("Keywords: %d\n", keywords);
+    //  printf("Identifiers: %d\n", identifier);
+    //  printf("Integers: %d\n", integer);
+    //  printf("Floating point numbers: %d\n", floating);
+    //  printf("Operators: %d\n", operator);
+    //  printf("Others: %d\n", other);
+    */
+
+    /* Keep output into output.txt*/
+    freopen("output.txt", "w", stdout);
+    printf("Lines: %d\n", lines);
+    printf("Keywords: %d\n", keywords);
+    printf("Identifiers: %d\n", identifier);
+    printf("Integers: %d\n", integer);
+    printf("Floating point numbers: %d\n", floating);
+    printf("Operators: %d\n", operator);
+    printf("Others: %d\n", other);
 
     return 0;
 }

@@ -1,0 +1,7 @@
+Lines: 2
+Keywords: 0
+Identifiers: 0
+Integers: 0
+Floating point numbers: 0
+Operators: 0
+Others: 3
