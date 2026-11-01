@@ -438,10 +438,12 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "a1.l"
-#line 2 "a1.l"
-#line 443 "lex.yy.c"
-#line 444 "lex.yy.c"
+#line 1 "a2.l"
+#line 2 "a2.l"
+
+
+#line 445 "lex.yy.c"
+#line 446 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -658,9 +660,9 @@ YY_DECL
 		}
 
 	{
-#line 6 "a1.l"
+#line 7 "a2.l"
 
-#line 663 "lex.yy.c"
+#line 665 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -719,20 +721,20 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "a1.l"
+#line 8 "a2.l"
 {printf("%s: Word\n", yytext);}
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 8 "a1.l"
+#line 9 "a2.l"
 {printf("%s: Int\n", yytext);}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 10 "a1.l"
+#line 10 "a2.l"
 ECHO;
 	YY_BREAK
-#line 735 "lex.yy.c"
+#line 737 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1737,13 +1739,26 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 10 "a1.l"
+#line 10 "a2.l"
 
 
-int yywrap() {return 1;}
 
-int main()
-{
+int yywrap(){return 1;}
+
+
+int main(){
+     yyin = fopen("input.txt", "r");
+
+     if (yyin == NULL)
+    {
+        printf("File not found!\n");
+        return 0;
+    }
+
     yylex();
-    return 0;
+
+     return 0;
 }
+
+
+
