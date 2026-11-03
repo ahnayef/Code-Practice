@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lab Questions</title>
+<style>pre { line-height: 125%; }
+td.linenos .normal { color: #666666; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+span.linenos { color: #666666; background-color: transparent; padding-left: 5px; padding-right: 5px; }
+td.linenos .special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 5px; padding-right: 5px; }
+.codehilite .hll { background-color: #ffffcc }
+.codehilite { background: #f0f0f0; }
+.codehilite .c { color: #60A0B0; font-style: italic } /* Comment */
+.codehilite .err { border: 1px solid #F00 } /* Error */
+.codehilite .k { color: #007020; font-weight: bold } /* Keyword */
+.codehilite .o { color: #666 } /* Operator */
+.codehilite .ch { color: #60A0B0; font-style: italic } /* Comment.Hashbang */
+.codehilite .cm { color: #60A0B0; font-style: italic } /* Comment.Multiline */
+.codehilite .cp { color: #007020 } /* Comment.Preproc */
+.codehilite .cpf { color: #60A0B0; font-style: italic } /* Comment.PreprocFile */
+.codehilite .c1 { color: #60A0B0; font-style: italic } /* Comment.Single */
+.codehilite .cs { color: #60A0B0; background-color: #FFF0F0 } /* Comment.Special */
+.codehilite .gd { color: #A00000 } /* Generic.Deleted */
+.codehilite .ge { font-style: italic } /* Generic.Emph */
+.codehilite .ges { font-weight: bold; font-style: italic } /* Generic.EmphStrong */
+.codehilite .gr { color: #F00 } /* Generic.Error */
+.codehilite .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.codehilite .gi { color: #00A000 } /* Generic.Inserted */
+.codehilite .go { color: #888 } /* Generic.Output */
+.codehilite .gp { color: #C65D09; font-weight: bold } /* Generic.Prompt */
+.codehilite .gs { font-weight: bold } /* Generic.Strong */
+.codehilite .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.codehilite .gt { color: #04D } /* Generic.Traceback */
+.codehilite .kc { color: #007020; font-weight: bold } /* Keyword.Constant */
+.codehilite .kd { color: #007020; font-weight: bold } /* Keyword.Declaration */
+.codehilite .kn { color: #007020; font-weight: bold } /* Keyword.Namespace */
+.codehilite .kp { color: #007020 } /* Keyword.Pseudo */
+.codehilite .kr { color: #007020; font-weight: bold } /* Keyword.Reserved */
+.codehilite .kt { color: #902000 } /* Keyword.Type */
+.codehilite .m { color: #40A070 } /* Literal.Number */
+.codehilite .s { color: #4070A0 } /* Literal.String */
+.codehilite .na { color: #4070A0 } /* Name.Attribute */
+.codehilite .nb { color: #007020 } /* Name.Builtin */
+.codehilite .nc { color: #0E84B5; font-weight: bold } /* Name.Class */
+.codehilite .no { color: #60ADD5 } /* Name.Constant */
+.codehilite .nd { color: #555; font-weight: bold } /* Name.Decorator */
+.codehilite .ni { color: #D55537; font-weight: bold } /* Name.Entity */
+.codehilite .ne { color: #007020 } /* Name.Exception */
+.codehilite .nf { color: #06287E } /* Name.Function */
+.codehilite .nl { color: #002070; font-weight: bold } /* Name.Label */
+.codehilite .nn { color: #0E84B5; font-weight: bold } /* Name.Namespace */
+.codehilite .nt { color: #062873; font-weight: bold } /* Name.Tag */
+.codehilite .nv { color: #BB60D5 } /* Name.Variable */
+.codehilite .ow { color: #007020; font-weight: bold } /* Operator.Word */
+.codehilite .w { color: #BBB } /* Text.Whitespace */
+.codehilite .mb { color: #40A070 } /* Literal.Number.Bin */
+.codehilite .mf { color: #40A070 } /* Literal.Number.Float */
+.codehilite .mh { color: #40A070 } /* Literal.Number.Hex */
+.codehilite .mi { color: #40A070 } /* Literal.Number.Integer */
+.codehilite .mo { color: #40A070 } /* Literal.Number.Oct */
+.codehilite .sa { color: #4070A0 } /* Literal.String.Affix */
+.codehilite .sb { color: #4070A0 } /* Literal.String.Backtick */
+.codehilite .sc { color: #4070A0 } /* Literal.String.Char */
+.codehilite .dl { color: #4070A0 } /* Literal.String.Delimiter */
+.codehilite .sd { color: #4070A0; font-style: italic } /* Literal.String.Doc */
+.codehilite .s2 { color: #4070A0 } /* Literal.String.Double */
+.codehilite .se { color: #4070A0; font-weight: bold } /* Literal.String.Escape */
+.codehilite .sh { color: #4070A0 } /* Literal.String.Heredoc */
+.codehilite .si { color: #70A0D0; font-style: italic } /* Literal.String.Interpol */
+.codehilite .sx { color: #C65D09 } /* Literal.String.Other */
+.codehilite .sr { color: #235388 } /* Literal.String.Regex */
+.codehilite .s1 { color: #4070A0 } /* Literal.String.Single */
+.codehilite .ss { color: #517918 } /* Literal.String.Symbol */
+.codehilite .bp { color: #007020 } /* Name.Builtin.Pseudo */
+.codehilite .fm { color: #06287E } /* Name.Function.Magic */
+.codehilite .vc { color: #BB60D5 } /* Name.Variable.Class */
+.codehilite .vg { color: #BB60D5 } /* Name.Variable.Global */
+.codehilite .vi { color: #BB60D5 } /* Name.Variable.Instance */
+.codehilite .vm { color: #BB60D5 } /* Name.Variable.Magic */
+.codehilite .il { color: #40A070 } /* Literal.Number.Integer.Long */</style>
+<style>
+:root{
+  --ink:#16202b; --muted:#5a6b7b; --line:#dfe6ee; --bg:#ffffff;
+  --accent:#0b62d0; --accent-soft:#eaf2fd; --warn:#b3261e; --warn-soft:#fdecea;
+  --ok:#0a7d4f; --ok-soft:#e7f6ee; --code-bg:#f7f9fc;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{display:flex; gap:38px; max-width:1500px; margin:0 auto; padding:0 26px}
+/* ---------- sidebar ---------- */
+aside{
+  width:290px; flex:0 0 290px; position:sticky; top:0; align-self:flex-start;
+  max-height:100vh; overflow-y:auto; padding:26px 14px 40px 0;
+  border-right:1px solid var(--line); font-size:13.5px; background:var(--bg);
+}
+aside .brand{font-weight:800; font-size:14px; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); margin:0 0 4px}
+aside .brand-sub{color:var(--muted); font-size:12.5px; margin:0 0 18px}
+aside a{display:block; color:var(--muted); text-decoration:none; padding:4px 8px; border-radius:6px; border-left:2px solid transparent}
+aside a:hover{color:var(--accent); background:var(--accent-soft)}
+aside a.toc-l2{font-weight:650; color:var(--ink); margin-top:12px}
+aside a.toc-l3{padding-left:20px; font-size:12.8px}
+/* ---------- main ---------- */
+main{flex:1 1 auto; min-width:0; padding:30px 0 90px; max-width:1000px}
+h1{font-size:32px; line-height:1.2; margin:0 0 10px; letter-spacing:-.02em}
+h2{font-size:23px; margin:34px 0 12px; padding-top:16px; border-top:1px solid var(--line); letter-spacing:-.01em}
+h3{font-size:18.5px; margin:30px 0 8px; color:#0d3a72; padding-bottom:6px; border-bottom:1px solid #eef2f7}
+h4{font-size:16px; margin:22px 0 6px}
+p{margin:11px 0}
+ul,ol{margin:11px 0; padding-left:24px}
+li{margin:5px 0}
+li>ul,li>ol{margin:5px 0}
+a{color:var(--accent)}
+strong{font-weight:700}
+hr{border:none; margin:0; height:0}   /* the h2 border is the real divider */
+blockquote{
+  margin:18px 0; padding:13px 18px; background:var(--accent-soft);
+  border-left:4px solid var(--accent); border-radius:0 8px 8px 0; color:#12314f;
+}
+blockquote p{margin:6px 0}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace; font-size:13.4px}
+p code,li code,td code,h3 code,h2 code{background:#eef2f7; border:1px solid #e2e8f0; border-radius:4px; padding:.5px 4px; color:#0b3d75}
+pre,div.codehilite{
+  background:var(--code-bg); border:1px solid var(--line); border-radius:9px;
+  margin:14px 0; overflow:auto;
+}
+div.codehilite pre{border:none; margin:0; border-radius:0; background:transparent; padding:0}
+div.codehilite{padding:13px 16px; font-size:13.2px; line-height:1.55}
+pre{padding:13px 16px; font-size:13.2px; line-height:1.55}
+pre code{background:none; border:none; padding:0; color:#16202b}
+/* tables */
+table{border-collapse:collapse; width:100%; margin:16px 0; font-size:14.2px; display:block; overflow-x:auto}
+th,td{border:1px solid var(--line); padding:8px 11px; text-align:left; vertical-align:top}
+th{background:#f2f6fb; font-weight:700}
+tbody tr:nth-child(even){background:#fafcfe}
+/* flex patterns contain 
+ and friends that pygments' C lexer flags as
+   errors; keep the colour but drop the red box                     */
+.codehilite .err, div.codehilite span.err { border: none !important; background: transparent !important; color: #7a4fb5 !important; }
+/* collapsible long code */
+.cw{position:relative}
+.cw .toggle{
+  position:absolute; top:8px; right:8px; z-index:2; font:600 11.5px/1 inherit;
+  background:#fff; color:var(--accent); border:1px solid #c9d9ee; border-radius:5px;
+  padding:5px 8px; cursor:pointer; letter-spacing:.02em;
+}
+.cw .toggle:hover{background:var(--accent-soft)}
+.cw.collapsed{max-height:340px; overflow:hidden}
+.cw.collapsed:after{
+  content:""; position:absolute; left:0; right:0; bottom:0; height:90px;
+  background:linear-gradient(rgba(247,249,252,0), var(--code-bg)); pointer-events:none;
+}
+/* print */
+@media print{
+  aside{display:none} main{max-width:none} .wrap{padding:0}
+  .cw.collapsed{max-height:none} .cw .toggle{display:none}
+  h2{page-break-before:auto} pre,div.codehilite,table{page-break-inside:avoid}
+}
+@media (max-width:1000px){
+  .wrap{display:block; padding:0 18px}
+  aside{position:static; width:auto; flex:none; max-height:none; border-right:none;
+        border-bottom:1px solid var(--line); padding:18px 0}
+  aside a.toc-l3{display:none}
+  main{padding-top:18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<aside>
+  <div class="brand">Flex Lab Exam</div>
+  <div class="brand-sub">Predicted questions · compiler construction</div>
+  <a class="toc-l2" href="#set-1-fundamental-scanning">Set 1 — Fundamental scanning</a>
+<a class="toc-l2" href="#set-2-tokenizing-a-c-program">Set 2 — Tokenizing a C program</a>
+<a class="toc-l2" href="#set-3-identifiers-keywords-and-declared-names">Set 3 — Identifiers, keywords and declared names</a>
+<a class="toc-l2" href="#set-4-numeric-and-character-constants">Set 4 — Numeric and character constants</a>
+<a class="toc-l2" href="#set-5-string-and-character-literals">Set 5 — String and character literals</a>
+<a class="toc-l2" href="#set-6-comments-line-continuation-and-preprocessing">Set 6 — Comments, line continuation and preprocessing</a>
+<a class="toc-l2" href="#set-7-operators-and-the-longest-match-rule">Set 7 — Operators and the longest-match rule</a>
+<a class="toc-l2" href="#set-8-counting-and-reporting">Set 8 — Counting and reporting</a>
+<a class="toc-l2" href="#set-9-source-transformation-and-style-checking">Set 9 — Source transformation and style checking</a>
+<a class="toc-l2" href="#set-10-arithmetic-expressions">Set 10 — Arithmetic expressions</a>
+<a class="toc-l2" href="#set-11-expressions-with-state">Set 11 — Expressions with state</a>
+<a class="toc-l2" href="#set-12-from-expression-to-intermediate-code">Set 12 — From expression to intermediate code</a>
+<a class="toc-l2" href="#set-13-scanning-without-a-scanner-generator">Set 13 — Scanning without a scanner generator</a>
+<a class="toc-l2" href="#set-14-literals-character-sets-and-ranges">Set 14 — Literals, character sets and ranges</a>
+<a class="toc-l2" href="#set-15-matching-an-exact-number-of-repetitions">Set 15 — Matching an exact number of repetitions</a>
+<a class="toc-l2" href="#set-16-anchors-and-the-wildcard">Set 16 — Anchors and the wildcard</a>
+<a class="toc-l2" href="#set-17-optional-star-and-plus">Set 17 — Optional, star and plus</a>
+<a class="toc-l2" href="#set-18-alternation-grouping-and-escaping">Set 18 — Alternation, grouping and escaping</a>
+<a class="toc-l2" href="#set-19-capture-groups-and-back-references">Set 19 — Capture groups and back-references</a>
+<a class="toc-l2" href="#set-20-word-non-word-space-and-non-space-classes">Set 20 — Word, non-word, space and non-space classes</a>
+<a class="toc-l2" href="#set-21-the-reference-tables-applied-to-c-source">Set 21 — The reference tables applied to C source</a>
+<a class="toc-l2" href="#coverage-map-where-every-rule-of-the-reference-sheet-is-examined">Coverage map — where every rule of the reference sheet is examined</a>
+<a class="toc-l3" href="#difficulty-spread-and-suggested-routes">Difficulty spread and suggested routes</a>
+<a class="toc-l3" href="#a-note-on-the-way-these-rules-are-worded">A note on the way these rules are worded</a>
+</aside>
+<main>
+<h1 id="compiler-construction-lab-examination-model-question-sets">Compiler Construction Lab Examination — Model Question Sets</h1>
+<p>Twenty-one complete lab question sets, one hundred and fifteen questions. Each set is one exam sitting: read the instructions, write the programs, test them on the given samples. Attempt one set at a time with no notes. Every set gets harder as it goes: the first questions are short, the last ones need a design decision.</p>
+<p><strong>General instructions for every set</strong></p>
+<ol>
+<li>Write a complete <strong>flex</strong> program for each question. Compile with <code>flex q.l &amp;&amp; gcc lex.yy.c -lm -o q</code>.</li>
+<li>Unless a question says otherwise, input is read from <strong>standard input</strong>.</li>
+<li>Marks are shown in brackets at the end of each question.</li>
+<li>Where a sample is given, your output must match it exactly, including spacing.</li>
+<li>Comments and unnecessary output will cost marks.</li>
+<li>A question that names a regular-expression rule tells you what must be matched, not which syntax to type. If flex has no operator for it, write the pattern out or keep the state yourself.</li>
+</ol>
+<hr />
+<h2 id="set-1-fundamental-scanning">Set 1 — Fundamental scanning</h2>
+<p><em>Time: 60 minutes · Answer all five questions · 50 marks</em></p>
+<p><strong>1.</strong> Write a flex program that reads a sequence of words and integers and prints one line for each token, in the order in which it appears. A word must be printed as <code>Word: &lt;text&gt;</code> and an integer as <code>Integer: &lt;number&gt;</code>. Any other character must be ignored. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+alpha 42 beta 7
+
+Sample Output
+Word: alpha
+Integer: 42
+Word: beta
+Integer: 7
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that reads the file <code>input.txt</code>, counts the number of words, the number of integers, and the number of characters that are neither letters, nor digits, nor white space, and prints the three counts at the end with the headings <code>Words</code>, <code>Integers</code> and <code>Others</code>. If the file cannot be opened, the program must print <code>File not found!</code> and terminate. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input (contents of input.txt)
+a 1 b 2 ;
+
+Sample Output
+Words: 2
+Integers: 2
+Others: 1
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that prints every word and every integer of the input together with its length, in the form <code>&lt;token&gt;(&lt;length&gt;)</code>, without any space between consecutive tokens. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int xy 12345
+
+Sample Output
+int(3)xy(2)12345(5)
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that reads one word per line and prints, for each line, the word in reverse followed by its length in brackets. Line numbers must not appear in the output. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+abc
+hello
+
+Sample Output
+cba(3)
+olleh(5)
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that scans the input until the word <code>stop</code> is encountered as a complete word. It must print <code>Token: &lt;text&gt;</code> for every word and integer seen before it, followed by <code>Total: &lt;n&gt;</code> where <code>&lt;n&gt;</code> is the number of tokens printed. Any input after the word <code>stop</code> must be completely ignored. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a 1 b stop c 2
+
+Sample Output
+Token: a
+Token: 1
+Token: b
+Total: 3
+</code></pre></div>
+
+<hr />
+<h2 id="set-2-tokenizing-a-c-program">Set 2 — Tokenizing a C program</h2>
+<p><em>Time: 75 minutes · Answer all five questions · 60 marks</em></p>
+<p><strong>1.</strong> Write a flex program that reads a C program and prints every token with its class, in the form <code>&lt;token&gt; --&gt; &lt;class&gt;</code>. The classes are <code>KEYWORD</code>, <code>IDENTIFIER</code>, <code>INTEGER</code>, <code>FLOAT</code>, <code>OPERATOR</code>, <code>PUNCTUATION</code> and <code>STRING</code>. Treat <code>int</code>, <code>float</code>, <code>char</code>, <code>double</code>, <code>void</code>, <code>if</code>, <code>else</code>, <code>while</code>, <code>for</code>, <code>return</code> as keywords; <code>( ) { } [ ] ; , .</code> as punctuation; <code>+ - * / % = &lt; &gt; ! &amp; |</code> and their two-character combinations as operators. White space and comments must produce no output. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int x = 3.5; // rate
+
+Sample Output
+int --&gt; KEYWORD
+x --&gt; IDENTIFIER
+= --&gt; OPERATOR
+3.5 --&gt; FLOAT
+; --&gt; PUNCTUATION
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints every token of the input as a pair, exactly in the form <code>(&lt;TYPE&gt;, &lt;text&gt;)</code>, where <code>&lt;TYPE&gt;</code> is one of <code>KW</code>, <code>ID</code>, <code>INT</code>, <code>FLT</code>, <code>OP</code>, <code>PUNCT</code>, <code>STR</code>, <code>CHR</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+x=a+1;
+
+Sample Output
+(ID, x)
+(OP, =)
+(ID, a)
+(OP, +)
+(INT, 1)
+(PUNCT, ;)
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that reports the position of every token. For each token print <code>line &lt;L&gt; col &lt;C&gt; &lt;text&gt;</code>, where the line and the column are both counted from 1 and the column is the position of the first character of the token. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int x
+  y;
+
+Sample Output
+line 1 col 1 int
+line 1 col 5 x
+line 2 col 3 y
+line 2 col 4 ;
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that builds a frequency report of token classes. After scanning, it must print exactly six lines in this order: <code>Keywords</code>, <code>Identifiers</code>, <code>Integers</code>, <code>Floats</code>, <code>Operators</code>, <code>Punctuations</code>, each followed by a colon and the count. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a = 1;
+
+Sample Output
+Keywords: 1
+Identifiers: 1
+Integers: 1
+Floats: 0
+Operators: 1
+Punctuations: 1
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that reports every character which cannot begin any token. For each such character it must print <code>Error: illegal character '&lt;c&gt;' at line &lt;L&gt;</code>, and then continue scanning the same line. Valid tokens must still be reported normally. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a = 1 @ b
+
+Sample Output
+a
+=
+1
+Error: illegal character '@' at line 1
+b
+</code></pre></div>
+
+<hr />
+<h2 id="set-3-identifiers-keywords-and-declared-names">Set 3 — Identifiers, keywords and declared names</h2>
+<p><em>Time: 60 minutes · Answer all five questions · 55 marks</em></p>
+<p><strong>1.</strong> Write a flex program that treats every line of the input as a single candidate and decides whether it is a valid C identifier. A valid identifier begins with a letter or an underscore and continues with letters, digits or underscores only. Print <code>Valid</code> or <code>Invalid</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+_x9
+9x
+
+Sample Output
+Valid
+Invalid
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that classifies each word of the input as <code>Keyword</code>, <code>Identifier</code> or <code>Invalid</code>. The keywords are <code>auto break case char const continue default do double else enum extern float for goto if int long register return short signed sizeof static struct switch typedef union unsigned void volatile while</code>. A word that is not a valid identifier is <code>Invalid</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int count 2x
+
+Sample Output
+Keyword
+Identifier
+Invalid
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that recognises the keywords <code>int</code>, <code>float</code>, <code>if</code>, <code>else</code>, <code>while</code>, <code>for</code> and <code>return</code> in any combination of upper and lower case, and prints each one in its standard lower-case form preceded by <code>Keyword:</code>. Every other word must be printed as <code>Identifier: &lt;word&gt;</code> exactly as it was written. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+INT Total WhIlE
+
+Sample Output
+Keyword: int
+Identifier: Total
+Keyword: while
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that prints every distinct identifier of the input exactly once, in the order of its first appearance, followed by the number of the line on which it first appeared. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a b
+a c
+
+Sample Output
+a 1
+b 1
+c 2
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that considers an identifier declared when it is immediately preceded by the keyword <code>int</code>. It must print <code>Declared: &lt;name&gt;</code> at the point of declaration and <code>Use before declaration: &lt;name&gt;</code> whenever an identifier appears that is not yet declared. Nothing is printed for keywords and numbers. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a = 1; int a; a = 2;
+
+Sample Output
+Use before declaration: a
+Declared: a
+</code></pre></div>
+
+<hr />
+<h2 id="set-4-numeric-and-character-constants">Set 4 — Numeric and character constants</h2>
+<p><em>Time: 75 minutes · Answer all five questions · 60 marks</em></p>
+<p><strong>1.</strong> Write a flex program that classifies every integer constant of the input as <code>Decimal</code>, <code>Octal</code> or <code>Hexadecimal</code>, printing the class followed by the constant. A constant beginning with <code>0x</code> or <code>0X</code> is hexadecimal, one beginning with <code>0</code> and containing further digits is octal, and everything else is decimal. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+42 017 0x1F
+
+Sample Output
+Decimal 42
+Octal 017
+Hexadecimal 0x1F
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints the decimal value of every integer constant in the input, interpreting octal and hexadecimal notation correctly. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+42 052 0x2A
+
+Sample Output
+42
+42
+42
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that rejects malformed numeric constants. For each malformed constant print <code>Invalid &lt;text&gt;: &lt;reason&gt;</code>, where the reason is <code>octal digit 8 or 9</code>, <code>hexadecimal constant without digits</code>, <code>more than one decimal point</code>, <code>invalid suffix</code> or <code>exponent without digits</code>. Well-formed constants must be printed as <code>Valid &lt;text&gt;</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+08 0x 1.2.3 42abc 1e
+
+Sample Output
+Invalid 08: octal digit 8 or 9
+Invalid 0x: hexadecimal constant without digits
+Invalid 1.2.3: more than one decimal point
+Invalid 42abc: invalid suffix
+Invalid 1e: exponent without digits
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that recognises floating-point constants. It must accept a constant with a decimal point, a constant with an exponent, and a constant with a trailing <code>f</code> or <code>F</code>, and must reject a constant with two decimal points. Print <code>Float: &lt;text&gt;</code> for a valid one and <code>Invalid: &lt;text&gt;</code> otherwise. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+3.14 1e10 1.5f 1.2.3
+
+Sample Output
+Float: 3.14
+Float: 1e10
+Float: 1.5f
+Invalid: 1.2.3
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that prints the integer value of every character constant in the input. A plain character has its ASCII value, <code>\n</code> is 10, <code>\t</code> is 9, <code>\0</code> is 0, <code>\xHH</code> is a hexadecimal escape and <code>\NNN</code> is an octal escape. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+'A' '\101' '\x41' '\n'
+
+Sample Output
+65
+65
+65
+10
+</code></pre></div>
+
+<hr />
+<h2 id="set-5-string-and-character-literals">Set 5 — String and character literals</h2>
+<p><em>Time: 90 minutes · Answer all six questions · 75 marks</em></p>
+<p><strong>1.</strong> Write a flex program that accepts a string literal only if it is opened and closed on the same line and every escape sequence in it is one of <code>\n</code>, <code>\t</code>, <code>\r</code>, <code>\\</code>, <code>\"</code>, <code>\'</code>, <code>\a</code>, <code>\b</code>, <code>\f</code>, <code>\v</code>, <code>\?</code>. Print <code>Valid &lt;text&gt;</code> for an acceptable literal and <code>Invalid &lt;text&gt;: &lt;reason&gt;</code> otherwise, where the reason is <code>illegal escape</code> or <code>unterminated</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+"ok"
+"Test \1"
+"Hello \y"
+
+Sample Output
+Valid "ok"
+Invalid "Test \1": illegal escape
+Invalid "Hello \y": illegal escape
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that accepts a character constant only if it contains exactly one character or exactly one escape sequence between the quotes. Print <code>Valid &lt;text&gt;</code> or <code>Invalid &lt;text&gt;: &lt;reason&gt;</code>, with the reason <code>empty</code>, <code>too many characters</code> or <code>unterminated</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+'a' '\n' '' 'ab'
+
+Sample Output
+Valid 'a'
+Valid '\n'
+Invalid '': empty
+Invalid 'ab': too many characters
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that examines the string literals of the input and reports every format specification found inside them. A <code>%%</code> is a literal percent sign and must be reported as <code>Percent</code>. Any other <code>%</code> followed by optional flags, an optional field width, an optional precision and one of the conversion characters <code>d i u o x X c s f e g p n</code> must be reported as <code>Specifier: &lt;sequence&gt;</code>. A <code>%</code> followed by anything else must be reported as <code>Bad specifier: &lt;sequence&gt;</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+printf("%d items, %.2f%% done", n, p);
+printf("%q", x);
+
+Sample Output
+Specifier: %d
+Specifier: %.2f
+Percent: %%
+Bad specifier: %q
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that prints the length in memory of every string literal in the input — that is, the number of characters the compiled program would store, counted after escape sequences have been interpreted, excluding the quotes and excluding the terminating null character. A tab counts as one character, <code>\x41</code> counts as one, <code>\101</code> counts as one and <code>\"</code> counts as one. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+"a\tb\x41\101"
+"abc"
+"a\"b"
+
+Sample Output
+Length: 5
+Length: 3
+Length: 3
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that concatenates adjacent string literals. Two or more string literals separated only by white space form a single literal; print <code>Concatenated: &lt;content&gt;</code> with the content decoded, followed by the total number of characters in brackets. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+"ab" "cd"
+
+Sample Output
+Concatenated: abcd (4 characters)
+</code></pre></div>
+
+<p><strong>6.</strong> Write a flex program that distinguishes string literals from character constants when each contains the other sort of quote. A single quote inside a string literal is ordinary text and needs no escape; an unescaped double quote inside a character constant is legal. Print <code>String &lt;text&gt;</code> or <code>Char &lt;text&gt;</code> for each literal. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+"it's" '"' "a\"b"
+
+Sample Output
+String "it's"
+Char '"'
+String "a\"b"
+</code></pre></div>
+
+<hr />
+<h2 id="set-6-comments-line-continuation-and-preprocessing">Set 6 — Comments, line continuation and preprocessing</h2>
+<p><em>Time: 75 minutes · Answer all five questions · 60 marks</em></p>
+<p><strong>1.</strong> Write a flex program that counts single-line comments and block comments separately and prints <code>Line comments: &lt;n&gt;</code> and <code>Block comments: &lt;n&gt;</code> at the end. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+// one
+/* two */ x;
+/* three
+   four */
+
+Sample Output
+Line comments: 1
+Block comments: 2
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints the input with all comments removed, so that the number of output lines equals the number of input lines. A line that contained only a comment must appear as an empty line, and any blanks left at the end of a line by the removal must be deleted. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a /* one
+     two */
+b
+
+Sample Output
+a
+
+b
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that detects a block comment which is never closed. It must print <code>Unterminated comment opened at line &lt;L&gt;</code> giving the line on which the <code>/*</code> appeared, and <code>All comments closed</code> when every block comment is properly terminated. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+x; /* oops
+y;
+
+Sample Output
+Unterminated comment opened at line 1
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that demonstrates that block comments do not nest. For an input containing <code>/* a /* b */ c */</code>, the comment must be reported as ending at the first <code>*/</code>, and the remaining <code>*/</code> must be reported as a stray token in the code. Print <code>Comment ends at line &lt;L&gt;</code> and <code>Stray */ at line &lt;L&gt;</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+/* a /* b */ c */
+
+Sample Output
+Comment ends at line 1
+Stray */ at line 1
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that reports every <code>#define</code> directive. It must print <code>Object macro: &lt;name&gt;</code> when the macro name is not followed by a parenthesis, and <code>Function macro: &lt;name&gt; (&lt;n&gt; parameters)</code> when it is. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+#define N 10
+#define SQ(x) ((x)*(x))
+#define ADD(a,b) (a+b)
+
+Sample Output
+Object macro: N
+Function macro: SQ (1 parameters)
+Function macro: ADD (2 parameters)
+</code></pre></div>
+
+<hr />
+<h2 id="set-7-operators-and-the-longest-match-rule">Set 7 — Operators and the longest-match rule</h2>
+<p><em>Time: 60 minutes · Answer all five questions · 55 marks</em></p>
+<p><strong>1.</strong> Write a flex program that prints every token of the input on its own line. The input line is <code>a+++b</code> and the program must demonstrate how the longest-match rule divides it. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a+++b
+
+Sample Output
+a
+++
++
+b
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints every token of the input on its own line, where the input contains both a compound assignment operator and an assignment followed by a minus sign. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a&gt;&gt;=2
+x=-1
+
+Sample Output
+a
+&gt;&gt;=
+2
+x
+=
+-
+1
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that prints the number of occurrences of each of these operators, in exactly this order, one per line as <code>&lt;operator&gt;: &lt;count&gt;</code>: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>=</code>, <code>==</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>!</code>, <code>!=</code>, <code>&amp;&amp;</code>, <code>||</code>. A two-character operator is counted only as itself. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a+b*c&gt;=d &amp;&amp; e!=f
+
+Sample Output
++: 1
+-: 0
+*: 1
+/: 0
+%: 0
+=: 0
+==: 0
+&lt;: 0
+&gt;: 0
+&lt;=: 0
+&gt;=: 1
+!: 0
+!=: 1
+&amp;&amp;: 1
+||: 0
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that scans the line <code>x----y // z----w</code> and prints every token belonging to the code, one per line, followed by the rest of the line as a single comment line beginning with <code>Comment:</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+x----y // z----w
+
+Sample Output
+x
+--
+--
+y
+Comment: // z----w
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that prints every distinct operator appearing in the input exactly once, in order of first appearance. Operators of two characters, such as <code>*=</code>, count as one operator. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+b=a+1; a*=2+3;
+
+Sample Output
+=
++
+*=
+</code></pre></div>
+
+<hr />
+<h2 id="set-8-counting-and-reporting">Set 8 — Counting and reporting</h2>
+<p><em>Time: 75 minutes · Answer all five questions · 60 marks</em></p>
+<p><strong>1.</strong> Write a flex program that prints the number of characters, words and lines of the input, using the headings <code>Characters</code>, <code>Words</code> and <code>Lines</code>. Every character, including the newline, is counted. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+hi there
+bye
+
+Sample Output
+Characters: 13
+Words: 3
+Lines: 2
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints a frequency table of the words of the input. Each distinct word must appear once as <code>&lt;word&gt;: &lt;count&gt;</code>, sorted by count from largest to smallest and alphabetically among equal counts. At the end print <code>Total: &lt;n&gt;</code> and <code>Distinct: &lt;n&gt;</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a b a c b a
+
+Sample Output
+a: 3
+b: 2
+c: 1
+Total: 6
+Distinct: 3
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that reports how many times each keyword of the input occurs. The keywords are <code>int</code>, <code>char</code>, <code>float</code>, <code>double</code>, <code>if</code>, <code>else</code>, <code>while</code>, <code>for</code>, <code>return</code>, <code>void</code>. Print only those that occur, one per line as <code>&lt;keyword&gt;: &lt;count&gt;</code>, in the order in which they first appeared. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a; int b; if (a) return; int c;
+
+Sample Output
+int: 3
+if: 1
+return: 1
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that reports the greatest number of parentheses open at the same time on each line, printing <code>Line &lt;L&gt;: depth &lt;d&gt;</code> for every line. A line without parentheses has depth 0. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+((a+b))
+(a+(b*c))
+a
+
+Sample Output
+Line 1: depth 2
+Line 2: depth 2
+Line 3: depth 0
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that reports every line longer than 40 characters, printing <code>Line &lt;L&gt; is &lt;n&gt; characters long</code>, in increasing order of line number. If there is no such line print <code>No long lines</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+short
+this line is quite long and contains many words
+
+Sample Output
+Line 2 is 47 characters long
+</code></pre></div>
+
+<hr />
+<h2 id="set-9-source-transformation-and-style-checking">Set 9 — Source transformation and style checking</h2>
+<p><em>Time: 60 minutes · Answer all five questions · 55 marks</em></p>
+<p><strong>1.</strong> Write a flex program that prints the input with every occurrence of the keywords <code>int</code>, <code>char</code>, <code>float</code>, <code>double</code>, <code>if</code>, <code>else</code>, <code>while</code>, <code>for</code>, <code>return</code> and <code>void</code> converted to upper case. Identifiers, string literals and comments must be left exactly as they are. At the end print <code>Keywords converted: &lt;n&gt;</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int total; if (total) return;
+
+Sample Output
+INT total; IF (total) RETURN;
+Keywords converted: 3
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints the input with every run of one or more spaces or tab characters replaced by a single space. The contents of string literals must not be altered. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a   =    "x    y";
+
+Sample Output
+a = "x    y";
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that prints the input as a numbered listing. Every line must be printed with its line number, right-aligned in a field of three characters, followed by a vertical bar and a space, and then the line itself with all comments removed. Blanks left at the end of a line by the removal must be deleted. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a; // note
+/* whole line */
+int b;
+
+Sample Output
+  1 | int a;
+  2 | 
+  3 | int b;
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that prints the input with every integer constant replaced by twice its value. Floating-point constants, identifiers and all other text must be unchanged. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+x = 21; y = 3.5;
+
+Sample Output
+x = 42; y = 3.5;
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that finds every identifier written in camelCase — that is, beginning with a lower-case letter and containing at least one upper-case letter — and prints its conversion to snake_case as <code>&lt;original&gt; -&gt; &lt;converted&gt;</code>, where an underscore is inserted before every upper-case letter and that letter is made lower case. Identifiers that are already all lower case must not be reported. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+myVarName x totalCount
+
+Sample Output
+myVarName -&gt; my_var_name
+totalCount -&gt; total_count
+</code></pre></div>
+
+<hr />
+<h2 id="set-10-arithmetic-expressions">Set 10 — Arithmetic expressions</h2>
+<p><em>Time: 75 minutes · Answer all five questions · 60 marks</em></p>
+<p><strong>1.</strong> Each line of the input contains two integers separated by a plus sign. Write a flex program that prints their sum for every line in the form <code>Sum: &lt;n&gt;</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+12 + 30
+1+1
+
+Sample Output
+Sum: 42
+Sum: 2
+</code></pre></div>
+
+<p><strong>2.</strong> Each line of the input contains two numbers separated by one of the four operators <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>. Write a flex program that applies the operator and prints the line in the form <code>&lt;a&gt; &lt;op&gt; &lt;b&gt; = &lt;result&gt;</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+7 * 6
+9 - 4
+
+Sample Output
+7 * 6 = 42
+9 - 4 = 5
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that evaluates <code>a / b</code> for each line of the input. When the divisor is zero the program must print <code>Error: division by zero</code> for that line and continue with the next line. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+8 / 2
+1 / 0
+9 / 3
+
+Sample Output
+4
+Error: division by zero
+3
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that evaluates a division and follows the rules of C: when both operands are written without a decimal point the division is integer division, and when either operand contains a decimal point the result is a floating-point value printed with <code>%g</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+10 / 4
+10.0 / 4
+
+Sample Output
+2
+2.5
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that evaluates expressions containing <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and nested parentheses, with the usual precedence and left associativity, and prints the value of each line. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+2+3*4
+(2+3)*4
+((2+3)*(4-1))/2.0
+
+Sample Output
+14
+20
+7.5
+</code></pre></div>
+
+<hr />
+<h2 id="set-11-expressions-with-state">Set 11 — Expressions with state</h2>
+<p><em>Time: 90 minutes · Answer all five questions · 70 marks</em></p>
+<p><strong>1.</strong> Write a flex program that supports variables. A line of the form <code>name = expression</code> computes the expression, stores it under that name and prints <code>name = value</code>. A line containing only a name prints the stored value. A name that has never been assigned must produce <code>Error: undefined variable 'name'</code>. Expressions may contain <code>+ - * /</code> and parentheses. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+x = 5
+y = x * 2.5
+y
+q
+
+Sample Output
+x = 5
+y = 12.5
+12.5
+Error: undefined variable 'q'
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that supports the function calls <code>floor(x)</code>, <code>ceil(x)</code>, <code>round(x)</code>, <code>sqrt(x)</code> and <code>pow(a,b)</code> inside expressions, and prints the value of each line with <code>%g</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+floor(3.7)+ceil(3.2)
+sqrt(16)
+pow(2,10)
+
+Sample Output
+7
+4
+1024
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that evaluates comparisons and the conditional operator. The comparison operators <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>==</code> and <code>!=</code> produce 1 or 0, and <code>condition ? a : b</code> yields <code>a</code> when the condition is non-zero and <code>b</code> otherwise. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+5 &gt; 3 ? 10 : 20
+2 == 3
+
+Sample Output
+10
+0
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that supports the increment and decrement operators on variables. <code>x++</code> yields the value before incrementing, <code>++x</code> yields the value after incrementing, and the same applies to <code>--</code>. For each statement print the value it produces, and at the end print every variable as <code>name = value</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+x = 5; a = x++; b = ++x;
+
+Sample Output
+a = 5
+b = 7
+x = 7
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that evaluates division and modulo when the operands are negative, following C's rule that the result is truncated towards zero. Print the value of each line. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+-7 / 2
+-7 % 2
+
+Sample Output
+-3
+-1
+</code></pre></div>
+
+<hr />
+<h2 id="set-12-from-expression-to-intermediate-code">Set 12 — From expression to intermediate code</h2>
+<p><em>Time: 90 minutes · Answer all five questions · 70 marks</em></p>
+<p><strong>1.</strong> Write a flex program that reads one infix expression per line and prints its postfix form, with a single space between symbols. Expressions contain integers, <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> and parentheses, with <code>*</code> and <code>/</code> binding more tightly than <code>+</code> and <code>-</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+2+3*4
+(2+3)*4
+
+Sample Output
+2 3 4 * +
+2 3 + 4 *
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that reads one postfix expression per line, evaluates it using a stack with integer arithmetic, and prints the result. When a line contains too few operands, print <code>Error: stack underflow</code> and continue with the next line. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+3 4 + 5 *
+7 +
+
+Sample Output
+35
+Error: stack underflow
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that reads assignments of the form <code>name = expression</code>, where the expression uses names, integers, <code>+ - * /</code> and parentheses, and prints three-address code for each one: one instruction per binary operation using the temporaries <code>t1</code>, <code>t2</code>, … in execution order, followed by the assignment to the target name. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+x = a + b * c
+
+Sample Output
+t1 = b * c
+t2 = a + t1
+x = t2
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that performs constant folding. Whenever both operands of an operation are numeric constants, the operation must be evaluated during scanning and replaced by its result. Print the folded expression in the form <code>Folded: &lt;text&gt;</code>, then <code>Value: &lt;number&gt;</code> with the value of the whole right-hand side after folding, then <code>Folded operations: &lt;n&gt;</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+x = 2*3 + 4
+
+Sample Output
+Folded: x = 6 + 4
+Value: x = 10
+Folded operations: 1
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that counts three kinds of error in the input and prints the totals. A character that cannot begin any token is a lexical error; an operator with a missing operand or an unbalanced bracket is a syntax error; a division by the literal <code>0</code> or the use of a name that was never declared with <code>int</code> is a semantic error. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a = 1 @ 2;
+int b = 1 + ;
+int c = 1 / 0;
+
+Sample Output
+Lexical errors: 1
+Syntax errors: 1
+Semantic errors: 1
+</code></pre></div>
+
+<hr />
+<h2 id="set-13-scanning-without-a-scanner-generator">Set 13 — Scanning without a scanner generator</h2>
+<p><em>Time: 60 minutes · Answer all four questions · 50 marks. Write these in plain C. Flex must not be used.</em></p>
+<p><strong>1.</strong> Write a C program that reads a C statement from standard input character by character and prints every token with its class: <code>KEYWORD</code>, <code>IDENTIFIER</code>, <code>INTEGER</code>, <code>FLOAT</code>, <code>OPERATOR</code> or <code>PUNCTUATION</code>. Use <code>getchar</code> and <code>ungetc</code>, a keyword table, and a lookup function based on <code>strcmp</code>. Keywords: <code>int char float double if else while for return void</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a = 3.5;
+
+Sample Output
+int --&gt; KEYWORD
+a --&gt; IDENTIFIER
+= --&gt; OPERATOR
+3.5 --&gt; FLOAT
+; --&gt; PUNCTUATION
+</code></pre></div>
+
+<p><strong>2.</strong> Write a C program that prints the number of characters, words and lines of the input using a single pass over the input and a flag that records whether the program is currently inside a word. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+hi there
+bye
+
+Sample Output
+Characters: 13
+Words: 3
+Lines: 2
+</code></pre></div>
+
+<p><strong>3.</strong> Write a C program that prints the input with all single-line and block comments removed, deletes any blanks left at the end of a line by the removal, and prints <code>Unterminated comment</code> if a block comment is never closed. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a; // x
+b; /* y */ c;
+
+Sample Output
+a;
+b;  c;
+</code></pre></div>
+
+<p><strong>4.</strong> Write a C program that reads one line and decides whether it is a valid C string literal, using a helper function that validates one escape sequence at a time. Print <code>Valid</code> or <code>Invalid: &lt;reason&gt;</code>, where the reason is <code>unterminated</code> or <code>illegal escape</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+"a\tb"
+"a\9"
+
+Sample Output
+Valid
+Invalid: illegal escape
+</code></pre></div>
+
+<hr />
+<h2 id="set-14-literals-character-sets-and-ranges">Set 14 — Literals, character sets and ranges</h2>
+<p><em>Time: 90 minutes · Answer all six questions · 80 marks</em></p>
+<p><strong>1.</strong> Write a flex program that reads the input line by line. For every line that contains the exact text <code>hello</code> anywhere in it, print <code>Match:</code> followed by the whole line; for every other line print <code>No match</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+hello world
+unit test
+say hello again
+
+Sample Output
+Match: hello world
+No match
+Match: say hello again
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints every line of the input with each lower-case vowel — <code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code> — replaced by a single <code>*</code>. Every other character, including <code>y</code> and all upper-case letters, must be printed unchanged. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+hello world
+rhythm
+Out Of Office
+
+Sample Output
+h*ll* w*rld
+rhythm
+O*t Of Off*c*
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that reads the whole input and prints, at the end, the number of upper-case letters and the number of lower-case letters in it, as <code>Upper: &lt;n&gt;</code> and <code>Lower: &lt;n&gt;</code>. Digits, punctuation, white space and newlines are not letters and must not be counted. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+Regex and JavaScript
+
+Sample Output
+Upper: 3
+Lower: 15
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that prints, for every line of the input, the number of digit characters and the number of characters that are not digits, as <code>Digits: &lt;n&gt;</code> and <code>Non-digits: &lt;n&gt;</code>. Every character of the line counts, including spaces, but the newline at the end of the line does not. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a1b2c3 45
+x
+
+Sample Output
+Digits: 5
+Non-digits: 4
+Digits: 0
+Non-digits: 1
+</code></pre></div>
+
+<p><strong>5.</strong> A password is accepted only when it contains at least one upper-case letter, at least one lower-case letter and at least one digit. Write a flex program that reads one password per line and prints <code>Valid</code> for an accepted password, or <code>Invalid: &lt;reason&gt;</code> otherwise, where the reason is <code>no uppercase</code>, <code>no lowercase</code> or <code>no digit</code>, checked in that order and only the first failing reason reported. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+Abc123
+abcdef
+ABC123
+Abcdefg
+
+Sample Output
+Valid
+Invalid: no uppercase
+Invalid: no lowercase
+Invalid: no digit
+</code></pre></div>
+
+<p><strong>6.</strong> Write a flex program that prints every word of the input that contains no vowel at all, using only the letters <code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code> as vowels, together with its length in the form <code>&lt;word&gt; (&lt;length&gt;)</code>, one per line. Words containing a vowel must produce no output. <strong>[20]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+rhythm hello sky try a
+
+Sample Output
+rhythm (6)
+sky (3)
+try (3)
+</code></pre></div>
+
+<hr />
+<h2 id="set-15-matching-an-exact-number-of-repetitions">Set 15 — Matching an exact number of repetitions</h2>
+<p><em>Time: 90 minutes · Answer all six questions · 85 marks</em></p>
+<p><strong>1.</strong> Write a flex program that reads every run of digits in the input. A run of exactly three digits must be printed as <code>Three: &lt;digits&gt;</code>; every other run must be printed as <code>Other: &lt;digits&gt;</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+12 345 6789
+
+Sample Output
+Other: 12
+Three: 345
+Other: 6789
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints <code>Four: &lt;word&gt;</code> for every word of the input that consists of exactly four letters, and prints nothing for other words. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+this is a test of four
+
+Sample Output
+Four: this
+Four: test
+Four: four
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that prints <code>Number: &lt;digits&gt;</code> for every run of two or more digits and prints nothing for a single digit. At the end print <code>Count: &lt;n&gt;</code> with the number of such runs. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+7 42 3 100
+
+Sample Output
+Number: 42
+Number: 100
+Count: 2
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that reads the input and replaces every run of two or more consecutive <code>a</code> characters by a single <code>a</code>, printing the resulting text, then printing <code>Runs: &lt;n&gt;</code> with the number of runs that were shortened. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+baaaad a aa
+
+Sample Output
+bad a a
+Runs: 2
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that accepts a floating-point token only when it has a decimal point and at least two digits after that point. Print <code>Float: &lt;token&gt;</code> for an accepted token and <code>Invalid: &lt;token&gt;</code> for a token with a decimal point but fewer than two digits after it. Integer tokens without a decimal point must produce no output. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+3.1 3.14 12.345 7
+
+Sample Output
+Invalid: 3.1
+Float: 3.14
+Float: 12.345
+</code></pre></div>
+
+<p><strong>6.</strong> A date is written as four digits, a hyphen, two digits, a hyphen, two digits. Write a flex program that reads one date per line, printing <code>Valid date</code> when the format is right, the month is between 01 and 12 and the day is between 01 and 31, and <code>Invalid date: &lt;reason&gt;</code> otherwise, where the reason is <code>bad format</code>, <code>bad month</code> or <code>bad day</code>, checked in that order. <strong>[25]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+2026-11-03
+2026-13-01
+2026-1-3
+2026-11-32
+
+Sample Output
+Valid date
+Invalid date: bad month
+Invalid date: bad format
+Invalid date: bad day
+</code></pre></div>
+
+<hr />
+<h2 id="set-16-anchors-and-the-wildcard">Set 16 — Anchors and the wildcard</h2>
+<p><em>Time: 85 minutes · Answer all six questions · 80 marks</em></p>
+<p><strong>1.</strong> Write a flex program that prints every line of the input that begins with the character <code>#</code>, in the form <code>Line &lt;L&gt;: &lt;line&gt;</code>, where <code>&lt;L&gt;</code> is the line number counted from 1. Other lines produce no output. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+#include &lt;stdio.h&gt;
+int main;
+#define N 10
+
+Sample Output
+Line 1: #include &lt;stdio.h&gt;
+Line 3: #define N 10
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints every line of the input that ends with a semicolon, in the form <code>Line &lt;L&gt;: &lt;line&gt;</code>. A line whose last character before the newline is anything else must produce no output. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a;
+if (x)
+{
+b = 2;
+
+Sample Output
+Line 1: int a;
+Line 4: b = 2;
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that decides, for every line, whether the line contains the character <code>c</code>, then any single character other than a newline, and then the character <code>t</code>, in that order and with no other character between them. Print <code>FOUND: &lt;line&gt;</code> or <code>No match: &lt;line&gt;</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+cat
+cot
+ct
+coat
+
+Sample Output
+FOUND: cat
+FOUND: cot
+No match: ct
+No match: coat
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that prints <code>Number: &lt;L&gt;</code> for every line that consists of an optional minus sign followed by one or more digits and nothing else, and <code>Not a number: &lt;L&gt;</code> for every other line. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+42
+-7
+4x
+ 9
+
+Sample Output
+Number: 1
+Number: 2
+Not a number: 3
+Not a number: 4
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that prints <code>Line &lt;L&gt; has &lt;n&gt; characters</code> for every line of the input, where <code>&lt;n&gt;</code> counts every character of the line except the newline that ends it. An empty line has 0 characters and must still be reported. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+abc
+
+xy
+
+Sample Output
+Line 1 has 3 characters
+Line 2 has 0 characters
+Line 3 has 2 characters
+</code></pre></div>
+
+<p><strong>6.</strong> Write a flex program that finds the longest line of the input and prints <code>Longest line: &lt;L&gt; (&lt;n&gt; characters)</code> at the end, where the newline is not counted. When two or more lines are equally longest, the first of them is reported. <strong>[20]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+abc
+hello world
+xy
+
+Sample Output
+Longest line: 2 (11 characters)
+</code></pre></div>
+
+<hr />
+<h2 id="set-17-optional-star-and-plus">Set 17 — Optional, star and plus</h2>
+<p><em>Time: 85 minutes · Answer all six questions · 80 marks</em></p>
+<p><strong>1.</strong> Write a flex program that prints <code>Match</code> for every line whose text contains a <code>g</code>, then zero or more <code>o</code> characters, then a <code>d</code>, and <code>No match</code> for every other line. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+gd
+god
+good
+gud
+
+Sample Output
+Match
+Match
+Match
+No match
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that reads all the integers in the input and prints their sum as <code>Sum: &lt;n&gt;</code> at the end. An integer is a run of one or more digits. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+3 40 7
+
+Sample Output
+Sum: 50
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that prints the input with every occurrence of <code>colour</code> or <code>color</code> replaced by <code>COLOR</code>, and then prints <code>Colours: &lt;n&gt;</code> with the number of replacements. Every other character must be printed unchanged. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+the colour and the color
+
+Sample Output
+the COLOR and the COLOR
+Colours: 2
+</code></pre></div>
+
+<p><strong>4.</strong> A number token may begin with an optional minus sign, may have a fraction made of a decimal point followed by one or more digits, and may have an exponent made of <code>e</code> or <code>E</code>, an optional sign and one or more digits. Write a flex program that prints <code>Number: &lt;token&gt;</code> for a well-formed number, <code>Invalid: &lt;token&gt;</code> for a token that starts with a digit or a minus sign but is not well formed, and nothing for words. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+-12 3.5 2e10 2e x
+
+Sample Output
+Number: -12
+Number: 3.5
+Number: 2e10
+Invalid: 2e
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that prints the input with every floating-point token reduced by deleting its trailing zeros, and deleting the decimal point when no digit is left after it. Integer tokens must be printed unchanged. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+12.500 3.000 7.0 4
+
+Sample Output
+12.5 3 7 4
+</code></pre></div>
+
+<p><strong>6.</strong> Write a flex program that replaces every comment of the form <code>/*</code> ... <code>*/</code> by the four characters <code>[C]</code>, where the comment ends at the first <code>*/</code> that follows its <code>/*</code> and may not extend past the end of its line, then prints <code>Comments removed: &lt;n&gt;</code>. Everything outside comments must be printed unchanged. <strong>[20]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a /* x */ b /* y */ c
+
+Sample Output
+a [C] b [C] c
+Comments removed: 2
+</code></pre></div>
+
+<hr />
+<h2 id="set-18-alternation-grouping-and-escaping">Set 18 — Alternation, grouping and escaping</h2>
+<p><em>Time: 90 minutes · Answer all six questions · 85 marks</em></p>
+<p><strong>1.</strong> Write a flex program that counts how many times the word <code>cat</code> and how many times the word <code>dog</code> occur in the input and prints <code>cat: &lt;n&gt;</code> and <code>dog: &lt;n&gt;</code> at the end. Whole words only count: <code>cats</code> and <code>dogs</code> must not be counted. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+cat dog cat bird
+
+Sample Output
+cat: 2
+dog: 1
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that finds every run of the two characters <code>ab</code> repeated one or more times, prints the run and the number of repetitions as <code>&lt;run&gt;: &lt;n&gt;</code>, and prints nothing for a lone <code>a</code> or a lone <code>b</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+ababab x ab
+
+Sample Output
+ababab: 3
+ab: 1
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that prints <code>Dot</code> for every literal <code>.</code> character in the input and <code>Star</code> for every literal <code>*</code> character, one per line, in the order in which they appear. These characters must be treated as ordinary text and not as pattern operators. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+file.txt data*
+
+Sample Output
+Dot
+Star
+</code></pre></div>
+
+<p><strong>4.</strong> A declaration is a type name, one or more spaces, and an identifier. Write a flex program that prints <code>Declared &lt;type&gt;: &lt;name&gt;</code> for every declaration whose type is <code>int</code>, <code>float</code> or <code>double</code>, and prints nothing for declarations of any other type. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a; float b; char c;
+
+Sample Output
+Declared int: a
+Declared float: b
+</code></pre></div>
+
+<p><strong>5.</strong> A file name is made of letters, digits, underscores and dots, contains at least one dot, and ends with one or more letters after its last dot. Write a flex program that prints <code>File: &lt;name&gt;</code> and <code>Extension: &lt;ext&gt;</code> for every file name in the input, and <code>Invalid: &lt;token&gt;</code> for a token that looks like a file name but has no letters after its last dot. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+report.final.pdf data. main.c
+
+Sample Output
+File: report.final.pdf
+Extension: pdf
+Invalid: data.
+File: main.c
+Extension: c
+</code></pre></div>
+
+<p><strong>6.</strong> Write a flex program that finds every compound operator of the input — one of <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>, <code>==</code>, <code>!=</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>&amp;&amp;</code>, <code>||</code>, <code>++</code>, <code>--</code> — and prints each occurrence on its own line, in the order it appears, followed by <code>Total: &lt;n&gt;</code>. Single characters such as <code>+</code> on its own must not be printed. <strong>[25]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a += b == c &amp;&amp; d++ x != y
+
+Sample Output
++=
+==
+&amp;&amp;
+++
+!=
+Total: 5
+</code></pre></div>
+
+<hr />
+<h2 id="set-19-capture-groups-and-back-references">Set 19 — Capture groups and back-references</h2>
+<p><em>Time: 90 minutes · Answer all six questions · 85 marks</em></p>
+<p><strong>1.</strong> Write a flex program that reads lines of the form <code>left = right</code>, splits each line at the first <code>=</code> and prints two lines, <code>Left: &lt;left&gt;</code> and <code>Right: &lt;right&gt;</code>, with the spaces around the <code>=</code> removed and the rest of each side kept exactly. A line without <code>=</code> must print <code>No assignment</code>. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+total = count + 1
+just a line
+
+Sample Output
+Left: total
+Right: count + 1
+No assignment
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints <code>Repeated: &lt;word&gt;</code> whenever the same word occurs twice in a row, separated only by white space, and prints nothing otherwise. Comparison is case sensitive. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+the the cat sat sat down
+
+Sample Output
+Repeated: the
+Repeated: sat
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that prints <code>Repeated: &lt;token&gt;</code> whenever the same word or the same integer occurs twice in a row, ignoring the difference between upper-case and lower-case letters, and prints the two occurrences exactly as they were written. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+The the cat Cat 12 12 7
+
+Sample Output
+Repeated: The the
+Repeated: cat Cat
+Repeated: 12 12
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that prints every word of the input that has at least two letters, whose first letter and last letter are the same, ignoring case, in the form <code>&lt;word&gt; (&lt;first letter&gt;)</code>, where the letter is printed exactly as the word begins. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+level cat stats x Radar
+
+Sample Output
+level (l)
+stats (s)
+Radar (R)
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that prints every word of the input that reads the same forwards and backwards, ignoring case, with the words given in the order they appear and <code>Palindromes: &lt;n&gt;</code> printed at the end. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+level madam noon cat Level
+
+Sample Output
+level
+madam
+noon
+Level
+Palindromes: 4
+</code></pre></div>
+
+<p><strong>6.</strong> A date is written as two digits, a slash, two digits, a slash, four digits. Write a flex program that prints the same date in the form <code>YYYY-MM-DD</code> when the month is between 01 and 12 and the day is between 01 and 31, and <code>Invalid: &lt;reason&gt;</code> otherwise, where the reason is <code>bad format</code>, <code>bad month</code> or <code>bad day</code>, checked in that order. <strong>[25]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+03/11/2026
+32/01/2026
+3/11/2026
+
+Sample Output
+2026-11-03
+Invalid: bad day
+Invalid: bad format
+</code></pre></div>
+
+<hr />
+<h2 id="set-20-word-non-word-space-and-non-space-classes">Set 20 — Word, non-word, space and non-space classes</h2>
+<p><em>Time: 110 minutes · Answer all eight questions · 105 marks</em></p>
+<p><strong>1.</strong> Write a flex program that prints every maximal run of letters, digits and underscores as <code>Word: &lt;text&gt;</code>, and then prints <code>Words: &lt;n&gt;</code>. Nothing else may be printed. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+hi_there, ok
+
+Sample Output
+Word: hi_there
+Word: ok
+Words: 2
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that prints <code>Punct: '&lt;c&gt;'</code> for every character of the input that is neither a letter, nor a digit, nor an underscore, nor a white-space character, one per line, in the order it appears. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+hi, there!
+
+Sample Output
+Punct: ','
+Punct: '!'
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that counts the white-space characters of the input — spaces, tabs and newlines — and prints <code>Whitespace characters: &lt;n&gt;</code> at the end. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+a  b c
+
+Sample Output
+Whitespace characters: 4
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that prints <code>Three: &lt;token&gt;</code> for every token of exactly three characters that contains no white space, and prints nothing for tokens of any other length. <strong>[10]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+abc defg hi jkl
+
+Sample Output
+Three: abc
+Three: jkl
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that reads the whole input and prints three counts, in this order: <code>Word characters: &lt;n&gt;</code>, <code>Non-word characters: &lt;n&gt;</code> and <code>Whitespace characters: &lt;n&gt;</code>. Word characters are letters, digits and underscores; non-word characters are everything that is neither a word character nor white space; whitespace is spaces, tabs and newlines. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+ab, c!
+
+Sample Output
+Word characters: 3
+Non-word characters: 2
+Whitespace characters: 2
+</code></pre></div>
+
+<p><strong>6.</strong> Write a flex program that reads a line of comma-separated fields, removes every space from the beginning and the end of each field, and prints <code>Field &lt;i&gt;: &lt;value&gt;</code> for each one, numbered from 1. A field that is empty after trimming must be printed as <code>Field &lt;i&gt;:</code> with nothing after the colon and no trailing space. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+ a , b c ,  d ,
+
+Sample Output
+Field 1: a
+Field 2: b c
+Field 3: d
+Field 4:
+</code></pre></div>
+
+<p><strong>7.</strong> Write a flex program that prints every token of the input that contains no white space and no punctuation, that is, every token made only of letters, digits and underscores, preceded by its position among the tokens of its own line, in the form <code>&lt;line&gt;.&lt;position&gt;: &lt;token&gt;</code>. Positions are counted from 1 on each line. <strong>[20]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a = 5;
+b = a + 1;
+
+Sample Output
+1.1: int
+1.2: a
+1.4: 5
+2.1: b
+2.3: a
+2.5: 1
+</code></pre></div>
+
+<p><strong>8.</strong> Write a flex program that prints the input with every run of white space outside a string literal replaced by a single space, and with every trailing space at the end of a line removed. The contents of string literals must be left exactly as they are. <strong>[20]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int   a  =  "x   y"  ;
+
+Sample Output
+int a = "x   y" ;
+</code></pre></div>
+
+<hr />
+<h2 id="set-21-the-reference-tables-applied-to-c-source">Set 21 — The reference tables applied to C source</h2>
+<p><em>Time: 90 minutes · Answer all six questions · 100 marks</em></p>
+<p><strong>1.</strong> Write a flex program that reads a C source file and prints every preprocessor line as <code>Preprocessor: #include</code>, followed by the header name as <code>Header: stdio.h</code>. A <code>#include</code> line whose header is not of the form <code>&lt;</code> letters, digits, underscores and dots <code>.h&gt;</code> must print <code>Invalid header: &lt;text&gt;</code> instead of the header line. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+#include &lt;stdio.h&gt;
+#include &lt;my_lib.h&gt;
+#include &lt;stdio&gt;
+
+Sample Output
+Preprocessor: #include
+Header: stdio.h
+Preprocessor: #include
+Header: my_lib.h
+Preprocessor: #include
+Invalid header: &lt;stdio&gt;
+</code></pre></div>
+
+<p><strong>2.</strong> Write a flex program that tokenises a C source file into the classes <code>KEYWORD</code>, <code>IDENTIFIER</code>, <code>NUMBER</code>, <code>OPERATOR</code> and <code>SPECIAL SYMBOL</code>, printing one line per token in the form <code>&lt;token&gt; --&gt; &lt;class&gt;</code>. The keywords are <code>int</code>, <code>float</code>, <code>char</code>, <code>double</code>, <code>void</code>, <code>if</code>, <code>else</code>, <code>while</code>, <code>for</code> and <code>return</code>; the special symbols are <code>(</code>, <code>)</code>, <code>{</code>, <code>}</code>, <code>;</code> and <code>,</code>; every other punctuation character is an operator. White space and comments must produce no output. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a = 10;
+int sum = a + 20;
+
+Sample Output
+int --&gt; KEYWORD
+a --&gt; IDENTIFIER
+= --&gt; OPERATOR
+10 --&gt; NUMBER
+; --&gt; SPECIAL SYMBOL
+int --&gt; KEYWORD
+sum --&gt; IDENTIFIER
+= --&gt; OPERATOR
+a --&gt; IDENTIFIER
++ --&gt; OPERATOR
+20 --&gt; NUMBER
+; --&gt; SPECIAL SYMBOL
+</code></pre></div>
+
+<p><strong>3.</strong> Write a flex program that prints every floating-point literal of a C source file as <code>FLOAT: &lt;text&gt;</code> — a run of digits, a decimal point and a run of digits — and every string literal as <code>STRING: &lt;text&gt;</code> including its quotes and escape sequences exactly as written. <code>printf</code> must be printed as <code>FUNCTION: printf</code>. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+float x = 3.14;
+printf("The result is: %f\n", x);
+
+Sample Output
+FLOAT: 3.14
+FUNCTION: printf
+STRING: "The result is: %f\n"
+</code></pre></div>
+
+<p><strong>4.</strong> Write a flex program that reports every call of the function <code>printf</code> with the number of arguments in it, printing <code>printf with &lt;n&gt; argument(s)</code>, where the arguments are the comma-separated items between the parentheses of the call. No other token may produce output. <strong>[15]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+printf("a %d\n", x);
+printf("hi");
+
+Sample Output
+printf with 2 argument(s)
+printf with 1 argument(s)
+</code></pre></div>
+
+<p><strong>5.</strong> Write a flex program that reads a C source file and prints exactly six lines at the end, in this order: <code>Keywords: &lt;n&gt;</code>, <code>Identifiers: &lt;n&gt;</code>, <code>Numbers: &lt;n&gt;</code>, <code>Operators: &lt;n&gt;</code>, <code>Special symbols: &lt;n&gt;</code>, <code>Strings: &lt;n&gt;</code>. Use the keyword list <code>int</code>, <code>float</code>, <code>char</code>, <code>double</code>, <code>void</code>, <code>if</code>, <code>else</code>, <code>while</code>, <code>for</code>, <code>return</code>, an identifier is a letter or underscore followed by letters, digits or underscores, and a number is a run of digits. <strong>[20]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int a = 10;
+
+Sample Output
+Keywords: 1
+Identifiers: 1
+Numbers: 1
+Operators: 1
+Special symbols: 1
+Strings: 0
+</code></pre></div>
+
+<p><strong>6.</strong> Write a flex program that gives a full report on one C function body. For every token it must print <code>&lt;token&gt; --&gt; &lt;class&gt;</code>, and at the end it must print <code>Tokens: &lt;n&gt;</code> and <code>Distinct identifiers: &lt;n&gt;</code>, where an identifier is counted once however often it appears. <strong>[20]</strong></p>
+<div class="codehilite"><pre><span></span><code>Sample Input
+int main() {
+    int a = 10;
+    int b = 20;
+    int sum = a + b;
+    return sum;
+}
+
+Sample Output
+int --&gt; KEYWORD
+main --&gt; IDENTIFIER
+( --&gt; SPECIAL SYMBOL
+) --&gt; SPECIAL SYMBOL
+{ --&gt; SPECIAL SYMBOL
+int --&gt; KEYWORD
+a --&gt; IDENTIFIER
+= --&gt; OPERATOR
+10 --&gt; NUMBER
+; --&gt; SPECIAL SYMBOL
+int --&gt; KEYWORD
+b --&gt; IDENTIFIER
+= --&gt; OPERATOR
+20 --&gt; NUMBER
+; --&gt; SPECIAL SYMBOL
+int --&gt; KEYWORD
+sum --&gt; IDENTIFIER
+= --&gt; OPERATOR
+a --&gt; IDENTIFIER
++ --&gt; OPERATOR
+b --&gt; IDENTIFIER
+; --&gt; SPECIAL SYMBOL
+return --&gt; KEYWORD
+sum --&gt; IDENTIFIER
+; --&gt; SPECIAL SYMBOL
+} --&gt; SPECIAL SYMBOL
+Tokens: 26
+Distinct identifiers: 4
+</code></pre></div>
+
+<hr />
+<h2 id="coverage-map-where-every-rule-of-the-reference-sheet-is-examined">Coverage map — where every rule of the reference sheet is examined</h2>
+<p>The reference sheet lists twenty-two rules. Each one is examined at least twice, and the two worked token tables at the end of the sheet are examined as Set 21. Questions marked <em>easy</em> are short bookkeeping; the later questions in a set are the ones that need a design decision.</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Rule</th>
+<th>Examined in</th>
+<th>Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Literal string</td>
+<td>14.1, 17.3, 18.3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Character set <code>[set]</code></td>
+<td>14.2, 14.5, 18.3</td>
+<td>3</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Character range <code>[a-z]</code></td>
+<td>14.3, 14.5, 18.5</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Negated set <code>[^abc]</code></td>
+<td>14.4, 14.6, 20.2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Exactly <em>n</em> times <code>{n}</code></td>
+<td>15.1, 15.2, 15.6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>6</td>
+<td>At least <em>n</em> times <code>{n,}</code></td>
+<td>15.3, 15.5, 15.6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Range of times <code>{n,m}</code></td>
+<td>15.4, 15.6, 21.1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Start of line <code>^</code></td>
+<td>16.1, 16.4, 20.8</td>
+<td>3</td>
+</tr>
+<tr>
+<td>9</td>
+<td>End of line <code>$</code></td>
+<td>16.2, 16.4, 20.8</td>
+<td>3</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Any character <code>.</code></td>
+<td>16.3, 16.5, 16.6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Zero or more <code>*</code></td>
+<td>17.1, 17.5, 19.1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>12</td>
+<td>One or more <code>+</code></td>
+<td>17.2, 17.4, 18.2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>13</td>
+<td>Optional <code>?</code></td>
+<td>17.3, 17.4, 16.4</td>
+<td>3</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Alternation <code>\|</code></td>
+<td>18.1, 18.4, 18.6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>15</td>
+<td>Escape <code>\</code></td>
+<td>18.3, 18.5, 18.6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>16</td>
+<td>Grouping <code>( )</code></td>
+<td>18.2, 19.1, 19.6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>17</td>
+<td>Named capture group</td>
+<td>19.1, 19.6, 21.4</td>
+<td>3</td>
+</tr>
+<tr>
+<td>18</td>
+<td>Back-reference <code>\1</code></td>
+<td>19.2, 19.3, 19.4, 19.5</td>
+<td>4</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Word character <code>\w</code></td>
+<td>20.1, 20.5, 20.7</td>
+<td>3</td>
+</tr>
+<tr>
+<td>20</td>
+<td>Non-word character <code>\W</code></td>
+<td>20.2, 20.5, 20.6</td>
+<td>3</td>
+</tr>
+<tr>
+<td>21</td>
+<td>Whitespace <code>\s</code></td>
+<td>20.3, 20.5, 20.8</td>
+<td>3</td>
+</tr>
+<tr>
+<td>22</td>
+<td>Non-whitespace <code>\S</code></td>
+<td>20.4, 20.6, 20.8</td>
+<td>3</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Example One — token table for a C program</td>
+<td>21.1, 21.2, 21.5, 21.6</td>
+<td>4</td>
+</tr>
+<tr>
+<td>—</td>
+<td>Example Two — floats, strings and <code>printf</code></td>
+<td>21.3, 21.4, 21.6</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="difficulty-spread-and-suggested-routes">Difficulty spread and suggested routes</h3>
+<p>Every set starts with 10-mark questions and ends with 15- to 25-mark ones, so an easy question, a medium question and a hard question on each rule are always in the same place.</p>
+<ul>
+<li><strong>Easy only (about 25 minutes):</strong> 14.1, 14.2, 14.3, 15.1, 15.2, 16.1, 16.2, 16.3, 17.1, 17.2, 17.3, 18.1, 18.2, 18.3, 19.1, 20.1, 20.2, 20.3, 20.4.</li>
+<li><strong>Medium (about an hour):</strong> 14.4, 14.5, 15.3, 15.5, 16.4, 16.5, 17.4, 17.5, 18.4, 18.5, 19.3, 19.4, 20.5, 20.6, 21.1, 21.2.</li>
+<li><strong>Hard (one sitting each):</strong> 14.6, 15.6, 16.6, 17.6, 18.6, 19.5, 19.6, 20.7, 20.8, 21.6.</li>
+<li><strong>Full mock paper:</strong> Set 21 straight through, then 15.6 and 19.6 with it.</li>
+</ul>
+<h3 id="a-note-on-the-way-these-rules-are-worded">A note on the way these rules are worded</h3>
+<p>flex supports <code>*</code>, <code>+</code>, <code>?</code>, <code>[...]</code>, <code>[^...]</code>, alternation, grouping, <code>^</code>, <code>$</code> and escaped literals directly. It does <strong>not</strong> support counted repetition <code>{n,m}</code>, named capture groups or back-references. Sets 15, 19 and parts of 21 therefore describe the matching <em>behaviour</em> rather than a pattern to type: you either write the pattern out in full — <code>[0-9][0-9][0-9]</code> for exactly three digits — or keep the state yourself in <code>yytext</code> and compare words as you go. Choosing which of the two to do is part of the question, and full marks need the choice justified only by the program working on the samples.</p>
+</main>
+</div>
+<script>
+document.querySelectorAll('.cw .toggle').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var box = btn.parentElement;
+    box.classList.toggle('collapsed');
+    btn.textContent = box.classList.contains('collapsed')
+      ? 'show all ' + (btn.dataset.n || '') + ' lines'
+      : 'collapse';
+  });
+});
+</script>
+</body>
+</html>
