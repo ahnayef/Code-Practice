@@ -4,8 +4,9 @@
 
 
 %%
-[a-zA-Z]+ {printf("%s: Word\n", yytext);}
-[0-9]+ {printf("%s: Int\n", yytext);}
+[a-zA-Z]+ {printf("Word: %s\n", yytext);}
+[0-9]+ {printf("Int: %s\n", yytext);}
+[^a-zA-Z0-9]+ {}
 %%
 
 int yywrap() {return 1;}
