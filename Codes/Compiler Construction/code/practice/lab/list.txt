@@ -1,0 +1,14 @@
+Some examples are discussed in class for the next lab exam
+
+1. A flex program to identify smaller letter and capital letter from a string 
+2. A flex program that counts the number and word from a string 
+
+3. Identify small and capital letter from a string 
+
+4. A flex program that starts with a 'p' and ends with a 'q'
+5. A flex program to identify string which starts with '_' end '_' and at least one alphabet (uppercase/lowercase)
+6. A flex program to identify string which starts with '_' end '_'and at least 2 character and at most 4 character in between them
+7. A flex program to identify integer number or floating number
+8. Construct a simple calculator (addition and subtraction)
+9. A flex program that accepts any string with 'pq' or 'PQ' anywhere in the string
+10. Assignment from Google classroom

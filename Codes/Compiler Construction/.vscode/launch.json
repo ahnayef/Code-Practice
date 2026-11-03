@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run current .l file (Flex)",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "runlex \"${relativeFile}\"",
+      "cwd": "${workspaceFolder}"
+    }
+  ]
+}
